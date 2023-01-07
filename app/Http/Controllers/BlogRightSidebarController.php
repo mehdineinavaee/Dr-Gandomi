@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BlogRightSitebar;
+use App\Models\BlogRightSidebar;
 use Illuminate\Http\Request;
 
-class BlogRightSitebarController extends Controller
+class BlogRightSidebarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class BlogRightSitebarController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\BlogRightSitebar  $blogRightSitebar
+     * @param  \App\Models\BlogRightSidebar  $blogRightSidebar
      * @return \Illuminate\Http\Response
      */
-    public function show(BlogRightSitebar $blogRightSitebar)
+    public function show(BlogRightSidebar $blogRightSidebar)
     {
         //
     }
@@ -52,10 +52,10 @@ class BlogRightSitebarController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\BlogRightSitebar  $blogRightSitebar
+     * @param  \App\Models\BlogRightSidebar  $blogRightSidebar
      * @return \Illuminate\Http\Response
      */
-    public function edit(BlogRightSitebar $blogRightSitebar)
+    public function edit(BlogRightSidebar $blogRightSidebar)
     {
         //
     }
@@ -64,10 +64,10 @@ class BlogRightSitebarController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\BlogRightSitebar  $blogRightSitebar
+     * @param  \App\Models\BlogRightSidebar  $blogRightSidebar
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BlogRightSitebar $blogRightSitebar)
+    public function update(Request $request, BlogRightSidebar $blogRightSidebar)
     {
         //
     }
@@ -75,10 +75,10 @@ class BlogRightSitebarController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\BlogRightSitebar  $blogRightSitebar
+     * @param  \App\Models\BlogRightSidebar  $blogRightSidebar
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BlogRightSitebar $blogRightSitebar)
+    public function destroy(BlogRightSidebar $blogRightSidebar)
     {
         //
     }

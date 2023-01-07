@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BlogRightSitebar extends Model
+class BlogRightSidebar extends Model
 {
     use HasFactory;
 }

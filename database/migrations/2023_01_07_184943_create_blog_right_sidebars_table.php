@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('blog_right_sitebars', function (Blueprint $table) {
+        Schema::create('blog_right_sidebars', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blog_right_sitebars');
+        Schema::dropIfExists('blog_right_sidebars');
     }
 };
