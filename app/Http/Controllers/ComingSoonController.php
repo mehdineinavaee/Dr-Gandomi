@@ -14,7 +14,7 @@ class ComingSoonController extends Controller
      */
     public function index()
     {
-        //
+        return view('coming_soons.index');
     }
 
     /**

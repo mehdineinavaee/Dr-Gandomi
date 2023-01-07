@@ -14,7 +14,7 @@ class StudyOnlineController extends Controller
      */
     public function index()
     {
-        //
+        return view('study_onlines.index');
     }
 
     /**

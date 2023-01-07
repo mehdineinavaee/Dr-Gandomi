@@ -14,7 +14,7 @@ class NotFoundPageController extends Controller
      */
     public function index()
     {
-        //
+        return view('not_found_pages.index');
     }
 
     /**

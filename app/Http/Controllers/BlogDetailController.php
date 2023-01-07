@@ -14,7 +14,7 @@ class BlogDetailController extends Controller
      */
     public function index()
     {
-        //
+        return view('blog_details.index');
     }
 
     /**

@@ -14,7 +14,7 @@ class ApplicationFormController extends Controller
      */
     public function index()
     {
-        //
+        return view('application_forms.index');
     }
 
     /**

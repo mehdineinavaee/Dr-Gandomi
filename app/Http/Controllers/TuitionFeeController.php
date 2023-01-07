@@ -14,7 +14,7 @@ class TuitionFeeController extends Controller
      */
     public function index()
     {
-        //
+        return view('tuition_fees.index');
     }
 
     /**

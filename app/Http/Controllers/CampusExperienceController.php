@@ -14,7 +14,7 @@ class CampusExperienceController extends Controller
      */
     public function index()
     {
-        //
+        return view('campus_experiences.index');
     }
 
     /**

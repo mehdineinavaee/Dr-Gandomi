@@ -14,7 +14,7 @@ class HomeOneController extends Controller
      */
     public function index()
     {
-        //
+        return view('home_ones.index');
     }
 
     /**

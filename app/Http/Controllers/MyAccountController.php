@@ -14,7 +14,7 @@ class MyAccountController extends Controller
      */
     public function index()
     {
-        //
+        return view('my_accounts.index');
     }
 
     /**

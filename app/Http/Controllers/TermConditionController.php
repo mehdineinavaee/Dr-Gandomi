@@ -14,7 +14,7 @@ class TermConditionController extends Controller
      */
     public function index()
     {
-        //
+        return view('term_conditions.index');
     }
 
     /**

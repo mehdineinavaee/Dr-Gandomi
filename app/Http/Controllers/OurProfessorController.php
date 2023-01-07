@@ -14,7 +14,7 @@ class OurProfessorController extends Controller
      */
     public function index()
     {
-        //
+        return view('our_professors.index');
     }
 
     /**

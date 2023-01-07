@@ -14,7 +14,7 @@ class EventDetailController extends Controller
      */
     public function index()
     {
-        //
+        return view('event_details.index');
     }
 
     /**

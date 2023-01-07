@@ -14,7 +14,7 @@ class HomeThreeController extends Controller
      */
     public function index()
     {
-        //
+        return view('home_threes.index');
     }
 
     /**

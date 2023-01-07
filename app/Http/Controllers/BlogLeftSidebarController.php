@@ -14,7 +14,7 @@ class BlogLeftSidebarController extends Controller
      */
     public function index()
     {
-        //
+        return view('blog_left_sidebars.index');
     }
 
     /**

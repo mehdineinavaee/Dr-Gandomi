@@ -14,7 +14,7 @@ class CourseDetailController extends Controller
      */
     public function index()
     {
-        //
+        return view('course_details.index');
     }
 
     /**

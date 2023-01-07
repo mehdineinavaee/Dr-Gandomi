@@ -14,7 +14,7 @@ class AlumniController extends Controller
      */
     public function index()
     {
-        //
+        return view('alumnis.index');
     }
 
     /**
