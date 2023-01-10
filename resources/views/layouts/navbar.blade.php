@@ -67,10 +67,10 @@
                                     <a href="{{ route('courses.index') }}" class="nav-link">درس ها</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('tuition_fees.index') }}" class="nav-link">هزینه های تحصیل</a>
+                                    <a href="{{ route('tuition_fee.index') }}" class="nav-link">هزینه های تحصیل</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('courses_details.index') }}" class="nav-link">جزئیات درس ها</a>
+                                    <a href="{{ route('course_details.index') }}" class="nav-link">جزئیات درس ها</a>
                                 </li>
                             </ul>
                         </li>
@@ -114,7 +114,7 @@
                                                 آنلاین</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{ route('admissions.index') }}" class="nav-link">پذیرش ها</a>
+                                            <a href="{{ route('admission.index') }}" class="nav-link">پذیرش ها</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -154,7 +154,7 @@
                                     <a href="{{ route('coming_soon.index') }}" class="nav-link">به زودی</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('page404.index') }}" class="nav-link">صفحه 404</a>
+                                    <a href="{{ route('not_found_page.index') }}" class="nav-link">صفحه 404</a>
                                 </li>
                             </ul>
                         </li>
@@ -208,10 +208,12 @@
 
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a href="{{ route('blog_left.index') }}" class="nav-link">بلاگ چپ چین</a>
+                                    <a href="{{ route('blog_left_sidebar.index') }}" class="nav-link">بلاگ چپ
+                                        چین</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('blog_right.index') }}" class="nav-link">بلاگ راست چین</a>
+                                    <a href="{{ route('blog_right_sidebar.index') }}" class="nav-link">بلاگ راست
+                                        چین</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('blog_details.index') }}" class="nav-link">جزئیات بلاگ</a>

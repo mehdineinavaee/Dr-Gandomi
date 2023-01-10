@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CourseController extends Controller
 {
@@ -14,7 +15,9 @@ class CourseController extends Controller
      */
     public function index()
     {
-        return view('courses.index');
+        $courses = Course::all();
+        return view('courses.index')
+            ->with('courses', $courses);
     }
 
     /**
@@ -24,7 +27,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        return view('courses.create');
     }
 
     /**
@@ -35,7 +38,15 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $course = new Course($request->all());
+        if ($request->hasFile('cover')) {
+            $path = $request->cover->store('public/courses');
+            $course->cover = basename($path);
+        }
+        $course->save();
+
+        return redirect()->back()
+            ->with('success', 'درس جدید ثبت شد');
     }
 
     /**
@@ -46,7 +57,8 @@ class CourseController extends Controller
      */
     public function show(Course $course)
     {
-        //
+        return view('courses.show')
+            ->with('course', $course);
     }
 
     /**
@@ -57,7 +69,8 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        //
+        return view('courses.edit')
+            ->with('course', $course);
     }
 
     /**
@@ -69,7 +82,23 @@ class CourseController extends Controller
      */
     public function update(Request $request, Course $course)
     {
-        //
+        if ($request->hasFile('cover')) {
+            $fileName = $course->cover;
+            if (Storage::exists('public/courses/' . $fileName)) {
+                Storage::delete('public/courses/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['courses/test.png', 'courses/test2.png']);
+                */
+            }
+            $path = $request->cover->store('public/courses');
+            $course->cover = basename($path);
+        }
+        $course->fill($request->only(['title', 'description'])); // 'cover' nadashte bashe
+        $course->save();
+
+        return redirect()->route('courses.index')
+            ->with('success', 'درس ویرایش شد');
     }
 
     /**
@@ -80,6 +109,8 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
-        //
+        $course->delete();
+        return redirect()->route('courses.index')
+            ->with('success', 'درس حذف شد');
     }
 }

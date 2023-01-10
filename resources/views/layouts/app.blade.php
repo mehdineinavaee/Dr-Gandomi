@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    @include('layouts.preloader')
+    {{-- @include('layouts.preloader') --}}
     @include('layouts.header')
     @include('layouts.search_modal')
     @yield('content')

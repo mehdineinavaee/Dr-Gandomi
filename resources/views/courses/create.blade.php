@@ -16,7 +16,7 @@
 
                             <div class="col-lg-6 col-sm-6">
                                 <div class="form-group">
-                                    <input type="file" class="form-control" id="photo" name="photo">
+                                    <input type="file" class="form-control" id="cover" name="cover">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>

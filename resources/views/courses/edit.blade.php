@@ -6,7 +6,7 @@
         <div class="container">
             <div class="contact-from-bg">
                 <div class="section-title">
-                    <h2>ویرایش دروس</h2>
+                    <h2>ویرایش درس</h2>
                 </div>
 
                 <div class="contact-form">
@@ -18,7 +18,7 @@
 
                             <div class="col-lg-6 col-sm-6">
                                 <div class="form-group">
-                                    <input type="file" class="form-control" id="photo" name="photo">
+                                    <input type="file" class="form-control" id="cover" name="cover">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
 
                             <div class="col-lg-12 col-md-12">
                                 <button type="submit" class="default-btn">
-                                    به روز رسانی
+                                    ثبت
                                 </button>
                                 <div id="msgSubmit" class="h3 text-center hidden"></div>
                                 <div class="clearfix"></div>

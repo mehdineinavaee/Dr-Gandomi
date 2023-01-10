@@ -103,8 +103,8 @@
                 @foreach ($courses as $course)
                     <div class="col-lg-3 col-sm-6">
                         <div class="single-study style-img">
-                            @if (isset($course->photo))
-                                <img src="{{ asset('storage/courses/' . $course->photo) }}" alt="{{ $course->title }}">
+                            @if (isset($course->cover))
+                                <img src="{{ asset('storage/courses/' . $course->cover) }}" alt="{{ $course->title }}">
                             @else
                                 <img src="{{ asset('images/TeacherNoSetImage.png') }}" alt="{{ $course->title }}">
                             @endif
@@ -112,11 +112,12 @@
                             <div class="single-study-content">
                                 <i class="flaticon-finance"></i>
                                 <h3>
-                                    <a href="study-online.html">{{ $course->title }}</a>
+                                    <a
+                                        href="{{ route('courses.show', ['course' => $course->id]) }}">{{ $course->title }}</a>
                                 </h3>
                                 <p class="justify">{{ $course->description }}</p>
 
-                                <a href="study-online.html" class="read-more">
+                                <a href="{{ route('courses.show', ['course' => $course->id]) }}" class="read-more">
                                     ادامه مطلب
                                     <span class="ri-arrow-left-line"></span>
                                 </a>
@@ -125,6 +126,12 @@
                                     تست ویرایش
                                     <span class="ri-arrow-left-line"></span>
                                 </a>
+
+                                <form action="{{ route('courses.destroy', $course->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger" type="submit">تست حذف</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -132,7 +139,7 @@
                 <div class="col-12">
                     <div class="study-load">
                         <a href="index.htm#" class="default-btn">
-                            دروس بیشتر
+                            مشاهده بیشتر
                             <i class="ri-arrow-left-line"></i>
                         </a>
                     </div>
