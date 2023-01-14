@@ -35,5 +35,50 @@ class DatabaseSeeder extends Seeder
                 'facebook' => 'facebook',
             ],
         ]);
+
+        DB::table('modes')->insert([
+            [
+                'title' => 'عمومی (حضوری)',
+            ],
+            [
+                'title' => 'عمومی (آنلاین)',
+            ],
+            [
+                'title' => 'خصوصی (حضوری)',
+            ],
+            [
+                'title' => 'خصوصی (آنلاین)',
+            ],
+        ]);
+
+        DB::table('categories')->insert([
+            [
+                'title' => 'طراحی وب',
+            ],
+            [
+                'title' => 'توسعه وب',
+            ],
+            [
+                'title' => 'طراحی گرافیک',
+            ],
+            [
+                'title' => 'توسعه اپلیکیشن',
+            ],
+        ]);
+
+        DB::table('grades')->insert([
+            [
+                'title' => 'کاردانی',
+            ],
+            [
+                'title' => 'کارشناسی',
+            ],
+            [
+                'title' => 'کارشناسی ارشد',
+            ],
+            [
+                'title' => 'دکتری',
+            ],
+        ]);
     }
 }

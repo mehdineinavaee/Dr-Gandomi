@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CourseDetail;
+use App\Models\Grade;
 use Illuminate\Http\Request;
 
-class CourseDetailController extends Controller
+class GradeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class CourseDetailController extends Controller
      */
     public function index()
     {
-        return view('course_details.index');
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class CourseDetailController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\CourseDetail  $courseDetail
+     * @param  \App\Models\Grade  $grade
      * @return \Illuminate\Http\Response
      */
-    public function show(CourseDetail $courseDetail)
+    public function show(Grade $grade)
     {
         //
     }
@@ -52,10 +52,10 @@ class CourseDetailController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\CourseDetail  $courseDetail
+     * @param  \App\Models\Grade  $grade
      * @return \Illuminate\Http\Response
      */
-    public function edit(CourseDetail $courseDetail)
+    public function edit(Grade $grade)
     {
         //
     }
@@ -64,10 +64,10 @@ class CourseDetailController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CourseDetail  $courseDetail
+     * @param  \App\Models\Grade  $grade
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CourseDetail $courseDetail)
+    public function update(Request $request, Grade $grade)
     {
         //
     }
@@ -75,10 +75,10 @@ class CourseDetailController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\CourseDetail  $courseDetail
+     * @param  \App\Models\Grade  $grade
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CourseDetail $courseDetail)
+    public function destroy(Grade $grade)
     {
         //
     }

@@ -38,41 +38,11 @@
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto">
                         <li class="nav-item">
-                            <a href="{{ asset('/') }}" class="nav-link active">
-                                صفحه اصلی
-                                <i class="ri-arrow-down-s-line"></i>
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="{{ route('home_one.index') }}" class="nav-link active">صفحه اصلی یک</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('home_two.index') }}" class="nav-link">صفحه اصلی دو</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('home_three.index') }}" class="nav-link">صفحه اصلی سه</a>
-                                </li>
-                            </ul>
+                            <a href="/" class="nav-link">صفحه اصلی</a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="JavaScript:void(0)" class="nav-link">
-                                درس ها
-                                <i class="ri-arrow-down-s-line"></i>
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="{{ route('courses.index') }}" class="nav-link">درس ها</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('tuition_fee.index') }}" class="nav-link">هزینه های تحصیل</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('course_details.index') }}" class="nav-link">جزئیات درس ها</a>
-                                </li>
-                            </ul>
+                            <a href="{{ route('courses.index') }}" class="nav-link">دوره ها</a>
                         </li>
 
                         <li class="nav-item">
@@ -94,7 +64,7 @@
                                 <li class="nav-item">
                                     <a href="JavaScript:void(0)" class="nav-link">
                                         دانشگاه
-                                        <i class="ri-arrow-down-s-line"></i>
+                                        <i class="ri-arrow-left-s-line"></i>
                                     </a>
 
                                     <ul class="dropdown-menu">
@@ -127,7 +97,7 @@
                                 <li class="nav-item">
                                     <a href="JavaScript:void(0)" class="nav-link">
                                         کاربر
-                                        <i class="ri-arrow-down-s-line"></i>
+                                        <i class="ri-arrow-left-s-line"></i>
                                     </a>
 
                                     <ul class="dropdown-menu">

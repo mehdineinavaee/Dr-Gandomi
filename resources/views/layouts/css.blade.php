@@ -1,5 +1,7 @@
 <!-- Bootstrap RTL Min CSS -->
 <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.rtl.min.css') }}">
+<!-- Virtual Select CSS -->
+<link rel="stylesheet" href="{{ asset('assets/css/virtual-select.css') }}">
 <!-- Owl Theme Default Min CSS -->
 <link rel="stylesheet" href="{{ asset('assets/css/owl.theme.default.min.css') }}">
 <!-- Owl Carousel Min CSS -->
@@ -24,10 +26,12 @@
 <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
 <!-- RTL CSS -->
 <link rel="stylesheet" href="{{ asset('assets/css/rtl.css') }}">
-<!-- ri icons cdn -->
-<link href="{{ asset('https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css') }}" rel="stylesheet">
 <!-- My CSS -->
 <link rel="stylesheet" href="{{ asset('assets/css/my_css.css') }}">
+<!-- Shabnam Font -->
+<link rel="stylesheet" href="{{ asset('assets/fonts/Shabnam/font-face.css') }}">
+<!-- Vazir Font -->
+<link rel="stylesheet" href="{{ asset('assets/fonts/Vazir/font-face.css') }}">
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}">
 

@@ -1,31 +1,14 @@
 @extends('layouts.app')
-@section('title', 'درس ها')
+@section('title', 'دوره ها')
 @section('content')
-    <!-- Start Page Title Area -->
-    <div class="page-title-area bg-2">
-        <div class="container">
-            <div class="page-title-content">
-                <h2>Corses</h2>
-
-                <ul>
-                    <li>
-                        <a href="index.html">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="active">Corses</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- End Page Title Area -->
-
+    @include('common.breadcrumbs', [
+        'data' => [['title' => 'دوره ها', 'url' => url()->current()]],
+    ])
     <!-- Start Find A Courses Area -->
     <section class="find-courses-area pt-100">
         <div class="container">
             <form class="find-courses-from-bg find-courses-from-bg-three mt-0">
-                <h2>Find a courses</h2>
+                <h2>جستجوی دوره</h2>
 
                 <ul>
                     <li>
@@ -65,22 +48,8 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-md-6">
-                        <div class="form-group">
-                            <select class="form-control">
-                                <option value="1">United States</option>
-                                <option value="2">العربيّة</option>
-                                <option value="3">Deutsch</option>
-                                <option value="4">Português</option>
-                                <option value="5">简体中文</option>
-                            </select>
-                            <i class="ri-arrow-down-s-line"></i>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6">
+                    <div class="col-lg-12 col-md-12">
                         <button type="submit" class="default-btn">
-                            Search
                             <i class="ri-search-line"></i>
                         </button>
                     </div>
@@ -98,7 +67,10 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut labore et dolore magna</p>
             </div>
-
+            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#add_course_modal">
+                <i class="ri-add-circle-fill" style="font-size: 2rem" data-toggle="tooltip" data-placement="top"
+                    title="افزودن دوره جدید"></i>
+            </a>
             <div class="row justify-content-center">
                 @foreach ($courses as $course)
                     <div class="col-lg-3 col-sm-6">
@@ -110,28 +82,28 @@
                             @endif
 
                             <div class="single-study-content">
-                                <i class="flaticon-finance"></i>
+                                {{-- <i class="flaticon-finance"></i> --}}
                                 <h3>
                                     <a
                                         href="{{ route('courses.show', ['course' => $course->id]) }}">{{ $course->title }}</a>
                                 </h3>
-                                <p class="justify">{{ $course->description }}</p>
+                                <p class="justify">{!! Str::limit($course->description, 200, ' ...') !!}</p>
 
                                 <a href="{{ route('courses.show', ['course' => $course->id]) }}" class="read-more">
                                     ادامه مطلب
                                     <span class="ri-arrow-left-line"></span>
                                 </a>
 
-                                <a href="{{ route('courses.edit', ['course' => $course->id]) }}" class="read-more">
-                                    تست ویرایش
-                                    <span class="ri-arrow-left-line"></span>
+                                <a href="{{ route('courses.edit', ['course' => $course->id]) }}" data-bs-toggle="modal"
+                                    data-bs-target="#edit_course_modal">
+                                    <i class="ri-edit-2-fill" style="font-size: 2rem; color:#000; margin-left:30px;"
+                                        data-toggle="tooltip" data-placement="top" title="ویرایش دوره"></i>
                                 </a>
 
-                                <form action="{{ route('courses.destroy', $course->id) }}" method="post">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger" type="submit">تست حذف</button>
-                                </form>
+                                <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#delete_course_modal">
+                                    <i class="ri-chat-delete-fill" style="font-size: 2rem; color:#92210f;"
+                                        data-toggle="tooltip" data-placement="top" title="حذف دوره"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -213,4 +185,8 @@
         </div>
     </section>
     <!-- End Study Area -->
+
+    @include('courses.create')
+    @include('courses.edit')
+    @include('courses.delete')
 @endsection

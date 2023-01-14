@@ -4,6 +4,8 @@
 <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 <!-- Bootstrap Bundle Min JS -->
 <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+<!-- Virtual Select JS -->
+<script src="{{ asset('assets/js/virtual-select.js') }}"></script>
 <!-- Meanmenu Min JS -->
 <script src="{{ asset('assets/js/meanmenu.min.js') }}"></script>
 <!-- Owl Carousel Min JS -->
@@ -28,3 +30,16 @@
 <script src="{{ asset('assets/js/ajaxchimp.min.js') }}"></script>
 <!-- Custom JS -->
 <script src="{{ asset('assets/js/custom.js') }}"></script>
+<!-- TextArea Editor JS -->
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+        selector: 'textarea'
+    });
+</script>
+<!-- num2persian JS -->
+<script src="{{ asset('assets/js/num2persian.js') }}"></script>
+<!-- Price JS -->
+<script src="{{ asset('assets/js/price.js') }}"></script>
+<!-- My JS -->
+<script src="{{ asset('assets/js/my_js.js') }}"></script>
