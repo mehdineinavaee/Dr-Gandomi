@@ -194,6 +194,27 @@
                         <li class="nav-item">
                             <a href="{{ route('contact.index') }}" class="nav-link">تماس با ما</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="JavaScript:void(0)" class="nav-link">
+                                مدیریت
+                                <i class="ri-arrow-down-s-line"></i>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a href="{{ route('blog_left_sidebar.index') }}" class="nav-link">دوره ها
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('blog_right_sidebar.index') }}" class="nav-link">دسته بندی ها
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('blog_details.index') }}" class="nav-link">روش برگزاری</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
 
                     <div class="others-options">
