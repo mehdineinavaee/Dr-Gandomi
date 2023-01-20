@@ -12,8 +12,7 @@
                         <div class="card-header">مدیریت دسته بندی ها</div>
                         <div class="card-body text-dark">
                             <h5 class="card-title">
-                                <a href="{{ route('categories.create') }}" data-bs-toggle="modal"
-                                    data-bs-target="#AddCategoryModal">
+                                <a href="{{ route('categories.create') }}">
                                     <i class="ri-add-circle-fill" style="font-size: 2rem" data-toggle="tooltip"
                                         data-placement="top" title="افزودن دسته بندی جدید"></i>
                                 </a>
@@ -23,29 +22,45 @@
                                 <table id="example" class="table table-striped" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>ردیف</th>
-                                            <th>عنوان</th>
-                                            <th>عملیات</th>
+                                            <th style="text-align:center; width:10%">ردیف</th>
+                                            <th style="text-align:center; width:70%">عنوان</th>
+                                            <th style="text-align:center; width:20%">عملیات</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($categories as $category)
                                             <tr>
                                                 <td style="text-align:center;">{{ $loop->iteration }}</td>
-                                                <td>{{ $category->title }}</td>
-                                                <td>
-                                                    <button value={{ $category->id }}>
-                                                        <i class="ri-chat-delete-fill" id="delete_category"
-                                                            data-toggle="tooltip" style="font-size: 1.3rem"
-                                                            data-placement="top" title="حذف">
+                                                <td style="text-align:center;">{{ $category->title }}</td>
+                                                <td style="text-align:center;">
+
+                                                    {{-- <form action="{{ route('categories.destroy', ['category' => $category->id]) }}"
+                                                        method="post">
+                                                        @method('DELETE')
+                                                        @csrf
+                                                        <button type="submit" href="javascript:void(0)"
+                                                            class="btn btn-sm btn-danger">
+                                                            <i class="ri-chat-delete-fill" data-toggle="tooltip"
+                                                                style="font-size: 1.3rem" data-placement="top"
+                                                                title="حذف">
+                                                            </i>
+                                                        </button>
+                                                    </form> --}}
+
+                                                    <button value={{ $category->id }}
+                                                        class="btn btn-danger btn-sm delete_category">
+                                                        <i class="ri-chat-delete-fill" data-toggle="tooltip"
+                                                            style="font-size: 1rem" data-placement="top" title="حذف">
                                                         </i>
                                                     </button>
 
-                                                    <a href="{{ route('categories.edit', ['category' => $category->id]) }}">
+                                                    <a href="{{ route('categories.edit', ['category' => $category->id]) }}"
+                                                        class="btn btn-primary btn-sm">
                                                         <i class="ri-edit-2-fill" data-toggle="tooltip"
-                                                            style="font-size: 1.3rem" data-placement="top" title="ویرایش">
+                                                            style="font-size: 1rem" data-placement="top" title="ویرایش">
                                                         </i>
                                                     </a>
+
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -59,7 +74,7 @@
             </div>
         </div>
     </section>
-    @include('categories.create')
+    @include('categories.delete')
 @endsection
 
 @push('js')

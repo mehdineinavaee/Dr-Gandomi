@@ -1,12 +1,11 @@
 @extends('layouts.app')
-@section('title', 'ویرایش دسته بندی')
+@section('title', 'ویرایش روش برگزاری')
 @section('content')
     <section class="candidates-resume-area ptb-50">
         <div class="container">
             <div class="candidates-resume-content">
-                <form class="resume-info" autocomplete="off"
-                    action="{{ route('categories.update', ['category' => $category->id]) }}" method="post"
-                    enctype="multipart/form-data">
+                <form class="resume-info" autocomplete="off" action="{{ route('modes.update', ['mode' => $mode->id]) }}"
+                    method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -15,7 +14,7 @@
                             <div class="form-group">
                                 <label>عنوان</label>
                                 <input type="text" name="title" id="title" class="form-control"
-                                    value="{{ $category->title }}">
+                                    value="{{ $mode->title }}">
                             </div>
                         </div>
                     </div>

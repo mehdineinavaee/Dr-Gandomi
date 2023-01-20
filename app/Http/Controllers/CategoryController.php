@@ -37,13 +37,10 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category = new Category;
-        $category->title = $request->input('title');
+        $category = new Category($request->all());
         $category->save();
-        return response()->json([
-            'status' => 200,
-            'message' => 'دسته بندی جدید ثبت شد',
-        ]);
+        return redirect()->route('categories.index')
+            ->with('success', 'دسته بندی جدید ثبت شد');
     }
 
     /**
@@ -65,7 +62,8 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('categories.edit')
+            ->with('category', $category);
     }
 
     /**
@@ -77,7 +75,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $category->fill($request->only(['title']));
+        $category->save();
+
+        return redirect()->route('categories.index')
+            ->with('success', 'دسته بندی ویرایش شد');
     }
 
     /**
@@ -86,8 +88,14 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'دسته بندی با موفقیت حذف شد',
+        ]);
     }
 }

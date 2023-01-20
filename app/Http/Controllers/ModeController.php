@@ -26,7 +26,7 @@ class ModeController extends Controller
      */
     public function create()
     {
-        //
+        return view('modes.create');
     }
 
     /**
@@ -37,7 +37,10 @@ class ModeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $mode = new Mode($request->all());
+        $mode->save();
+        return redirect()->route('modes.index')
+            ->with('success', 'روش برگزاری جدید ثبت شد');
     }
 
     /**
@@ -59,7 +62,8 @@ class ModeController extends Controller
      */
     public function edit(Mode $mode)
     {
-        //
+        return view('modes.edit')
+            ->with('mode', $mode);
     }
 
     /**
@@ -71,7 +75,11 @@ class ModeController extends Controller
      */
     public function update(Request $request, Mode $mode)
     {
-        //
+        $mode->fill($request->only(['title']));
+        $mode->save();
+
+        return redirect()->route('modes.index')
+            ->with('success', 'روش برگزاری ویرایش شد');
     }
 
     /**
@@ -80,8 +88,14 @@ class ModeController extends Controller
      * @param  \App\Models\Mode  $mode
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Mode $mode)
+    public function destroy($id)
     {
-        //
+        $mode = Mode::find($id);
+        $mode->delete();
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'روش برگزاری با موفقیت حذف شد',
+        ]);
     }
 }
