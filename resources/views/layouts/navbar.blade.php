@@ -178,12 +178,8 @@
 
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a href="{{ route('blog_left_sidebar.index') }}" class="nav-link">بلاگ چپ
-                                        چین</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('blog_right_sidebar.index') }}" class="nav-link">بلاگ راست
-                                        چین</a>
+                                    <a href="{{ route('blog_right_sidebar.index') }}" class="nav-link">بلاگ
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('blog_details.index') }}" class="nav-link">جزئیات بلاگ</a>
@@ -221,7 +217,7 @@
                         <ul>
                             <li>
                                 <a href="{{ route('application_form.index') }}" class="default-btn">
-                                    فرم کاربردی
+                                    ثبت نام
                                 </a>
                             </li>
                             <li>

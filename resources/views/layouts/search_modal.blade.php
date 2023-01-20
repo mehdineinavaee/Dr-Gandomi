@@ -9,7 +9,7 @@
               <div class="modal-body">
                   <form class="search-box">
                       <div class="search-input">
-                          <input type="text" name="Search" autocomplete="off" placeholder="Search for..."
+                          <input type="text" name="Search" autocomplete="off" placeholder="جستجو برای ..."
                               class="form-control">
 
                           <button type="submit" class="search-btn">
