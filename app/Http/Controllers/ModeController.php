@@ -14,7 +14,9 @@ class ModeController extends Controller
      */
     public function index()
     {
-        //
+        $modes = Mode::all();
+        return view('modes.index')
+            ->with('modes', $modes);
     }
 
     /**

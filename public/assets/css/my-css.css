@@ -25,3 +25,12 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #172f41;
 }
+
+/* Handle style for virtual select */
+.vscomp-options-container {
+    /* max-height: none !important; */
+    list-style: none;
+    padding: 0;
+    max-height: 200px;
+    overflow: auto;
+}

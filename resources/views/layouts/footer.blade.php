@@ -5,7 +5,7 @@
               <div class="col-lg-3 col-sm-6">
                   <div class="single-footer-widget bg-f9f5f1">
                       <a href="index.html" class="logo">
-                          <img src="assets/images/logo.png" alt="Image">
+                          <img src={{ asset('assets/images/logo.png') }} alt="Image">
                       </a>
 
                       <p class="justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio officia facere

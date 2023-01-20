@@ -1,26 +1,23 @@
-<!-- Delete Course Modal -->
-<div class="modal fade" id="delete_course_modal" tabindex="-1">
-    <div class="modal-dialog">
+<div class="modal fade" id="DeleteCourseModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-
             <div class="modal-header">
-                <h5 class="modal-title">حذف دوره</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">حذف دوره</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body" style="text-align: center">
-                <h6>آیا از حذف دوره اطمینان دارید؟</h6>
-                <p>با کلیک روی دکمه "موافقم" امکان بازگشت وجود ندارد.</p>
+            <div class="modal-body">
+                <input type="hidden" id="delete_course_id">
+                <h6 style="text-align: center">آیا از حذف اطمینان دارید؟</h6>
+                <p style="text-align: center">با کلیک روی دکمه "موافقم" امکان بازگشت وجود ندارد.</p>
             </div>
             <div class="modal-footer">
-                <div class="col-lg-12 col-md-12">
-                    <form action="{{ route('courses.destroy', $course->id) }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button class="default-btn" type="submit">موافقم</button>
-                    </form>
-                </div>
+                <button type="button" class="btn btn-secondary badge-pill btn-w btn-sm" data-bs-dismiss="modal">منصرف
+                    شدم
+                </button>
+                <button type="button" class="btn btn-success badge-pill btn-w btn-sm delete_course_btn">موافقم
+                </button>
             </div>
         </div>
     </div>
 </div>
-<!-- End- Delete Course Modal -->

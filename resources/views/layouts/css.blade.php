@@ -27,7 +27,9 @@
 <!-- RTL CSS -->
 <link rel="stylesheet" href="{{ asset('assets/css/rtl.css') }}">
 <!-- My CSS -->
-<link rel="stylesheet" href="{{ asset('assets/css/my_css.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/my-css.css') }}">
+<!-- Data Tables CSS -->
+<link rel="stylesheet" href="{{ asset('assets/data-tables/datatables.min.css') }}">
 <!-- Shabnam Font -->
 <link rel="stylesheet" href="{{ asset('assets/fonts/Shabnam/font-face.css') }}">
 <!-- Vazir Font -->

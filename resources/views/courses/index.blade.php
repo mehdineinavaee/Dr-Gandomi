@@ -67,10 +67,6 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut labore et dolore magna</p>
             </div>
-            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#add_course_modal">
-                <i class="ri-add-circle-fill" style="font-size: 2rem" data-toggle="tooltip" data-placement="top"
-                    title="افزودن دوره جدید"></i>
-            </a>
             <div class="row justify-content-center">
                 @foreach ($courses as $course)
                     <div class="col-lg-3 col-sm-6">
@@ -92,17 +88,6 @@
                                 <a href="{{ route('courses.show', ['course' => $course->id]) }}" class="read-more">
                                     ادامه مطلب
                                     <span class="ri-arrow-left-line"></span>
-                                </a>
-
-                                <a href="{{ route('courses.edit', ['course' => $course->id]) }}" data-bs-toggle="modal"
-                                    data-bs-target="#edit_course_modal">
-                                    <i class="ri-edit-2-fill" style="font-size: 2rem; color:#000; margin-left:30px;"
-                                        data-toggle="tooltip" data-placement="top" title="ویرایش دوره"></i>
-                                </a>
-
-                                <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#delete_course_modal">
-                                    <i class="ri-chat-delete-fill" style="font-size: 2rem; color:#92210f;"
-                                        data-toggle="tooltip" data-placement="top" title="حذف دوره"></i>
                                 </a>
                             </div>
                         </div>
@@ -185,8 +170,4 @@
         </div>
     </section>
     <!-- End Study Area -->
-
-    @include('courses.create')
-    @include('courses.edit')
-    @include('courses.delete')
 @endsection

@@ -203,15 +203,15 @@
 
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a href="{{ route('blog_left_sidebar.index') }}" class="nav-link">دوره ها
+                                    <a href="{{ route('courses.admin') }}" class="nav-link">دوره ها
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('blog_right_sidebar.index') }}" class="nav-link">دسته بندی ها
+                                    <a href="{{ route('categories.index') }}" class="nav-link">دسته بندی ها
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('blog_details.index') }}" class="nav-link">روش برگزاری</a>
+                                    <a href="{{ route('modes.index') }}" class="nav-link">روش برگزاری</a>
                                 </li>
                             </ul>
                         </li>

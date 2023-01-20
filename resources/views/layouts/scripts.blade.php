@@ -1,6 +1,4 @@
 <!-- Jquery Min JS -->
-<script data-cfasync="false" src="{{ asset('../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js') }}">
-</script>
 <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 <!-- Bootstrap Bundle Min JS -->
 <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
@@ -42,4 +40,8 @@
 <!-- Price JS -->
 <script src="{{ asset('assets/js/price.js') }}"></script>
 <!-- My JS -->
-<script src="{{ asset('assets/js/my_js.js') }}"></script>
+<script src="{{ asset('assets/js/my-js.js') }}"></script>
+<!-- Data Tables JS -->
+<script src="{{ asset('assets/data-tables/datatables.min.js') }}"></script>
+<!-- Sweet Alert 2 JS -->
+<script src="{{ asset('assets/js/sweetalert2.all.min.js') }}"></script>

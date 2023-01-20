@@ -22,6 +22,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeOneController;
 use App\Http\Controllers\HomeThreeController;
 use App\Http\Controllers\HomeTwoController;
+use App\Http\Controllers\ModeController;
 use App\Http\Controllers\MyAccountController;
 use App\Http\Controllers\NotFoundPageController;
 use App\Http\Controllers\OurProfessorController;
@@ -55,7 +56,6 @@ Route::resource('application_form', ApplicationFormController::class);
 Route::resource('blog_details', BlogDetailController::class);
 Route::resource('blog_left_sidebar', BlogLeftSidebarController::class);
 Route::resource('blog_right_sidebar', BlogRightSidebarController::class);
-Route::resource('categories', CategoryController::class);
 Route::resource('campus_experience', CampusExperienceController::class);
 Route::resource('campus_information', CampusInformationController::class);
 Route::resource('cart', CartController::class);
@@ -80,3 +80,8 @@ Route::resource('study_online', StudyOnlineController::class);
 Route::resource('terms_conditions', TermConditionController::class);
 Route::resource('tuition_fee', TuitionFeeController::class);
 Route::resource('wishlist', WishlistController::class);
+
+// Admin Routes
+Route::get('admin/courses', [CourseController::class, 'admin'])->name('courses.admin');
+Route::resource('categories', CategoryController::class);
+Route::resource('modes', ModeController::class);

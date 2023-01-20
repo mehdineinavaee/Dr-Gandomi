@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\Mode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Models\Mode;
-use Symfony\Component\VarDumper\VarDumper;
 
 class CourseController extends Controller
 {
+    public function admin()
+    {
+        $courses = Course::all();
+        return view('courses.admin')
+            ->with('courses', $courses);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -19,12 +25,7 @@ class CourseController extends Controller
     public function index()
     {
         $courses = Course::all();
-        $modes = Mode::all();
-        $categories = Category::orderBy('title')->get();
-
         return view('courses.index')
-            ->with('modes', $modes)
-            ->with('categories', $categories)
             ->with('courses', $courses);
     }
 
@@ -35,7 +36,11 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('courses.create');
+        $modes = Mode::all();
+        $categories = Category::orderBy('title')->get();
+        return view('courses.create')
+            ->with('modes', $modes)
+            ->with('categories', $categories);
     }
 
     /**
@@ -57,7 +62,7 @@ class CourseController extends Controller
         $course->save();
         $course->categories()->attach($myArray);
 
-        return redirect()->route('courses.index')
+        return redirect()->route('courses.admin')
             ->with('success', 'دوره جدید ثبت شد');
     }
 
@@ -81,8 +86,12 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
+        $modes = Mode::all();
+        $categories = Category::orderBy('title')->get();
         return view('courses.edit')
-            ->with('course', $course);
+            ->with('course', $course)
+            ->with('modes', $modes)
+            ->with('categories', $categories);
     }
 
     /**
@@ -113,7 +122,7 @@ class CourseController extends Controller
         $course->categories()->sync($myArray);
         $course->save();
 
-        return redirect()->route('courses.index')
+        return redirect()->route('courses.admin')
             ->with('success', 'دوره ویرایش شد');
     }
 
@@ -123,8 +132,10 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+
+    public function destroy($id)
     {
+        $course = Course::find($id);
         $fileName = $course->cover;
         if (Storage::exists('public/courses/' . $fileName)) {
             Storage::delete('public/courses/' . $fileName);
@@ -134,7 +145,10 @@ class CourseController extends Controller
             */
         }
         $course->delete();
-        return redirect()->route('courses.index')
-            ->with('success', 'دوره حذف شد');
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'دوره با موفقیت حذف شد',
+        ]);
     }
 }

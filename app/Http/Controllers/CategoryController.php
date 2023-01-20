@@ -37,7 +37,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = new Category;
+        $category->title = $request->input('title');
+        $category->save();
+        return response()->json([
+            'status' => 200,
+            'message' => 'دسته بندی جدید ثبت شد',
+        ]);
     }
 
     /**
