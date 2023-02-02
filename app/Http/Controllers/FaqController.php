@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class FaqController extends Controller
 {
+    public function admin()
+    {
+        $faqs = Faq::all();
+        return view('faqs.admin')
+            ->with('faqs', $faqs);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,9 @@ class FaqController extends Controller
      */
     public function index()
     {
-        return view('faqs.index');
+        $faqs = Faq::all();
+        return view('faqs.index')
+            ->with('faqs', $faqs);
     }
 
     /**
@@ -24,7 +33,7 @@ class FaqController extends Controller
      */
     public function create()
     {
-        //
+        return view('faqs.create');
     }
 
     /**
@@ -35,7 +44,11 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $faq = new Faq($request->all());
+        $faq->save();
+
+        return redirect()->route('faqs.admin')
+            ->with('success', 'پرسش و پاسخ جدید ثبت شد');
     }
 
     /**
@@ -46,7 +59,8 @@ class FaqController extends Controller
      */
     public function show(Faq $faq)
     {
-        //
+        return view('faqs.show')
+            ->with('faq', $faq);
     }
 
     /**
@@ -57,7 +71,8 @@ class FaqController extends Controller
      */
     public function edit(Faq $faq)
     {
-        //
+        return view('faqs.edit')
+            ->with('faq', $faq);
     }
 
     /**
@@ -69,7 +84,11 @@ class FaqController extends Controller
      */
     public function update(Request $request, Faq $faq)
     {
-        //
+        $faq->fill($request->only(['question', 'response'])); // 'cover' nadashte bashe
+        $faq->save();
+
+        return redirect()->route('faqs.admin')
+            ->with('success', 'پرسش و پاسخ ویرایش شد');
     }
 
     /**
@@ -78,8 +97,14 @@ class FaqController extends Controller
      * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Faq $faq)
+    public function destroy($id)
     {
-        //
+        $faq = Faq::find($id);
+        $faq->delete();
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'پرسش و پاسخ با موفقیت حذف شد',
+        ]);
     }
 }

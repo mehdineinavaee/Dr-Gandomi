@@ -30,9 +30,10 @@
                                     <tbody>
                                         @foreach ($modes as $mode)
                                             <tr>
-                                                <td style="text-align:center;">{{ $loop->iteration }}</td>
-                                                <td style="text-align:center;">{{ $mode->title }}</td>
-                                                <td style="text-align:center;">
+                                                <td style="text-align:center;" class="align-middle">{{ $loop->iteration }}
+                                                </td>
+                                                <td style="text-align:center;" class="align-middle">{{ $mode->title }}</td>
+                                                <td style="text-align:center;" class="align-middle">
 
                                                     {{-- <form action="{{ route('modes.destroy', ['mode' => $mode->id]) }}"
                                                         method="post">

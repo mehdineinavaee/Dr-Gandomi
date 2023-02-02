@@ -4,9 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\OurProfessor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class OurProfessorController extends Controller
 {
+    public function admin()
+    {
+        $ourProfessors = OurProfessor::all();
+        return view('our_professors.admin')
+            ->with('ourProfessors', $ourProfessors);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,9 @@ class OurProfessorController extends Controller
      */
     public function index()
     {
-        return view('our_professors.index');
+        $ourProfessors = OurProfessor::orderBy('id', 'desc')->paginate(6);
+        return view('our_professors.index')
+            ->with('ourProfessors', $ourProfessors);
     }
 
     /**
@@ -24,7 +34,7 @@ class OurProfessorController extends Controller
      */
     public function create()
     {
-        //
+        return view('our_professors.create');
     }
 
     /**
@@ -35,7 +45,15 @@ class OurProfessorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ourProfessor = new OurProfessor($request->all());
+        if ($request->hasFile('cover')) {
+            $path = $request->cover->store('public/our_professors');
+            $ourProfessor->cover = basename($path);
+        }
+        $ourProfessor->save();
+
+        return redirect()->route('our_professors.admin')
+            ->with('success', 'استاد جدید ثبت شد');
     }
 
     /**
@@ -57,7 +75,8 @@ class OurProfessorController extends Controller
      */
     public function edit(OurProfessor $ourProfessor)
     {
-        //
+        return view('our_professors.edit')
+            ->with('ourProfessor', $ourProfessor);
     }
 
     /**
@@ -69,7 +88,23 @@ class OurProfessorController extends Controller
      */
     public function update(Request $request, OurProfessor $ourProfessor)
     {
-        //
+        if ($request->hasFile('cover')) {
+            $fileName = $ourProfessor->cover;
+            if (Storage::exists('public/our_professors/' . $fileName)) {
+                Storage::delete('public/our_professors/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->cover->store('public/our_professors');
+            $ourProfessor->cover = basename($path);
+        }
+        $ourProfessor->fill($request->only(['name', 'post', 'twitter', 'linkedin', 'instagram', 'facebook'])); // 'cover' nadashte bashe
+        $ourProfessor->save();
+
+        return redirect()->route('our_professors.admin')
+            ->with('success', 'استاد ویرایش شد');
     }
 
     /**
@@ -78,8 +113,22 @@ class OurProfessorController extends Controller
      * @param  \App\Models\OurProfessor  $ourProfessor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(OurProfessor $ourProfessor)
+    public function destroy($id)
     {
-        //
+        $ourProfessor = OurProfessor::find($id);
+        $fileName = $ourProfessor->cover;
+        if (Storage::exists('public/our_professors/' . $fileName)) {
+            Storage::delete('public/our_professors/' . $fileName);
+            /*
+                Delete Multiple File like this way
+                Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+            */
+        }
+        $ourProfessor->delete();
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'استاد با موفقیت حذف شد',
+        ]);
     }
 }

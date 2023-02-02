@@ -1,20 +1,20 @@
 @extends('layouts.app')
-@section('title', 'مدیریت دوره ها')
+@section('title', 'مدیریت اساتید')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'مدیریت دوره ها', 'url' => url()->current()]],
+        'data' => [['title' => 'مدیریت اساتید', 'url' => url()->current()]],
     ])
     <section class="contact-info-area ptb-100">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="card border-dark mb-3">
-                        <div class="card-header">مدیریت دوره ها</div>
+                        <div class="card-header">مدیریت اساتید</div>
                         <div class="card-body text-dark">
                             <h5 class="card-title">
-                                <a href="{{ route('courses.create') }}">
+                                <a href="{{ route('our_professors.create') }}">
                                     <i class="ri-add-circle-fill" style="font-size: 2rem" data-toggle="tooltip"
-                                        data-placement="top" title="افزودن دوره جدید"></i>
+                                        data-placement="top" title="افزودن استاد جدید"></i>
                                 </a>
                             </h5>
                             <p class="card-text">
@@ -23,35 +23,32 @@
                                     <thead>
                                         <tr>
                                             <th style="text-align:center;">ردیف</th>
-                                            <th style="text-align:center;">عنوان</th>
-                                            <th style="text-align:center;">روش برگزاری</th>
-                                            <th style="text-align:center;">مدت</th>
-                                            <th style="text-align:center;">تاریخ شروع</th>
-                                            <th style="text-align:center;">هزینه</th>
-                                            <th style="text-align:center;">زبان</th>
-                                            <th style="text-align:center;">تعداد صندلی فعال</th>
+                                            <th style="text-align:center;">نام و نام خانوادگی</th>
+                                            <th style="text-align:center;">سمت</th>
+                                            <th style="text-align:center;">توییتر</th>
+                                            <th style="text-align:center;">لینکدین</th>
+                                            <th style="text-align:center;">اینستاگرام</th>
+                                            <th style="text-align:center;">فیس بوک</th>
                                             <th style="text-align:center;">عملیات</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($courses as $course)
+                                        @foreach ($ourProfessors as $ourProfessor)
                                             <tr>
                                                 <td style="text-align:center;" class="align-middle">{{ $loop->iteration }}
                                                 </td>
-                                                <td style="text-align:center;" class="align-middle">{{ $course->title }}
-                                                </td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $course->mode->title }}</td>
-                                                <td style="text-align:center;" class="align-middle">{{ $course->duration }}
-                                                </td>
+                                                    {{ $ourProfessor->name }}</td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $course->start_dates }}</td>
+                                                    {{ $ourProfessor->post }}</td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ number_format($course->fee) }} تومان</td>
-                                                <td style="text-align:center;" class="align-middle">{{ $course->language }}
-                                                </td>
+                                                    {{ $ourProfessor->twitter }}</td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $course->seats_available }}</td>
+                                                    {{ $ourProfessor->linkedin }}</td>
+                                                <td style="text-align:center;" class="align-middle">
+                                                    {{ $ourProfessor->instagram }}</td>
+                                                <td style="text-align:center;" class="align-middle">
+                                                    {{ $ourProfessor->facebook }}</td>
                                                 <td style="text-align:center;" class="align-middle">
 
                                                     {{-- <form action="{{ route('courses.destroy', ['course' => $course->id]) }}"
@@ -67,25 +64,17 @@
                                                         </button>
                                                     </form> --}}
 
-                                                    <button value={{ $course->id }}
-                                                        class="btn btn-danger btn-sm delete_course">
+                                                    <button value={{ $ourProfessor->id }}
+                                                        class="btn btn-danger btn-sm delete_our_professor">
                                                         <i class="ri-chat-delete-fill" data-toggle="tooltip"
                                                             style="font-size: 1rem" data-placement="top" title="حذف">
                                                         </i>
                                                     </button>
 
-                                                    <a href="{{ route('courses.edit', ['course' => $course->id]) }}"
+                                                    <a href="{{ route('our_professors.edit', ['our_professor' => $ourProfessor->id]) }}"
                                                         class="btn btn-primary btn-sm">
                                                         <i class="ri-edit-2-fill" data-toggle="tooltip"
                                                             style="font-size: 1rem" data-placement="top" title="ویرایش">
-                                                        </i>
-                                                    </a>
-
-                                                    <a href="{{ route('courses.show', ['course' => $course->id]) }}"
-                                                        class="btn btn-info btn-sm" style="color: #fff">
-                                                        <i class="ri-folder-info-fill" data-toggle="tooltip"
-                                                            style="font-size: 1rem" data-placement="top"
-                                                            title="مشاهده جزئیات">
                                                         </i>
                                                     </a>
 
@@ -102,7 +91,7 @@
             </div>
         </div>
     </section>
-    @include('courses.delete')
+    @include('our_professors.delete')
 @endsection
 
 @push('js')

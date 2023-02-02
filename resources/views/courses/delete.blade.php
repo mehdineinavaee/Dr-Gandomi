@@ -8,8 +8,8 @@
             </div>
             <div class="modal-body">
                 <input type="hidden" id="delete_course_id">
-                <h6 style="text-align: center">آیا از حذف اطمینان دارید؟</h6>
-                <p style="text-align: center">با کلیک روی دکمه "موافقم" امکان بازگشت وجود ندارد.</p>
+                <h6 class="justify">آیا از حذف اطمینان دارید؟</h6>
+                <p class="justify">با کلیک روی دکمه "موافقم" امکان بازگشت وجود ندارد.</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary badge-pill btn-w btn-sm" data-bs-dismiss="modal">منصرف

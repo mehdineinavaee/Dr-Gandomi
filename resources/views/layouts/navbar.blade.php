@@ -53,6 +53,22 @@
 
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
+                                    <a href="JavaScript:void(0)" class="nav-link">
+                                        بلاگ
+                                        <i class="ri-arrow-left-s-line"></i>
+                                    </a>
+
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="{{ route('blog_right_sidebar.index') }}" class="nav-link">بلاگ
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{ route('blog_details.index') }}" class="nav-link">جزئیات بلاگ</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
                                     <a href="{{ route('about.index') }}" class="nav-link">درباره ما</a>
                                 </li>
                                 <li class="nav-item">
@@ -89,7 +105,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('FAQ.index') }}" class="nav-link">پرسش و پاسخ</a>
+                                    <a href="{{ route('faqs.index') }}" class="nav-link">پرسش و پاسخ</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('gallery.index') }}" class="nav-link">گالری</a>
@@ -171,23 +187,6 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="JavaScript:void(0)" class="nav-link">
-                                بلاگ
-                                <i class="ri-arrow-down-s-line"></i>
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="{{ route('blog_right_sidebar.index') }}" class="nav-link">بلاگ
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('blog_details.index') }}" class="nav-link">جزئیات بلاگ</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
                             <a href="{{ route('contact.index') }}" class="nav-link">تماس با ما</a>
                         </li>
 
@@ -196,18 +195,42 @@
                                 مدیریت
                                 <i class="ri-arrow-down-s-line"></i>
                             </a>
-
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a href="{{ route('courses.admin') }}" class="nav-link">دوره ها
+                                    <a href="JavaScript:void(0)" class="nav-link">
+                                        دوره ها
+                                        <i class="ri-arrow-left-s-line"></i>
+                                    </a>
+
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="{{ route('categories.index') }}" class="nav-link">دسته بندی ها
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{ route('modes.index') }}" class="nav-link">روش برگزاری</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{ route('courses.admin') }}" class="nav-link">پنل دوره
+                                                ها
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('our_professors.admin') }}" class="nav-link">
+                                        پنل اساتید
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('categories.index') }}" class="nav-link">دسته بندی ها
+                                    <a href="{{ route('faqs.admin') }}" class="nav-link">
+                                        پنل پرسش و پاسخ
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('modes.index') }}" class="nav-link">روش برگزاری</a>
+                                    <a href="{{ route('galleries.admin') }}" class="nav-link">
+                                        پنل گالری
+                                    </a>
                                 </li>
                             </ul>
                         </li>

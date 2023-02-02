@@ -2,30 +2,16 @@
 @section('title', 'اطلاعات دانشگاه')
 @section('content')
     <!-- Start Page Title Area -->
-    <div class="page-title-area bg-8">
-        <div class="container">
-            <div class="page-title-content">
-                <h2>Campus information</h2>
-
-                <ul>
-                    <li>
-                        <a href="index.html">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="active">Campus information</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    @include('common.breadcrumbs', [
+        'data' => [['title' => 'اطلاعات دانشگاه', 'url' => url()->current()]],
+    ])
     <!-- End Page Title Area -->
 
     <!-- Start Campus information Area -->
     <section class="campus-information-area ptb-100">
         <div class="container">
             <div class="main-default-content">
-                <h3>About our campus</h3>
+                <h3>درباره دانشگاه</h3>
                 <p class="justify">Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet,
                     consectetur adipiscing
                     elit. Cras ultricies ligula sed magna dictum porta. Vestibulum ante ipsum primis in faucibus orci luctus
@@ -46,7 +32,7 @@
                 <img src="assets/images/campus-information-img.jpg" alt="Image">
                 <div class="gap-20"></div>
 
-                <h4>Campus facilities</h4>
+                <h4>امکانات دانشگاه</h4>
                 <p class="justify">Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet,
                     consectetur adipiscing
                     elit. Cras ultricies ligula sed magna dictum porta. Vestibulum ante ipsum primis in faucibus orci luctus
@@ -70,7 +56,7 @@
 
                 <div class="gap-20"></div>
 
-                <h4>Other campus information</h4>
+                <h4>دیگر اطلاعات دانشگاه</h4>
                 <p class="justify">Vivamus suscipit tortor eget felis porttitor volutpat. Lorem ipsum dolor sit amet,
                     consectetur adipiscing
                     elit. Cras ultricies ligula sed magna dictum porta. Vestibulum ante ipsum primis in faucibus orci luctus

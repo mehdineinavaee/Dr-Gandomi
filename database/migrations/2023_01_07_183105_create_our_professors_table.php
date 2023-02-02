@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('our_professors', function (Blueprint $table) {
             $table->id();
+            $table->string('cover')->nullable();
+            $table->string('name');
+            $table->string('post');
+            $table->string('twitter')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('facebook')->nullable();
             $table->timestamps();
         });
     }

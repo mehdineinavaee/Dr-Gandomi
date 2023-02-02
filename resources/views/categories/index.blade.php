@@ -30,9 +30,11 @@
                                     <tbody>
                                         @foreach ($categories as $category)
                                             <tr>
-                                                <td style="text-align:center;">{{ $loop->iteration }}</td>
-                                                <td style="text-align:center;">{{ $category->title }}</td>
-                                                <td style="text-align:center;">
+                                                <td style="text-align:center;" class="align-middle">{{ $loop->iteration }}
+                                                </td>
+                                                <td style="text-align:center;" class="align-middle">{{ $category->title }}
+                                                </td>
+                                                <td style="text-align:center;" class="align-middle">
 
                                                     {{-- <form action="{{ route('categories.destroy', ['category' => $category->id]) }}"
                                                         method="post">
