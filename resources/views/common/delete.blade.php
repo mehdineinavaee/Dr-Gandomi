@@ -1,13 +1,13 @@
-<div class="modal fade" id="DeleteFaqModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+<div class="modal fade" id="DeleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">حذف پرسش و پاسخ</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">حذف</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <input type="hidden" id="delete_faq_id">
+                <input type="hidden" id="url">
                 <h6 class="justify">آیا از حذف اطمینان دارید؟</h6>
                 <p class="justify">با کلیک روی دکمه "موافقم" امکان بازگشت وجود ندارد.</p>
             </div>
@@ -15,7 +15,7 @@
                 <button type="button" class="btn btn-secondary badge-pill btn-w btn-sm" data-bs-dismiss="modal">منصرف
                     شدم
                 </button>
-                <button type="button" class="btn btn-success badge-pill btn-w btn-sm delete_faq_btn">موافقم
+                <button type="button" class="btn btn-success badge-pill btn-w btn-sm delete_btn">موافقم
                 </button>
             </div>
         </div>

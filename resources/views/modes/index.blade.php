@@ -48,8 +48,8 @@
                                                         </button>
                                                     </form> --}}
 
-                                                    <button value={{ $mode->id }}
-                                                        class="btn btn-danger btn-sm delete_mode">
+                                                    <button value='/modes/{{ $mode->id }}'
+                                                        class="btn btn-danger btn-sm delete">
                                                         <i class="ri-chat-delete-fill" data-toggle="tooltip"
                                                             style="font-size: 1rem" data-placement="top" title="حذف">
                                                         </i>
@@ -75,7 +75,7 @@
             </div>
         </div>
     </section>
-    @include('modes.delete')
+    @include('common.delete')
 @endsection
 
 @push('js')

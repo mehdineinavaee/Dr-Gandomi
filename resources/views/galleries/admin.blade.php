@@ -55,8 +55,8 @@
                                                         </button>
                                                     </form> --}}
 
-                                                    <button value={{ $gallery->id }}
-                                                        class="btn btn-danger btn-sm delete_gallery">
+                                                    <button value='/gallery/{{ $gallery->id }}'
+                                                        class="btn btn-danger btn-sm delete">
                                                         <i class="ri-chat-delete-fill" data-toggle="tooltip"
                                                             style="font-size: 1rem" data-placement="top" title="حذف">
                                                         </i>
@@ -91,7 +91,7 @@
             </div>
         </div>
     </section>
-    @include('galleries.delete')
+    @include('common.delete')
 @endsection
 
 @push('js')

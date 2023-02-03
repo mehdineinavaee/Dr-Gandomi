@@ -54,8 +54,8 @@
                                                         </button>
                                                     </form> --}}
 
-                                                    <button value={{ $faq->id }}
-                                                        class="btn btn-danger btn-sm delete_faq">
+                                                    <button value='/faqs/{{ $faq->id }}'
+                                                        class="btn btn-danger btn-sm delete">
                                                         <i class="ri-chat-delete-fill" data-toggle="tooltip"
                                                             style="font-size: 1rem" data-placement="top" title="حذف">
                                                         </i>
@@ -89,7 +89,7 @@
             </div>
         </div>
     </section>
-    @include('faqs.delete')
+    @include('common.delete')
 @endsection
 
 @push('js')

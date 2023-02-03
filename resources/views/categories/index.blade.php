@@ -49,8 +49,8 @@
                                                         </button>
                                                     </form> --}}
 
-                                                    <button value={{ $category->id }}
-                                                        class="btn btn-danger btn-sm delete_category">
+                                                    <button value='/categories/{{ $category->id }}'
+                                                        class="btn btn-danger btn-sm delete">
                                                         <i class="ri-chat-delete-fill" data-toggle="tooltip"
                                                             style="font-size: 1rem" data-placement="top" title="حذف">
                                                         </i>
@@ -76,7 +76,7 @@
             </div>
         </div>
     </section>
-    @include('categories.delete')
+    @include('common.delete')
 @endsection
 
 @push('js')
