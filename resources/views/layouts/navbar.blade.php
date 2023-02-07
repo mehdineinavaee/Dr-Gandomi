@@ -232,6 +232,26 @@
                                         پنل گالری
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="JavaScript:void(0)" class="nav-link">
+                                        محصولات
+                                        <i class="ri-arrow-left-s-line"></i>
+                                    </a>
+
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="{{ route('categories.index') }}" class="nav-link">دسته بندی ها
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{ route('modes.index') }}" class="nav-link">روش برگزاری</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{ route('products.admin') }}" class="nav-link">پنل محصولات
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                     </ul>

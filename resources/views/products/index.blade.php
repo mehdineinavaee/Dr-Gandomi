@@ -1,25 +1,9 @@
 @extends('layouts.app')
 @section('title', 'محصولات')
 @section('content')
-    <!-- Start Page Title Area -->
-    <div class="page-title-area bg-15">
-        <div class="container">
-            <div class="page-title-content">
-                <h2>Products</h2>
-
-                <ul>
-                    <li>
-                        <a href="index.html">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="active">Products</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- End Page Title Area -->
+    @include('common.breadcrumbs', [
+        'data' => [['title' => 'محصولات', 'url' => url()->current()]],
+    ])
 
     <!-- Start Product Area -->
     <div class="product-area ptb-100">
@@ -47,289 +31,45 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-product">
-                        <div class="product-img">
-                            <img src="assets/images/product/product-1.jpg" alt="Image">
+                @foreach ($products as $product)
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-product">
+                            <div class="product-img">
+                                <img src="{{ asset('storage/products/' . $product->cover) }}" alt="{{ $product->title }}">
 
-                            <ul>
+                                <ul>
 
-                                <li>
-                                    <a href="index.htm#">
-                                        <i class="ri-heart-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="ri-eye-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="cart.html">
-                                        <i class="ri-shopping-cart-line"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                                    <li>
+                                        <a href="index.htm#">
+                                            <i class="ri-heart-line"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="index.htm#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="ri-eye-line"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="cart.html">
+                                            <i class="ri-shopping-cart-line"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <a href="product-details.html">
+                                <h3>{{ $product->title }}</h3>
+                            </a>
+
+                            <span class="price"> <del>{{ number_format($product->price) }} تومان</del>
+                                {{ number_format($product->total) }} تومان</span>
+                            @if ($product->new === 1)
+                                <span class="new">جدید</span>
+                            @endif
                         </div>
-
-                        <a href="product-details.html">
-                            <h3>Natural</h3>
-                        </a>
-
-                        <span class="price"> <del>$20</del> $10.00</span>
-                        <span class="new">New</span>
                     </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-product">
-                        <div class="product-img">
-                            <img src="assets/images/product/product-2.jpg" alt="Image">
-
-                            <ul>
-
-                                <li>
-                                    <a href="index.htm#">
-                                        <i class="ri-heart-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="ri-eye-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="cart.html">
-                                        <i class="ri-shopping-cart-line"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <a href="product-details.html">
-                            <h3>Secret covered in sand</h3>
-                        </a>
-
-                        <span class="price">$20.00</span>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-product">
-                        <div class="product-img">
-                            <img src="assets/images/product/product-3.jpg" alt="Image">
-
-                            <ul>
-
-                                <li>
-                                    <a href="index.htm#">
-                                        <i class="ri-heart-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="ri-eye-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="cart.html">
-                                        <i class="ri-shopping-cart-line"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <a href="product-details.html">
-                            <h3>N is for nature</h3>
-                        </a>
-
-                        <span class="price">$08.00</span>
-                        <span class="new sell">Sell</span>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-product">
-                        <div class="product-img">
-                            <img src="assets/images/product/product-4.jpg" alt="Image">
-
-                            <ul>
-
-                                <li>
-                                    <a href="index.htm#">
-                                        <i class="ri-heart-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="ri-eye-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="cart.html">
-                                        <i class="ri-shopping-cart-line"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <a href="product-details.html">
-                            <h3>Life of the candle</h3>
-                        </a>
-
-                        <span class="price">$15.00</span>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-product">
-                        <div class="product-img">
-                            <img src="assets/images/product/product-5.jpg" alt="Image">
-
-                            <ul>
-
-                                <li>
-                                    <a href="index.htm#">
-                                        <i class="ri-heart-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="ri-eye-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="cart.html">
-                                        <i class="ri-shopping-cart-line"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <a href="product-details.html">
-                            <h3>Be now</h3>
-                        </a>
-
-                        <span class="price"> <del>$20</del> $20.00</span>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-product">
-                        <div class="product-img">
-                            <img src="assets/images/product/product-6.jpg" alt="Image">
-
-                            <ul>
-
-                                <li>
-                                    <a href="index.htm#">
-                                        <i class="ri-heart-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="ri-eye-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="cart.html">
-                                        <i class="ri-shopping-cart-line"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <a href="product-details.html">
-                            <h3>Soft cover book</h3>
-                        </a>
-
-                        <span class="price">$14.00</span>
-                        <span class="new">New</span>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-product">
-                        <div class="product-img">
-                            <img src="assets/images/product/product-7.jpg" alt="Image">
-
-                            <ul>
-
-                                <li>
-                                    <a href="index.htm#">
-                                        <i class="ri-heart-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="ri-eye-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="cart.html">
-                                        <i class="ri-shopping-cart-line"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <a href="product-details.html">
-                            <h3>4k book cover</h3>
-                        </a>
-
-                        <span class="price"> <del>$50</del> $22.00</span>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single-product">
-                        <div class="product-img">
-                            <img src="assets/images/product/product-8.jpg" alt="Image">
-
-                            <ul>
-
-                                <li>
-                                    <a href="index.htm#">
-                                        <i class="ri-heart-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="ri-eye-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="cart.html">
-                                        <i class="ri-shopping-cart-line"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <a href="product-details.html">
-                            <h3>Hispanic white coat</h3>
-                        </a>
-
-                        <span class="price">$49.00</span>
-                        <span class="new sell">Sell</span>
-                    </div>
-                </div>
-
-                <div class="col-12">
-                    <div class="pagination-area">
-                        <a href="index.htm#" class="prev page-numbers">
-                            <i class="ri-arrow-left-line"></i>
-                        </a>
-
-                        <span class="page-numbers current" aria-current="page">1</span>
-                        <a href="index.htm#" class="page-numbers">2</a>
-                        <a href="index.htm#" class="page-numbers">3</a>
-
-                        <a href="index.htm#" class="next page-numbers">
-                            <i class="ri-arrow-right-line"></i>
-                        </a>
-                    </div>
-                </div>
+                @endforeach
+                {{ $products->links('common.pagination-links') }}
             </div>
         </div>
     </div>
