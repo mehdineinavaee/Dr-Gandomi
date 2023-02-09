@@ -128,9 +128,6 @@
                                 <li class="nav-item">
                                     <a href="{{ route('wishlist.index') }}" class="nav-link">لیست علاقه مندی ها</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('checkout.index') }}" class="nav-link">پرداخت</a>
-                                </li>
                             </ul>
                         </li>
 
