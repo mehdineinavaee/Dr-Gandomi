@@ -12,11 +12,6 @@
                 <div class="others-options-for-mobile-devices">
                     <ul>
                         <li>
-                            <a href="{{ route('application_form.index') }}" class="default-btn">
-                                Application Form
-                            </a>
-                        </li>
-                        <li>
                             <button type="button" class="search-btn" data-bs-toggle="modal"
                                 data-bs-target="#exampleModalsrc">
                                 <i class="ri-search-line"></i>
@@ -72,26 +67,7 @@
                                     <a href="{{ route('about.index') }}" class="nav-link">درباره ما</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('application_form.index') }}" class="nav-link">فرم کاربردی</a>
-                                </li>
-                                <li class="nav-item">
                                     <a href="{{ route('our_professors.index') }}" class="nav-link">اساتید</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="JavaScript:void(0)" class="nav-link">
-                                        دانشگاه
-                                        <i class="ri-arrow-left-s-line"></i>
-                                    </a>
-
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="{{ route('alumni.index') }}" class="nav-link">فارغ التحصیلان</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{ route('study_online.index') }}" class="nav-link">مطالعه
-                                                آنلاین</a>
-                                        </li>
-                                    </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('faqs.index') }}" class="nav-link">پرسش و پاسخ</a>
@@ -116,17 +92,6 @@
                                             <a href="register.html" class="nav-link">ثبت نام</a>
                                         </li>
                                     </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('privacy_policy.index') }}" class="nav-link">سیاست حفظ حریم
-                                        خصوصی</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('terms_conditions.index') }}" class="nav-link">شرایط و
-                                        ضوابط</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('coming_soon.index') }}" class="nav-link">به زودی</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('not_found_page.index') }}" class="nav-link">صفحه 404</a>
@@ -253,7 +218,7 @@
                     <div class="others-options">
                         <ul>
                             <li>
-                                <a href="{{ route('application_form.index') }}" class="default-btn">
+                                <a href="#" class="default-btn">
                                     ثبت نام
                                 </a>
                             </li>
