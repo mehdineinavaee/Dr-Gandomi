@@ -64,9 +64,6 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('about.index') }}" class="nav-link">درباره ما</a>
-                                </li>
-                                <li class="nav-item">
                                     <a href="{{ route('our_professors.index') }}" class="nav-link">اساتید</a>
                                 </li>
                                 <li class="nav-item">

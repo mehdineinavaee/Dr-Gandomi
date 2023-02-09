@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BlogDetailController;
 use App\Http\Controllers\BlogRightSidebarController;
@@ -40,7 +39,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home_ones.index');
 });
-Route::resource('about', AboutController::class);
 Route::resource('authors', AuthorController::class);
 Route::resource('blog_details', BlogDetailController::class);
 Route::resource('blog_right_sidebar', BlogRightSidebarController::class);
