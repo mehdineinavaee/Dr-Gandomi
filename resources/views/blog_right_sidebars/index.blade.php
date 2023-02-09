@@ -27,69 +27,6 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="widget-sidebar mr-15">
-                        <div class="sidebar-widget search">
-                            <form class="search-form">
-                                <input class="form-control" name="search" placeholder="Search..." type="text">
-                                <button class="search-button" type="submit">
-                                    <i class="ri-search-line"></i>
-                                </button>
-                            </form>
-                        </div>
-
-                        <div class="sidebar-widget categories">
-                            <h3>Categories</h3>
-
-                            <ul>
-                                <li>
-                                    <a href="index.htm#">
-                                        Academies
-                                        <i class="ri-arrow-right-s-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#">
-                                        Academies
-                                        <i class="ri-arrow-right-s-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#">
-                                        Alumni
-                                        <i class="ri-arrow-right-s-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#">
-                                        Application
-                                        <i class="ri-arrow-right-s-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#">
-                                        Engineering
-                                        <i class="ri-arrow-right-s-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#">
-                                        Design
-                                        <i class="ri-arrow-right-s-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#">
-                                        Business
-                                        <i class="ri-arrow-right-s-line"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#">
-                                        Science
-                                        <i class="ri-arrow-right-s-line"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
 
                         <div class="sidebar-widget recent-post">
                             <h3 class="widget-title">Latest news</h3>
@@ -115,61 +52,6 @@
                                         <img src="assets/images/blog-details/blog-1.jpg" alt="Image">
                                     </a>
                                     <span>Murch 10, 2021</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="sidebar-widget categories">
-                            <h3>Archives</h3>
-
-                            <ul>
-                                <li>
-                                    <a href="index.htm#">
-                                        January
-                                        <span>2021</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#">
-                                        October
-                                        <span>2020</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#">
-                                        January
-                                        <span>2019</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#">
-                                        February
-                                        <span>2019</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#">
-                                        October
-                                        <span>2019</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#">
-                                        June
-                                        <span>2019</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#">
-                                        February
-                                        <span>2019</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.htm#">
-                                        January
-                                        <span>2018</span>
-                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -296,21 +178,6 @@
                                         amet consectetur adipisicing elit. Inventore nemo unde asperiores illum quia
                                         voluptatum asperiores illum quia</p>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
-                            <div class="pagination-area">
-                                <a href="index.htm#" class="prev page-numbers">
-                                    <i class="ri-arrow-left-line"></i>
-                                </a>
-                                <span class="page-numbers current" aria-current="page">1</span>
-                                <a href="index.htm#" class="page-numbers">2</a>
-                                <a href="index.htm#" class="page-numbers">3</a>
-
-                                <a href="index.htm#" class="next page-numbers">
-                                    <i class="ri-arrow-right-line"></i>
-                                </a>
                             </div>
                         </div>
                     </div>

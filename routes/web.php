@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\AuthorController;
-use App\Http\Controllers\BlogDetailController;
 use App\Http\Controllers\BlogRightSidebarController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CartController;
@@ -39,7 +38,6 @@ Route::get('/', function () {
     return view('home_ones.index');
 });
 Route::resource('authors', AuthorController::class);
-Route::resource('blog_details', BlogDetailController::class);
 Route::resource('blog_right_sidebar', BlogRightSidebarController::class);
 Route::resource('cart', CartController::class);
 Route::resource('contact', ContactController::class);
