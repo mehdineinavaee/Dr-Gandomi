@@ -16,10 +16,6 @@
                             </div>
 
                             <div class="courses-link">
-                                <a href="{{ route('campus_experience.index') }}">
-                                    دوره های ما را کاوش کنید
-                                    <i class="ri-arrow-left-line"></i>
-                                </a>
                                 <a href="{{ route('study_online.index') }}" class="study-online">
                                     مطالعه آنلاین
                                     <i class="ri-arrow-left-line"></i>
@@ -37,27 +33,4 @@
             </div>
         </div>
     </div>
-
-    <ul class="social-link">
-        <li>
-            <a href="index.htm#" target="_blank">
-                فیس بوک
-            </a>
-        </li>
-        <li>
-            <a href="index.htm#" target="_blank">
-                اینستاگرام
-            </a>
-        </li>
-        <li>
-            <a href="index.htm#" target="_blank">
-                توییتر
-            </a>
-        </li>
-        <li>
-            <a href="index.htm#" target="_blank">
-                لینکدین
-            </a>
-        </li>
-    </ul>
 </section>

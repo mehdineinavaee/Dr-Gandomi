@@ -1,6 +1,14 @@
 // virtual select
 VirtualSelect.init({
+  ele: "#authors",
+});
+
+VirtualSelect.init({
   ele: "#categories",
+});
+
+VirtualSelect.init({
+  ele: "#translators",
 });
 
 // Tooltip

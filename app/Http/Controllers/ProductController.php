@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Publisher;
+use App\Models\Author;
+use App\Models\Translator;
 
 class ProductController extends Controller
 {
@@ -34,7 +37,13 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $publishers = Publisher::all();
+        $authors = Author::orderBy('first_name')->orderBy('last_name')->get();
+        $translators = Translator::orderBy('first_name')->orderBy('last_name')->get();
+        return view('products.create')
+            ->with('publishers', $publishers)
+            ->with('authors', $authors)
+            ->with('translators', $translators);
     }
 
     /**
@@ -48,14 +57,27 @@ class ProductController extends Controller
         $product = new Product($request->all());
         $product->price = str_replace(",", "", $request->price);
         $product->total = $product->price - (($product->price * $product->discount) / 100);
+
         if ($request->has('new')) {
             $product->new = 1;
         }
+
         if ($request->hasFile('cover')) {
             $path = $request->cover->store('public/products');
             $product->cover = basename($path);
         }
+
+        $product->publisher()->associate($request->publisher);
+
         $product->save();
+
+        $myAuthorsArray = explode(',', $request->authors);
+        $product->authors()->attach($myAuthorsArray);
+
+        if ($request->translators !== null) {
+            $myTranslatorsArray = explode(',', $request->translators);
+            $product->translators()->attach($myTranslatorsArray);
+        }
 
         return redirect()->route('products.admin')
             ->with('success', 'محصول جدید ثبت شد');
@@ -80,8 +102,14 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        $publishers = Publisher::all();
+        $authors = Author::all();
+        $translators = Translator::all();
         return view('products.edit')
-            ->with('product', $product);
+            ->with('product', $product)
+            ->with('publishers', $publishers)
+            ->with('authors', $authors)
+            ->with('translators', $translators);
     }
 
     /**
@@ -105,7 +133,7 @@ class ProductController extends Controller
             $path = $request->cover->store('public/products');
             $product->cover = basename($path);
         }
-        $product->fill($request->only(['title', 'price', 'discount', 'total', 'new'])); // 'cover' nadashte bashe
+        $product->fill($request->only(['title', 'price', 'discount', 'total', 'new', 'edition', 'description'])); // 'cover' nadashte bashe
         $product->price = str_replace(",", "", $product->price);
         $product->total = $product->price - (($product->price * $product->discount) / 100);
         if ($request->has('new')) {
@@ -113,6 +141,15 @@ class ProductController extends Controller
         } else {
             $product->new = 0;
         }
+
+        $product->publisher()->associate($request->publisher);
+
+        $myAuthorsArray = explode(',', $request->authors);
+        $product->authors()->sync($myAuthorsArray);
+
+        $myTranslatorsArray = explode(',', $request->translators);
+        $product->translators()->sync($myTranslatorsArray);
+
         $product->save();
 
         return redirect()->route('products.admin')

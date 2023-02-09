@@ -14,7 +14,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('contacts.index');
+        $contact = Contact::where('id', '1')->get();
+        return view('contacts.index')
+            ->with('contact', $contact);
     }
 
     /**
@@ -57,7 +59,8 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        //
+        return view('contacts.edit')
+            ->with('contact', $contact);
     }
 
     /**
@@ -69,7 +72,11 @@ class ContactController extends Controller
      */
     public function update(Request $request, Contact $contact)
     {
-        //
+        $contact->fill($request->only(['google_map_area', 'address', 'email', 'tell', 'facebook', 'instagram', 'linkedin', 'twitter'])); // 'cover' nadashte bashe
+        $contact->save();
+
+        return redirect()->route('contact.index')
+            ->with('success', 'تماس با ما ویرایش شد');
     }
 
     /**

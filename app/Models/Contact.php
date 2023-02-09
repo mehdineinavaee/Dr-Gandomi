@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Contact extends Model
 {
     use HasFactory;
+    protected $fillable = ['google_map_area', 'address', 'email', 'tell', 'facebook', 'instagram', 'linkedin', 'twitter'];
 }

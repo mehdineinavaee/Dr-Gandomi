@@ -2,7 +2,7 @@
   <footer class="footer-area black-bg-color">
       <div class="container">
           <div class="row align-items-center justify-content-center">
-              <div class="col-lg-3 col-sm-6">
+              <div class="col-lg-4 col-sm-4">
                   <div class="single-footer-widget bg-f9f5f1">
                       <a href="index.html" class="logo">
                           <img src={{ asset('assets/images/logo.png') }} alt="Image">
@@ -44,7 +44,7 @@
                   </div>
               </div>
 
-              <div class="col-lg-3 col-sm-6">
+              <div class="col-lg-4 col-sm-4">
                   <div class="single-footer-widget">
                       <h3>Useful link</h3>
 
@@ -68,31 +68,7 @@
                   </div>
               </div>
 
-              <div class="col-lg-3 col-sm-6">
-                  <div class="single-footer-widget">
-                      <h3>Study</h3>
-
-                      <ul class="import-link">
-                          <li>
-                              <a href="index.htm#">Find a course</a>
-                          </li>
-                          <li>
-                              <a href="index.htm#">Admissions</a>
-                          </li>
-                          <li>
-                              <a href="index.htm#">Scholarships</a>
-                          </li>
-                          <li>
-                              <a href="index.htm#">Study on campus</a>
-                          </li>
-                          <li>
-                              <a href="index.htm#">Fees and costs</a>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-
-              <div class="col-lg-3 col-sm-6">
+              <div class="col-lg-4 col-sm-4">
                   <div class="single-footer-widget">
                       <h3>Inquiries</h3>
 

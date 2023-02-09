@@ -4,60 +4,6 @@
     @include('common.breadcrumbs', [
         'data' => [['title' => 'دوره ها', 'url' => url()->current()]],
     ])
-    <!-- Start Find A Courses Area -->
-    <section class="find-courses-area pt-100">
-        <div class="container">
-            <form class="find-courses-from-bg find-courses-from-bg-three mt-0">
-                <h2>جستجوی دوره</h2>
-
-                <ul>
-                    <li>
-                        <label class="single-check">
-                            Undergraduate
-                            <input type="radio" checked="checked" name="radio-2">
-                            <span class="checkmark"></span>
-                        </label>
-                    </li>
-
-                    <li>
-                        <label class="single-check">
-                            Postgraduate
-                            <input type="radio" name="radio-2">
-                            <span class="checkmark"></span>
-                        </label>
-                    </li>
-                </ul>
-
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Keyword search">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6">
-                        <div class="form-group">
-                            <select class="form-control">
-                                <option value="1">Category course</option>
-                                <option value="2">Web Design</option>
-                                <option value="3">Web Developement</option>
-                                <option value="4">Graphic Design</option>
-                                <option value="5">App Developement</option>
-                            </select>
-                            <i class="ri-arrow-down-s-line"></i>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12 col-md-12">
-                        <button type="submit" class="default-btn">
-                            <i class="ri-search-line"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section>
-    <!-- End Find A Courses Area -->
 
     <!-- Start Study Area -->
     <section class="studys-area study-area-style-two ptb-100">
@@ -93,14 +39,7 @@
                         </div>
                     </div>
                 @endforeach
-                <div class="col-12">
-                    <div class="study-load">
-                        <a href="index.htm#" class="default-btn">
-                            مشاهده بیشتر
-                            <i class="ri-arrow-left-line"></i>
-                        </a>
-                    </div>
-                </div>
+                {{ $courses->links('common.pagination-links') }}
             </div>
         </div>
     </section>

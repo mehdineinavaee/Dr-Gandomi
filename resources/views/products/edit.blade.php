@@ -28,6 +28,63 @@
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
+                                <label>ویرایش</label>
+                                <input type="text" name="edition" id="edition" class="form-control"
+                                    value="{{ $product->edition }}">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>انتشارات</label>
+                                <select id="publisher" name="publisher" class="form-control">
+                                    <option value="" selected>انتشارات را انتخاب کنید
+                                    </option>
+                                    @foreach ($publishers as $publisher)
+                                        <option value="{{ $publisher->id }}"
+                                            @if ($product->publisher->id === $publisher->id) selected @endif>
+                                            {{ $publisher->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>نویسنده</label><br />
+                                <select id="authors" name="authors" placeholder="نویسنده را انتخاب کنید"
+                                    data-search="true" data-silent-initial-value-set="true" multiple>
+                                    @foreach ($authors as $author)
+                                        <option value="{{ $author->id }}"
+                                            @if ($product->authors->pluck('id')->search($author->id) !== false) selected @endif>
+                                            {{ $author->fullName }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>مترجم</label><br />
+                                <select id="translators" name="translators" placeholder="مترجم را انتخاب کنید"
+                                    data-search="true" data-silent-initial-value-set="true" multiple>
+                                    @foreach ($translators as $translator)
+                                        <option value="{{ $translator->id }}"
+                                            @if ($product->translators->pluck('id')->search($translator->id) !== false) selected @endif>
+                                            {{ $translator->fullName }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
                                 <label>قیمت</label>
                                 <input type="text" name="price" id="price" class="form-control"
                                     onkeyup="separateNum(this.value,this,'editNumToLetter');"
@@ -55,6 +112,13 @@
                                         به عنوان محصول جدید ثبت شود
                                     </label>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-sm-12">
+                            <div class="form-group">
+                                <label>توضیحات</label>
+                                <textarea name="description" id="description">{{ $product->description }}</textarea>
                             </div>
                         </div>
                     </div>

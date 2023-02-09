@@ -85,22 +85,11 @@
 
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="{{ route('campus_information.index') }}" class="nav-link">اطلاعات
-                                                دانشگاه</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{ route('campus_experience.index') }}" class="nav-link">تجربیات
-                                                دانشگاه</a>
-                                        </li>
-                                        <li class="nav-item">
                                             <a href="{{ route('alumni.index') }}" class="nav-link">فارغ التحصیلان</a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="{{ route('study_online.index') }}" class="nav-link">مطالعه
                                                 آنلاین</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{ route('admission.index') }}" class="nav-link">پذیرش ها</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -180,9 +169,6 @@
                                 <li class="nav-item">
                                     <a href="{{ route('checkout.index') }}" class="nav-link">پرداخت</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('product_details.index') }}" class="nav-link">جزئیات پرداخت</a>
-                                </li>
                             </ul>
                         </li>
 
@@ -240,17 +226,25 @@
 
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="{{ route('categories.index') }}" class="nav-link">دسته بندی ها
+                                            <a href="{{ route('publishers.index') }}" class="nav-link">انتشارات
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{ route('modes.index') }}" class="nav-link">روش برگزاری</a>
+                                            <a href="{{ route('authors.index') }}" class="nav-link">نویسنده ها</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{ route('translators.index') }}" class="nav-link">مترجمان</a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="{{ route('products.admin') }}" class="nav-link">پنل محصولات
                                             </a>
                                         </li>
                                     </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('contact.edit', ['contact' => 1]) }}" class="nav-link">
+                                        پنل تماس با ما
+                                    </a>
                                 </li>
                             </ul>
                         </li>

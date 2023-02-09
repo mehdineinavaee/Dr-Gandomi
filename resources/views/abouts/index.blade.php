@@ -124,38 +124,6 @@
     </section>
     <!-- End Counter Area -->
 
-    <!-- Start Our Campus Information Area -->
-    <section class="our-campus-information-area ptb-100">
-        <div class="container">
-            <div class="our-campus-bg our-campus-bg-style-three">
-                <div class="row">
-                    <div class="col-lg-7">
-                        <div class="campus-img mr-15">
-                            <img src="assets/images/campus-img.jpg" alt="Image">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-5">
-                        <div class="campus-content ml-15">
-                            <span>Our campus information</span>
-                            <h2>We are proud that more than 50 students from different nationalities study on our campus.
-                            </h2>
-                            <p>Curabitur aliquet quam id dui posuere blandit. Praesent sapien massa, convallis a
-                                pellentesque nec, egestas non nisi. Donec rutrum congue leo eget malesuada. Pellentesque
-                                in ipsum id orci porta dapibus. Proin eget tortor risus.</p>
-
-                            <a href="campus-information.html" class="read-more">
-                                Find out more
-                                <span class="ri-arrow-right-line"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Our Campus Information Area -->
-
     <!-- Start Team Area -->
     <section class="team-area team-area-three pb-70">
         <div class="container">
@@ -307,46 +275,6 @@
         </div>
     </section>
     <!-- End Team Area -->
-
-    <!-- Start Campus Experience Area -->
-    <section class="campus-experience-area-style pb-100">
-        <div class="container">
-            <div class="campus-experience-bg ptb-100">
-                <div class="campus-experience-slider owl-carousel owl-theme">
-                    <div class="single-campus-experience">
-                        <span>Admission information</span>
-
-                        <h3>The campus experience</h3>
-                        <p>Nulla quis lorem ut libero malesuada feugiat. Vivamus suscipit tortor eget felis porttitor
-                            volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus
-                            magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui
-                            posuere blandit. Donec sollicitudin molestie lacinia eget consectetur posuere blandit.</p>
-
-                        <a href="campus-experience.html" class="default-btn">
-                            Find out more
-                            <i class="ri-arrow-right-line"></i>
-                        </a>
-                    </div>
-
-                    <div class="single-campus-experience">
-                        <span>Admission information</span>
-
-                        <h3>The campus experience about</h3>
-                        <p>Nulla quis lorem ut libero malesuada feugiat. Vivamus suscipit tortor eget felis porttitor
-                            volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus
-                            magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui
-                            posuere blandit. Donec sollicitudin molestie lacinia eget consectetur posuere blandit.</p>
-
-                        <a href="campus-experience.html" class="default-btn">
-                            Find out more
-                            <i class="ri-arrow-right-line"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Campus Experience Area -->
 
     <!-- Start Application Submit Area -->
     <section class="application-submit-area pt-r-s-0 ptb-100">

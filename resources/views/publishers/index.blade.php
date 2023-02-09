@@ -1,20 +1,20 @@
 @extends('layouts.app')
-@section('title', 'مدیریت محصولات')
+@section('title', 'مدیریت انتشارات')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'مدیریت محصولات', 'url' => url()->current()]],
+        'data' => [['title' => 'مدیریت انتشارات', 'url' => url()->current()]],
     ])
     <section class="contact-info-area ptb-100">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="card border-dark mb-3">
-                        <div class="card-header">مدیریت محصولات</div>
+                        <div class="card-header">مدیریت انتشارات</div>
                         <div class="card-body text-dark">
                             <h5 class="card-title">
-                                <a href="{{ route('products.create') }}">
+                                <a href="{{ route('publishers.create') }}">
                                     <i class="ri-add-circle-fill" style="font-size: 2rem" data-toggle="tooltip"
-                                        data-placement="top" title="افزودن محصول جدید"></i>
+                                        data-placement="top" title="افزودن انتشارات جدید"></i>
                                 </a>
                             </h5>
                             <p class="card-text">
@@ -23,32 +23,32 @@
                                     <thead>
                                         <tr>
                                             <th style="text-align:center;">ردیف</th>
-                                            <th style="text-align:center;">عنوان</th>
-                                            <th style="text-align:center;">قیمت واحد</th>
-                                            <th style="text-align:center;">درصد تخفیف</th>
-                                            <th style="text-align:center;">قیمت نهایی</th>
+                                            <th style="text-align:center;">نام</th>
+                                            <th style="text-align:center;">آدرس</th>
+                                            <th style="text-align:center;">صندوق پستی</th>
+                                            <th style="text-align:center;">تلفن</th>
                                             <th style="text-align:center;">عملیات</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($products as $product)
+                                        @foreach ($publishers as $publisher)
                                             <tr>
                                                 <td style="text-align:center;" class="align-middle">{{ $loop->iteration }}
                                                 </td>
-                                                <td style="text-align:center;" class="align-middle">{{ $product->title }}
+                                                <td style="text-align:center;" class="align-middle">
+                                                    {{ $publisher->name }}</td>
+                                                <td style="text-align:center;" class="align-middle">
+                                                    {{ $publisher->address }}
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ number_format($product->price) }} تومان
+                                                    {{ $publisher->postal_code }}
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $product->discount }} درصد
-                                                </td>
-                                                <td style="text-align:center;" class="align-middle">
-                                                    {{ number_format($product->total) }} تومان
+                                                    {{ $publisher->tell }}
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
 
-                                                    {{-- <form action="{{ route('courses.destroy', ['course' => $course->id]) }}"
+                                                    {{-- <form action="{{ route('modes.destroy', ['mode' => $mode->id]) }}"
                                                         method="post">
                                                         @method('DELETE')
                                                         @csrf
@@ -61,27 +61,20 @@
                                                         </button>
                                                     </form> --}}
 
-                                                    <button value='/products/{{ $product->id }}'
+                                                    <button value='/publishers/{{ $publisher->id }}'
                                                         class="btn btn-danger btn-sm delete">
                                                         <i class="ri-chat-delete-fill" data-toggle="tooltip"
                                                             style="font-size: 1rem" data-placement="top" title="حذف">
                                                         </i>
                                                     </button>
 
-                                                    <a href="{{ route('products.edit', ['product' => $product->id]) }}"
+                                                    <a href="{{ route('publishers.edit', ['publisher' => $publisher->id]) }}"
                                                         class="btn btn-primary btn-sm">
                                                         <i class="ri-edit-2-fill" data-toggle="tooltip"
                                                             style="font-size: 1rem" data-placement="top" title="ویرایش">
                                                         </i>
                                                     </a>
 
-                                                    <a href="{{ route('products.show', ['product' => $product->id]) }}"
-                                                        class="btn btn-info btn-sm" style="color: #fff">
-                                                        <i class="ri-folder-info-fill" data-toggle="tooltip"
-                                                            style="font-size: 1rem" data-placement="top"
-                                                            title="مشاهده جزئیات">
-                                                        </i>
-                                                    </a>
                                                 </td>
                                             </tr>
                                         @endforeach

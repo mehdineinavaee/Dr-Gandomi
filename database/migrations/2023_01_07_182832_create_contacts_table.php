@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
+            $table->string('google_map_area', '1000');
+            $table->string('address')->nullable();
+            $table->string('email');
+            $table->string('tell')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('twitter')->nullable();
             $table->timestamps();
         });
     }

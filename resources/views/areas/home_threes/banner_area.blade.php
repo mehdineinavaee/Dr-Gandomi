@@ -9,10 +9,6 @@
                             <h1>Need a good education to grow your career</h1>
 
                             <div class="courses-link">
-                                <a href="campus-experience.html">
-                                    Explore our courses
-                                    <i class="ri-arrow-right-line"></i>
-                                </a>
                                 <a href="study-online.html" class="study-online">
                                     Study online
                                     <i class="ri-arrow-right-line"></i>

@@ -1,18 +1,25 @@
 @extends('layouts.app')
-@section('title', 'روش برگزاری جدید')
+@section('title', 'مترجم جدید')
 @section('content')
     <section class="candidates-resume-area ptb-100">
         <div class="container">
             <div class="candidates-resume-content">
-                <form class="resume-info" autocomplete="off" action="{{ route('modes.store') }}" method="post"
+                <form class="resume-info" autocomplete="off" action="{{ route('translators.store') }}" method="post"
                     enctype="multipart/form-data">
                     @csrf
 
                     <div class="row">
-                        <div class="col-lg-12 col-sm-12">
+                        <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
-                                <label>عنوان</label>
-                                <input type="text" name="title" id="title" class="form-control">
+                                <label>نام</label>
+                                <input type="text" name="first_name" id="first_name" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>نام خانوادگی</label>
+                                <input type="text" name="last_name" id="last_name" class="form-control">
                             </div>
                         </div>
                     </div>

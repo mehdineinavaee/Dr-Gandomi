@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('discount');
             $table->string('total');
             $table->boolean('new')->default(0);
+            $table->string('edition');
+            $table->text('description', '5000')->nullable();
             $table->timestamps();
         });
     }
