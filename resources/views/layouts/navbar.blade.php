@@ -77,9 +77,6 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('not_found_page.index') }}" class="nav-link">صفحه 404</a>
-                                </li>
                             </ul>
                         </li>
 
