@@ -17,28 +17,17 @@ use App\Http\Controllers\NotFoundPageController;
 use App\Http\Controllers\OurProfessorController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PublisherController;
-use App\Http\Controllers\StudyOnlineController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TranslatorController;
 use App\Http\Controllers\TuitionFeeController;
 use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('home_ones.index');
 });
 Route::resource('authors', AuthorController::class);
-Route::resource('blog_right_sidebar', BlogRightSidebarController::class);
+Route::resource('blog_right_sidebars', BlogRightSidebarController::class);
 Route::resource('cart', CartController::class);
 Route::resource('contact', ContactController::class);
 Route::resource('courses', CourseController::class);
@@ -52,12 +41,13 @@ Route::resource('not_found_page', NotFoundPageController::class);
 Route::resource('our_professors', OurProfessorController::class);
 Route::resource('products', ProductController::class);
 Route::resource('publishers', PublisherController::class);
-Route::resource('study_online', StudyOnlineController::class);
+Route::resource('settings', SettingController::class);
 Route::resource('translators', TranslatorController::class);
 Route::resource('tuition_fee', TuitionFeeController::class);
 Route::resource('wishlist', WishlistController::class);
 
 // Admin Routes
+Route::get('admin/blog_right_sidebars', [BlogRightSidebarController::class, 'admin'])->name('blog_right_sidebars.admin');
 Route::get('admin/courses', [CourseController::class, 'admin'])->name('courses.admin');
 Route::resource('categories', CategoryController::class);
 Route::resource('modes', ModeController::class);

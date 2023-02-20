@@ -5,9 +5,9 @@
             <div class="col-lg-6 col-sm-6">
                 <ul class="header-left-content">
                     <li>
-                        <a href="tel:+1-(514)-312-5678">
+                        <a href="tel:{{ $settings->tel }}">
                             <i class="ri-phone-fill"></i>
-                            +98 919 178 5593
+                            {{ $settings->tel }}
                         </a>
                     </li>
                 </ul>

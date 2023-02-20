@@ -17,12 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('backgroundBanner')->nullable();
             $table->string('banner')->nullable();
-            $table->string('facebook')->nullable();
-            $table->string('instagram')->nullable();
-            $table->string('linkedin')->nullable();
-            $table->string('slogen')->nullable();
-            $table->string('twitter')->nullable();
             $table->string('welcome')->nullable();
+            $table->string('slogen')->nullable();
             $table->timestamps();
         });
     }

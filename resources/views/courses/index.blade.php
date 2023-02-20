@@ -17,17 +17,11 @@
                 @foreach ($courses as $course)
                     <div class="col-lg-3 col-sm-6">
                         <div class="single-study style-img">
-                            @if (isset($course->cover))
-                                <img src="{{ asset('storage/courses/' . $course->cover) }}" alt="{{ $course->title }}">
-                            @else
-                                <img src="{{ asset('images/TeacherNoSetImage.png') }}" alt="{{ $course->title }}">
-                            @endif
-
+                            <img src="{{ asset('storage/courses/' . $course->cover) }}" alt="{{ $course->title }}">
                             <div class="single-study-content">
                                 {{-- <i class="flaticon-finance"></i> --}}
                                 <h3>
-                                    <a
-                                        href="{{ route('courses.show', ['course' => $course->id]) }}">{{ $course->title }}</a>
+                                    <a href="{{ route('courses.show', ['course' => $course->id]) }}">{{ $course->title }}</a>
                                 </h3>
                                 <p class="justify">{!! Str::limit($course->description, 200, ' ...') !!}</p>
 

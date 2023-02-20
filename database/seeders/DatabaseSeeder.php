@@ -29,56 +29,6 @@ class DatabaseSeeder extends Seeder
                 'slogen' => 'آموزش در سطح جهانی برای ساختن آینده قابل استفاده است',
                 'backgroundBanner' => 'NULL',
                 'banner' => 'NULL',
-                'linkedin' => 'linkedin',
-                'twitter' => 'twitter',
-                'instagram' => 'instagram',
-                'facebook' => 'facebook',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-            ],
-        ]);
-
-        DB::table('modes')->insert([
-            [
-                'title' => 'عمومی (حضوری)',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-            ],
-            [
-                'title' => 'عمومی (آنلاین)',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-            ],
-            [
-                'title' => 'خصوصی (حضوری)',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-            ],
-            [
-                'title' => 'خصوصی (آنلاین)',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-            ],
-        ]);
-
-        DB::table('categories')->insert([
-            [
-                'title' => 'طراحی وب',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-            ],
-            [
-                'title' => 'توسعه وب',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-            ],
-            [
-                'title' => 'طراحی گرافیک',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-            ],
-            [
-                'title' => 'توسعه اپلیکیشن',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
@@ -117,6 +67,20 @@ class DatabaseSeeder extends Seeder
                 'instagram' => 'www.instagram.com',
                 'linkedin' => 'www.linkedin.com',
                 'twitter' => 'www.twitter.com',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ],
+        ]);
+
+        DB::table('settings')->insert([
+            [
+                'tel' => '09133552993',
+                'logo' => 'NULL',
+                'favicon' => 'NULL',
+                'footer_description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolorum tempore tenetur tempora nostrum totam molestias dolores recusandae saepe maxime ut excepturi exercitationem, inventore pariatur! Laborum explicabo eius veritatis iste.',
+                'address' => 'دانشگاه آزاد اسلامی واحد یزد',
+                'email' => 'abolfazlgandomi@gmail.com',
+                'phone' => '035-82040021',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ],

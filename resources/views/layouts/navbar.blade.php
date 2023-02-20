@@ -5,7 +5,7 @@
             <div class="mobile-responsive-menu">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
+                        <img src={{ asset('storage/settings/' . $settings->logo) }} alt="logo">
                     </a>
                 </div>
 
@@ -27,7 +27,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
                 <a class="navbar-brand" href="index.html">
-                    <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
+                    <img src={{ asset('storage/settings/' . $settings->logo) }} alt="logo">
                 </a>
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
@@ -48,20 +48,7 @@
 
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a href="JavaScript:void(0)" class="nav-link">
-                                        بلاگ
-                                        <i class="ri-arrow-left-s-line"></i>
-                                    </a>
-
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="{{ route('blog_right_sidebar.index') }}" class="nav-link">بلاگ
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{ route('blog_details.index') }}" class="nav-link">جزئیات بلاگ</a>
-                                        </li>
-                                    </ul>
+                                    <a href="{{ route('blog_right_sidebars.index') }}" class="nav-link">بلاگ</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('our_professors.index') }}" class="nav-link">اساتید</a>
@@ -142,6 +129,12 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
+                                    <a href="{{ route('settings.edit', ['setting' => 1]) }}" class="nav-link">
+                                        تنظیمات
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
                                     <a href="JavaScript:void(0)" class="nav-link">
                                         دوره ها
                                         <i class="ri-arrow-left-s-line"></i>
@@ -161,6 +154,11 @@
                                             </a>
                                         </li>
                                     </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('blog_right_sidebars.admin') }}" class="nav-link">
+                                        پنل بلاگ
+                                    </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('our_professors.admin') }}" class="nav-link">

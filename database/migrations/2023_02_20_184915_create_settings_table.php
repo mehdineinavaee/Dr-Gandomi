@@ -13,8 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('study_onlines', function (Blueprint $table) {
+        Schema::create('settings', function (Blueprint $table) {
             $table->id();
+            $table->text('tel');
+            $table->string('logo');
+            $table->string('favicon');
+            $table->text('footer_description', '500');
+            $table->text('address', '500');
+            $table->text('email');
+            $table->text('phone');
             $table->timestamps();
         });
     }
@@ -26,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('study_onlines');
+        Schema::dropIfExists('settings');
     }
 };

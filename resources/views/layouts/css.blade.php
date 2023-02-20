@@ -35,6 +35,6 @@
 <!-- Vazir Font -->
 <link rel="stylesheet" href="{{ asset('assets/fonts/Vazir/font-face.css') }}">
 <!-- Favicon -->
-<link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}">
+<link rel="icon" type="image/png" href="{{ asset('storage/settings/' . $settings->favicon) }}">
 
 @stack('css')

@@ -14,13 +14,6 @@
                                     <i class="ri-arrow-left-line"></i>
                                 </a>
                             </div>
-
-                            <div class="courses-link">
-                                <a href="{{ route('study_online.index') }}" class="study-online">
-                                    مطالعه آنلاین
-                                    <i class="ri-arrow-left-line"></i>
-                                </a>
-                            </div>
                         </div>
                     </div>
 

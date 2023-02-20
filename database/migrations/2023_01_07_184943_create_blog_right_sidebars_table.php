@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('blog_right_sidebars', function (Blueprint $table) {
             $table->id();
-            $table->text('date');
+            $table->string('cover');
             $table->text('title');
             $table->text('description', '5000');
             $table->text('tags', '1000');
+            $table->text('date');
             $table->timestamps();
         });
     }

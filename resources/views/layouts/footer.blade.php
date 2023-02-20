@@ -5,64 +5,34 @@
               <div class="col-lg-4 col-sm-4">
                   <div class="single-footer-widget bg-f9f5f1">
                       <a href="index.html" class="logo">
-                          <img src={{ asset('assets/images/logo.png') }} alt="Image">
+                          <img src={{ asset('storage/settings/' . $settings->logo) }} alt={{ $settings->address }}>
                       </a>
 
-                      <p class="justify">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio officia facere
-                          ab, mollitia cum
-                          eaque corrupti quasi adipisci</p>
-
-                      <ul class="social-icon">
-                          <li>
-                              <span>Follow us:</span>
-                          </li>
-                          <li>
-                              <a href="javascript:if(confirm('https://www.facebook.com/\n\nThis file was not retrieved because it was filtered out by your project settings.\n\nWould you like to open it from the server?'))window.location='https://www.facebook.com/'"
-                                  target="_blank">
-                                  <i class="ri-facebook-fill"></i>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="javascript:if(confirm('https://www.instagram.com/\n\nThis file was not retrieved because it was filtered out by your project settings.\n\nWould you like to open it from the server?'))window.location='https://www.instagram.com/'"
-                                  target="_blank">
-                                  <i class="ri-instagram-line"></i>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="javascript:if(confirm('https://www.linkedin.com/\n\nThis file was not retrieved because it was filtered out by your project settings.\n\nWould you like to open it from the server?'))window.location='https://www.linkedin.com/'"
-                                  target="_blank">
-                                  <i class="ri-linkedin-fill"></i>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="javascript:if(confirm('https://twitter.com/\n\nThis file was not retrieved because it was filtered out by your project settings.\n\nWould you like to open it from the server?'))window.location='https://twitter.com/'"
-                                  target="_blank">
-                                  <i class="ri-twitter-fill"></i>
-                              </a>
-                          </li>
-                      </ul>
+                      <p class="justify">
+                          {!! $settings->footer_description !!}
+                      </p>
                   </div>
               </div>
 
               <div class="col-lg-4 col-sm-4">
                   <div class="single-footer-widget">
-                      <h3>Useful link</h3>
+                      <h3>لینک مفید</h3>
 
                       <ul class="import-link">
                           <li>
-                              <a href="application.html">Application</a>
+                              <a href={{ route('courses.index') }}>دوره ها</a>
                           </li>
                           <li>
-                              <a href="faq.html">FAQ</a>
+                              <a href={{ route('blog_right_sidebars.index') }}>بلاگ</a>
                           </li>
                           <li>
-                              <a href="alumni.html">Alumni</a>
+                              <a href={{ route('faqs.index') }}>پرسش و پاسخ</a>
                           </li>
                           <li>
-                              <a href="terms-conditions.html">Terms & conditions</a>
+                              <a href={{ route('events.index') }}>رویدادها</a>
                           </li>
                           <li>
-                              <a href="privacy-policy.html">Privacy policy</a>
+                              <a href={{ route('products.index') }}>محصولات</a>
                           </li>
                       </ul>
                   </div>
@@ -70,25 +40,23 @@
 
               <div class="col-lg-4 col-sm-4">
                   <div class="single-footer-widget">
-                      <h3>Inquiries</h3>
+                      <h3>با ما در تماس باشید</h3>
 
                       <ul class="address">
                           <li class="location">
                               <i class="ri-map-pin-line"></i>
-                              <span>Address</span>
-                              1312 Greg Street, Sparks. NV 88441
+                              <span>آدرس</span>
+                              {{ $settings->address }}
                           </li>
                           <li>
                               <i class="ri-mail-line"></i>
-                              <span>Email</span>
-                              <a href="../../cdn-cgi/l/email-protection.htm#d7beb9b1b897a2b9b4b8f9b4b8ba"><span
-                                      class="__cf_email__"
-                                      data-cfemail="31585f575e71445f525e1f525e5c">[email&#160;protected]</span></a>
+                              <span>ایمیل</span>
+                              <span>{{ $settings->email }}</span>
                           </li>
                           <li>
                               <i class="ri-phone-line"></i>
-                              <span>Phone</span>
-                              <a href="tel:+1-(514)-312-5678">+1 (514) 312-5678</a>
+                              <span>تلفن</span>
+                              <a href="tel:{{ $settings->phone }}">{{ $settings->phone }}</a>
                           </li>
                       </ul>
                   </div>

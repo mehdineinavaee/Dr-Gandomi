@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class BlogRightSidebar extends Model
 {
     use HasFactory;
-    protected $fillable = ['date', 'title', 'description', 'tags'];
+    protected $fillable = ['cover', 'title', 'description', 'tags', 'date'];
 }
