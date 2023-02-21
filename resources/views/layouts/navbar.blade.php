@@ -81,19 +81,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="JavaScript:void(0)" class="nav-link">
-                                رویدادها
-                                <i class="ri-arrow-down-s-line"></i>
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="{{ route('events.index') }}" class="nav-link">رویدادها</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('event_details.index') }}" class="nav-link">جزئیات رویداد</a>
-                                </li>
-                            </ul>
+                            <a href="{{ route('events.index') }}" class="nav-link">رویدادها</a>
                         </li>
 
                         <li class="nav-item">
