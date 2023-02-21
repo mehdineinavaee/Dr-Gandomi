@@ -22,9 +22,7 @@ use App\Http\Controllers\TuitionFeeController;
 use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('home_ones.index');
-});
+Route::resource('/', HomeOneController::class);
 Route::resource('authors', AuthorController::class);
 Route::resource('blog_right_sidebars', BlogRightSidebarController::class);
 Route::resource('cart', CartController::class);

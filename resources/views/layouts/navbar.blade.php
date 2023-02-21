@@ -132,6 +132,12 @@
                                 </li>
 
                                 <li class="nav-item">
+                                    <a href="{{ route('home_one.edit', ['home_one' => 1]) }}" class="nav-link">
+                                        صفحه اصلی
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
                                     <a href="JavaScript:void(0)" class="nav-link">
                                         دوره ها
                                         <i class="ri-arrow-left-s-line"></i>

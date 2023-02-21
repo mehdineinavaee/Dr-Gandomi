@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class HomeOne extends Model
 {
     use HasFactory;
+    protected $fillable = ['backgroundBanner', 'banner', 'welcome', 'slogen'];
 }

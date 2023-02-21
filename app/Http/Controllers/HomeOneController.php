@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\HomeOne;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HomeOneController extends Controller
 {
@@ -14,7 +15,9 @@ class HomeOneController extends Controller
      */
     public function index()
     {
-        return view('home_ones.index');
+        $home_ones = HomeOne::find(1);
+        return view('home_ones.index')
+            ->with('home_ones', $home_ones);
     }
 
     /**
@@ -57,7 +60,8 @@ class HomeOneController extends Controller
      */
     public function edit(HomeOne $homeOne)
     {
-        //
+        return view('home_ones.edit')
+            ->with('home_one', $homeOne);
     }
 
     /**
@@ -69,7 +73,37 @@ class HomeOneController extends Controller
      */
     public function update(Request $request, HomeOne $homeOne)
     {
-        //
+        if ($request->hasFile('backgroundBanner')) {
+            $fileName = $homeOne->backgroundBanner;
+            if (Storage::exists('public/home_one/' . $fileName)) {
+                Storage::delete('public/home_one/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->backgroundBanner->storeAs('public/home_one', "background_banner.jpg");
+            $homeOne->backgroundBanner = basename($path);
+        }
+
+        if ($request->hasFile('banner')) {
+            $fileName = $homeOne->banner;
+            if (Storage::exists('public/home_one/' . $fileName)) {
+                Storage::delete('public/home_one/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->banner->storeAs('public/home_one', "banner.jpg");
+            $homeOne->banner = basename($path);
+        }
+
+        $homeOne->fill($request->only(['welcome', 'slogen'])); // 'backgroundBanner', 'banner' nadashte bashe
+        $homeOne->save();
+
+        return redirect()->back()
+            ->with('success', 'صفحه اصلی ویرایش شد');
     }
 
     /**

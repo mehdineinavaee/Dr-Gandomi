@@ -1,97 +1,53 @@
 @extends('layouts.app')
-@section('title', 'صفحه اصلی یک')
+@section('title', 'ویرایش صفحه اصلی')
 @section('content')
-    <!-- Start Form Area -->
-    <section class="faq-contact-area pb-100 pt-70">
+    <section class="candidates-resume-area ptb-100">
         <div class="container">
-            <div class="contact-from-bg">
-                <div class="section-title">
-                    <h2>فرم صفحه اصلی یک</h2>
-                </div>
+            <div class="candidates-resume-content">
+                <form class="resume-info" method="POST" action="{{ route('home_one.update', ['home_one' => $home_one->id]) }}"
+                    autocomplete="off" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
 
-                <div class="contact-form">
-                    <form method="POST" action="{{ route('home_one.update', ['homeOne' => $homeOne->id]) }}"
-                        enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
-                        <div class="row">
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" name="welcome" id="welcome" class="form-control"
-                                        data-error="لطفاً پیام خوش آمدگویی را وارد کنید" placeholder="پیام خوش آمد گویی">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" name="slogen" id="slogen" class="form-control"
-                                        data-error="لطفاً شعار را وارد کنید" placeholder="شعار">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="form-group">
-                                    <input type="file" name="backgroundBanner" id="backgroundBanner"
-                                        data-error="لطفاً تصویر زمینه را انتخاب کنید" class="form-control"
-                                        placeholder="تصویر زمینه">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="form-group">
-                                    <input type="file" name="banner" id="banner" class="form-control"
-                                        data-error="لطفاً تصویر را انتخاب کنید" placeholder="تصویر">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" name="linkedin" id="linkedin" class="form-control"
-                                        data-error="لطفاً لینکدین را وارد کنید" placeholder="لینکدین">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" name="twitter" id="twitter" class="form-control"
-                                        data-error="لطفاً توییتر را وارد کنید" placeholder="توییتر">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" name="instagram" id="instagram" class="form-control"
-                                        data-error="لطفاً اینستاگرام را وارد کنید" placeholder="اینستاگرام">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" name="facebook" id="facebook" class="form-control"
-                                        data-error="لطفاً فیس بوک را وارد کنید" placeholder="فیس بوک">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12">
-                                <button type="submit" class="default-btn">
-                                    به روز رسانی
-                                </button>
-                                <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                <div class="clearfix"></div>
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>تصویر پشت زمینه (1920px&times;1080px)</label>
+                                <input type="file" class="form-control" accept="image/jpg" id="backgroundBanner"
+                                    name="backgroundBanner">
                             </div>
                         </div>
-                    </form>
-                </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>تصویر زمینه (825px&times;830px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="banner" name="banner">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>پیام خوش آمد گویی</label>
+                                <input type="text" name="welcome" id="welcome" class="form-control"
+                                    value="{{ $home_one->welcome }}">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>شعار</label>
+                                <input type="text" name="slogen" id="slogen" class="form-control"
+                                    value="{{ $home_one->slogen }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <button type="submit" class="default-btn">
+                            ثبت
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
-    <!-- End Form Area -->
 @endsection
