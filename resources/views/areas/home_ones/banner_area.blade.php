@@ -1,5 +1,5 @@
 <section class="banner-area bg-1 jarallax" data-jarallax='{"speed": 0.3}'
-    style="background-image: url('{{ asset('storage/home_one/background_banner.jpg') }}');">
+    style="background-image: url('{{ asset('storage/home_one/' . $home_ones->backgroundBanner) }}');">
     <div class="d-table">
         <div class="d-table-cell">
             <div class="container">

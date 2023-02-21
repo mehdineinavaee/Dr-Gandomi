@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('title', 'تصویر جدید')
 @section('content')
+    @include('common.breadcrumbs', [
+        'data' => [['title' => 'افزودن گالری', 'url' => url()->current(), 'bg' => $settings->gallery]],
+    ])
     <section class="candidates-resume-area ptb-100">
         <div class="container">
             <div class="candidates-resume-content">

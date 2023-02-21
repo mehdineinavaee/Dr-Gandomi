@@ -2,7 +2,7 @@
 @section('title', 'مشاهده پرسش و پاسخ')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'مشاهده پرسش و پاسخ', 'url' => url()->current()]],
+        'data' => [['title' => 'مشاهده پرسش و پاسخ', 'url' => url()->current(), 'bg' => $settings->faqs]],
     ])
     <!-- Start FAQs Details Area -->
     <section class="courses-details-area pt-100 pb-70">

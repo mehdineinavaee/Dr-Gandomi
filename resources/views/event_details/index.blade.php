@@ -1,26 +1,9 @@
 @extends('layouts.app')
 @section('title', 'جزئیات رویداد')
 @section('content')
-    <!-- Start Page Title Area -->
-    <div class="page-title-area bg-20">
-        <div class="container">
-            <div class="page-title-content">
-                <h2>Event details</h2>
-
-                <ul>
-                    <li>
-                        <a href="index.html">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="active">Event details</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- End Page Title Area -->
-
+    @include('common.breadcrumbs', [
+        'data' => [['title' => 'جزئیات رویداد', 'url' => url()->current(), 'bg' => $settings->event_details]],
+    ])
     <!-- Start Event Details Area -->
     <section class="event-details-area pt-100 pb-70">
         <div class="container">

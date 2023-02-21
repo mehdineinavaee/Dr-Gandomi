@@ -1,26 +1,9 @@
 @extends('layouts.app')
 @section('title', 'حساب من')
 @section('content')
-    <!-- Start Page Title Area -->
-    <div class="page-title-area bg-24">
-        <div class="container">
-            <div class="page-title-content">
-                <h2>My account</h2>
-
-                <ul>
-                    <li>
-                        <a href="index.html">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="active">My account</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- End Page Title Area -->
-
+    @include('common.breadcrumbs', [
+        'data' => [['title' => 'حساب من', 'url' => url()->current(), 'bg' => $settings->my_account]],
+    ])
     <!-- Start User Area -->
     <section class="user-area ptb-100">
         <div class="container">

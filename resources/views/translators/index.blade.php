@@ -2,7 +2,7 @@
 @section('title', 'مدیریت مترجمان')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'مدیریت مترجمان', 'url' => url()->current()]],
+        'data' => [['title' => 'مدیریت مترجمان', 'url' => url()->current(), 'bg' => $settings->translators]],
     ])
     <section class="contact-info-area ptb-100">
         <div class="container">

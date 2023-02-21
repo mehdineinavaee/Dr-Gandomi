@@ -2,7 +2,7 @@
 @section('title', 'مدیریت نویسنده ها')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'مدیریت نویسنده ها', 'url' => url()->current()]],
+        'data' => [['title' => 'مدیریت نویسنده ها', 'url' => url()->current(), 'bg' => $settings->authors]],
     ])
     <section class="contact-info-area ptb-100">
         <div class="container">

@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('title', 'نویسنده جدید')
 @section('content')
+    @include('common.breadcrumbs', [
+        'data' => [['title' => 'افزودن نویسنده', 'url' => url()->current(), 'bg' => $settings->authors]],
+    ])
     <section class="candidates-resume-area ptb-100">
         <div class="container">
             <div class="candidates-resume-content">

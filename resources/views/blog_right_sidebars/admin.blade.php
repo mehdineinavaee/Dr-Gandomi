@@ -2,7 +2,7 @@
 @section('title', 'مدیریت بلاگ')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'مدیریت بلاگ', 'url' => url()->current()]],
+        'data' => [['title' => 'مدیریت بلاگ', 'url' => url()->current(), 'bg' => $settings->blog]],
     ])
     <section class="contact-info-area ptb-100">
         <div class="container">

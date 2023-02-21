@@ -1,5 +1,5 @@
 <!-- Start Page Title Area -->
-<div class="page-title-area bg-27">
+<div class="page-title-area bg-27" style="background-image: url('{{ asset('storage/settings/' . $data[0]['bg']) }}');">
     <div class="container">
         <div class="page-title-content">
             <h2>{{ $data[0]['title'] }}</h2>

@@ -2,7 +2,7 @@
 @section('title', 'مدیریت محصولات')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'مدیریت محصولات', 'url' => url()->current()]],
+        'data' => [['title' => 'مدیریت محصولات', 'url' => url()->current(), 'bg' => $settings->products]],
     ])
     <section class="contact-info-area ptb-100">
         <div class="container">

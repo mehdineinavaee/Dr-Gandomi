@@ -22,6 +22,25 @@ return new class extends Migration
             $table->text('address', '500');
             $table->text('email');
             $table->text('phone');
+            $table->string('courses');
+            $table->string('blog');
+            $table->string('our_professors');
+            $table->string('faqs');
+            $table->string('gallery');
+            $table->string('my_account');
+            $table->string('events');
+            $table->string('event_details');
+            $table->string('products');
+            $table->string('cart');
+            $table->string('wishlist');
+            $table->string('contact');
+            $table->string('settings');
+            $table->string('home_one');
+            $table->string('categories');
+            $table->string('modes');
+            $table->string('publishers');
+            $table->string('authors');
+            $table->string('translators');
             $table->timestamps();
         });
     }

@@ -2,7 +2,7 @@
 @section('title', 'بلاگ')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'بلاگ', 'url' => url()->current()]],
+        'data' => [['title' => 'بلاگ', 'url' => url()->current(), 'bg' => $settings->blog]],
     ])
 
     <!-- Start Blog Area -->

@@ -2,9 +2,8 @@
 @section('title', 'تماس با ما')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'تماس با ما', 'url' => url()->current()]],
+        'data' => [['title' => 'تماس با ما', 'url' => url()->current(), 'bg' => $settings->contact]],
     ])
-
     <!-- Start Contact Info Area -->
     <section class="contact-info-area ptb-100">
         <div class="container">

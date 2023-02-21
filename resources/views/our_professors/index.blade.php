@@ -2,7 +2,7 @@
 @section('title', 'اساتید')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'اساتید', 'url' => url()->current()]],
+        'data' => [['title' => 'اساتید', 'url' => url()->current(), 'bg' => $settings->our_professors]],
     ])
 
     <!-- Start Team Area -->

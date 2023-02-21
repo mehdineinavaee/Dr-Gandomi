@@ -1,11 +1,9 @@
 @extends('layouts.app')
 @section('title', 'پرسش و پاسخ')
 @section('content')
-    <!-- Start Page Title Area -->
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'پرسش و پاسخ', 'url' => url()->current()]],
+        'data' => [['title' => 'پرسش و پاسخ', 'url' => url()->current(), 'bg' => $settings->faqs]],
     ])
-    <!-- End Page Title Area -->
 
     <!-- Start FAQ Area -->
     <section class="faq-area pt-100 pb-70">

@@ -2,9 +2,8 @@
 @section('title', 'گالری')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'گالری', 'url' => url()->current()]],
+        'data' => [['title' => 'گالری', 'url' => url()->current(), 'bg' => $settings->gallery]],
     ])
-
     <!-- Start Gallery Area -->
     <div class="gallery-area gallery-popup pt-100 pb-50">
         <div class="container">

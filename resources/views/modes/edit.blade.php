@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('title', 'ویرایش روش برگزاری')
 @section('content')
+    @include('common.breadcrumbs', [
+        'data' => [['title' => 'ویرایش روش برگزاری', 'url' => url()->current(), 'bg' => $settings->modes]],
+    ])
     <section class="candidates-resume-area ptb-50">
         <div class="container">
             <div class="candidates-resume-content">

@@ -1,26 +1,9 @@
 @extends('layouts.app')
 @section('title', 'لیست علاقه مندی ها')
 @section('content')
-    <!-- Start Page Title Area -->
-    <div class="page-title-area bg-18">
-        <div class="container">
-            <div class="page-title-content">
-                <h2>Wishlist</h2>
-
-                <ul>
-                    <li>
-                        <a href="index.html">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="active">Wishlist</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- End Page Title Area -->
-
+    @include('common.breadcrumbs', [
+        'data' => [['title' => 'لیست علاقه مندی ها', 'url' => url()->current(), 'bg' => $settings->wishlist]],
+    ])
     <!-- Start Wishlist Area -->
     <section class="wishlist-area  ptb-100">
         <div class="container">

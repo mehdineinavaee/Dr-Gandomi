@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('title', 'انتشارات جدید')
 @section('content')
+    @include('common.breadcrumbs', [
+        'data' => [['title' => 'افزودن انتشارات', 'url' => url()->current(), 'bg' => $settings->publishers]],
+    ])
     <section class="candidates-resume-area ptb-100">
         <div class="container">
             <div class="candidates-resume-content">

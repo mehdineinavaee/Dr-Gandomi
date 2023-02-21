@@ -1,7 +1,10 @@
 @extends('layouts.app')
 @section('title', 'ویرایش دوره')
 @section('content')
-    <section class="candidates-resume-area ptb-50">
+    @include('common.breadcrumbs', [
+        'data' => [['title' => 'ویرایش دوره', 'url' => url()->current(), 'bg' => $settings->courses]],
+    ])
+    <section class="candidates-resume-area ptb-100">
         <div class="container">
             <div class="candidates-resume-content">
                 <form class="resume-info" autocomplete="off" action="{{ route('courses.update', ['course' => $course->id]) }}"

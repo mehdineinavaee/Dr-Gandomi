@@ -97,10 +97,257 @@ class SettingController extends Controller
             $setting->favicon = basename($path);
         }
 
-        $setting->fill($request->only(['tel', 'footer_description', 'address', 'email', 'phone'])); // 'logo', 'favicon' nadashte bashe
+        if ($request->hasFile('courses')) {
+            $fileName = $setting->courses;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->courses->store('public/settings');
+            $setting->courses = basename($path);
+        }
+
+        if ($request->hasFile('blog')) {
+            $fileName = $setting->blog;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->blog->store('public/settings');
+            $setting->blog = basename($path);
+        }
+
+        if ($request->hasFile('our_professors')) {
+            $fileName = $setting->our_professors;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->our_professors->store('public/settings');
+            $setting->our_professors = basename($path);
+        }
+
+        if ($request->hasFile('faqs')) {
+            $fileName = $setting->faqs;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->faqs->store('public/settings');
+            $setting->faqs = basename($path);
+        }
+
+        if ($request->hasFile('gallery')) {
+            $fileName = $setting->gallery;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->gallery->store('public/settings');
+            $setting->gallery = basename($path);
+        }
+
+        if ($request->hasFile('my_account')) {
+            $fileName = $setting->my_account;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->my_account->store('public/settings');
+            $setting->my_account = basename($path);
+        }
+
+        if ($request->hasFile('events')) {
+            $fileName = $setting->events;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->events->store('public/settings');
+            $setting->events = basename($path);
+        }
+
+        if ($request->hasFile('event_details')) {
+            $fileName = $setting->event_details;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->event_details->store('public/settings');
+            $setting->event_details = basename($path);
+        }
+
+        if ($request->hasFile('products')) {
+            $fileName = $setting->products;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->products->store('public/settings');
+            $setting->products = basename($path);
+        }
+
+        if ($request->hasFile('cart')) {
+            $fileName = $setting->cart;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->cart->store('public/settings');
+            $setting->cart = basename($path);
+        }
+
+        if ($request->hasFile('wishlist')) {
+            $fileName = $setting->wishlist;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->wishlist->store('public/settings');
+            $setting->wishlist = basename($path);
+        }
+
+        if ($request->hasFile('contact')) {
+            $fileName = $setting->contact;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->contact->store('public/settings');
+            $setting->contact = basename($path);
+        }
+
+        if ($request->hasFile('settings')) {
+            $fileName = $setting->settings;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->settings->store('public/settings');
+            $setting->settings = basename($path);
+        }
+
+        if ($request->hasFile('home_one')) {
+            $fileName = $setting->home_one;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->home_one->store('public/settings');
+            $setting->home_one = basename($path);
+        }
+
+        if ($request->hasFile('categories')) {
+            $fileName = $setting->categories;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->categories->store('public/settings');
+            $setting->categories = basename($path);
+        }
+
+        if ($request->hasFile('modes')) {
+            $fileName = $setting->modes;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->modes->store('public/settings');
+            $setting->modes = basename($path);
+        }
+
+        if ($request->hasFile('publishers')) {
+            $fileName = $setting->publishers;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->publishers->store('public/settings');
+            $setting->publishers = basename($path);
+        }
+
+        if ($request->hasFile('authors')) {
+            $fileName = $setting->authors;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->authors->store('public/settings');
+            $setting->authors = basename($path);
+        }
+
+        if ($request->hasFile('translators')) {
+            $fileName = $setting->translators;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->translators->store('public/settings');
+            $setting->translators = basename($path);
+        }
+
+        $setting->fill($request->only(['tel', 'footer_description', 'address', 'email', 'phone'])); // 'logo', 'favicon', ... nadashte bashe
         $setting->save();
 
-        return redirect()->back()
+        return redirect()->route('home_one.index')
             ->with('success', 'تنظیمات ویرایش شد');
     }
 

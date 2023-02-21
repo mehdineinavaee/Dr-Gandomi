@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('title', 'مترجم جدید')
 @section('content')
+    @include('common.breadcrumbs', [
+        'data' => [['title' => 'افزودن مترجم', 'url' => url()->current(), 'bg' => $settings->translators]],
+    ])
     <section class="candidates-resume-area ptb-100">
         <div class="container">
             <div class="candidates-resume-content">

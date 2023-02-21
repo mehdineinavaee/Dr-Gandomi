@@ -2,9 +2,8 @@
 @section('title', 'محصولات')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'محصولات', 'url' => url()->current()]],
+        'data' => [['title' => 'محصولات', 'url' => url()->current(), 'bg' => $settings->products]],
     ])
-
     <!-- Start Product Area -->
     <div class="product-area ptb-100">
         <div class="container">

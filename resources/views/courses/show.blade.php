@@ -2,7 +2,7 @@
 @section('title', 'مشاهده دوره')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'مشاهده دوره', 'url' => url()->current()]],
+        'data' => [['title' => 'مشاهده دوره', 'url' => url()->current(), 'bg' => $settings->courses]],
     ])
     <!-- Start Courses Details Area -->
     <section class="courses-details-area pt-100 pb-70">

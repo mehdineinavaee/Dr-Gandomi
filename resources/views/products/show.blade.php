@@ -2,7 +2,7 @@
 @section('title', 'مشاهده محصول')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'مشاهده محصول', 'url' => url()->current()]],
+        'data' => [['title' => 'مشاهده محصول', 'url' => url()->current(), 'bg' => $settings->products]],
     ])
     <section class="courses-details-area pt-100 pb-70">
         <div class="container">

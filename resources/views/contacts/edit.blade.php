@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('title', 'ویرایش تماس با ما')
 @section('content')
+    @include('common.breadcrumbs', [
+        'data' => [['title' => 'ویرایش تماس با ما', 'url' => url()->current(), 'bg' => $settings->contact]],
+    ])
     <section class="candidates-resume-area ptb-100">
         <div class="container">
             <div class="candidates-resume-content">

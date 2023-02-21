@@ -2,7 +2,7 @@
 @section('title', 'مشاهده بلاگ')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'مشاهده بلاگ', 'url' => url()->current()]],
+        'data' => [['title' => 'مشاهده بلاگ', 'url' => url()->current(), 'bg' => $settings->blog]],
     ])
     <section class="blog-post-area blog-post-left-sidebar ptb-100">
         <div class="container">

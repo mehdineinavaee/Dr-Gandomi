@@ -82,7 +82,7 @@ class HomeOneController extends Controller
                     Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
                 */
             }
-            $path = $request->backgroundBanner->storeAs('public/home_one', "background_banner.jpg");
+            $path = $request->backgroundBanner->store('public/home_one');
             $homeOne->backgroundBanner = basename($path);
         }
 
@@ -95,14 +95,14 @@ class HomeOneController extends Controller
                     Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
                 */
             }
-            $path = $request->banner->storeAs('public/home_one', "banner.jpg");
+            $path = $request->banner->store('public/home_one');
             $homeOne->banner = basename($path);
         }
 
         $homeOne->fill($request->only(['welcome', 'slogen'])); // 'backgroundBanner', 'banner' nadashte bashe
         $homeOne->save();
 
-        return redirect()->back()
+        return redirect()->route('home_one.index')
             ->with('success', 'صفحه اصلی ویرایش شد');
     }
 

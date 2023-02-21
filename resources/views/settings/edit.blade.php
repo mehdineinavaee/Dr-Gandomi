@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('title', 'تنظیمات')
 @section('content')
+    @include('common.breadcrumbs', [
+        'data' => [['title' => 'تنظیمات', 'url' => url()->current(), 'bg' => $settings->settings]],
+    ])
     <section class="candidates-resume-area ptb-100">
         <div class="container">
             <div class="candidates-resume-content">
@@ -11,6 +14,8 @@
                     @method('PUT')
 
                     <div class="row">
+                        <h3>سربرگ</h3>
+
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>موبایل</label>
@@ -32,6 +37,8 @@
                                 <input type="file" class="form-control" accept="image/*" id="favicon" name="favicon">
                             </div>
                         </div>
+
+                        <h3>پاورقی</h3>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
@@ -59,11 +66,162 @@
 
                         <div class="col-lg-12 col-sm-12">
                             <div class="form-group">
-                                <label>توضیحات در پاورقی</label>
+                                <label>توضیحات</label>
                                 <textarea name="footer_description" id="footer_description">{{ $setting->footer_description }}</textarea>
                             </div>
                         </div>
+
+                        <h3>پشت زمینه عناوین صفحات</h3>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>دوره ها (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="courses" name="courses">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>بلاگ (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="blog" name="blog">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>اساتید (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="our_professors"
+                                    name="our_professors">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>پرسش و پاسخ (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="faqs" name="faqs">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>گالری (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="gallery" name="gallery">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>حساب من (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="my_account"
+                                    name="my_account">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>رویدادها (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="events"
+                                    name="events">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>جزئیات رویداد (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="event_details"
+                                    name="event_details">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>محصولات (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="products"
+                                    name="products">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>کارت (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="cart"
+                                    name="cart">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>لیست علاقه مندی ها (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="wishlist"
+                                    name="wishlist">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>تماس با ما (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="contact"
+                                    name="contact">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>تنظیمات (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="settings"
+                                    name="settings">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>صفحه اصلی (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="home_one"
+                                    name="home_one">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>دسته بندی ها (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="categories"
+                                    name="categories">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>روش برگزاری (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="modes"
+                                    name="modes">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>انتشارات (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="publishers"
+                                    name="publishers">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>نویسنده ها (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="authors"
+                                    name="authors">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>مترجمان (1920px&times;600px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="translators"
+                                    name="translators">
+                            </div>
+                        </div>
                     </div>
+
                     <div class="col-lg-12 col-md-12">
                         <button type="submit" class="default-btn">
                             ثبت

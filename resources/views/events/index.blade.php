@@ -1,26 +1,9 @@
 @extends('layouts.app')
 @section('title', 'رویدادها')
 @section('content')
-    <!-- Start Page Title Area -->
-    <div class="page-title-area bg-5">
-        <div class="container">
-            <div class="page-title-content">
-                <h2>Events</h2>
-
-                <ul>
-                    <li>
-                        <a href="index.html">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="active">Events</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- End Page Title Area -->
-
+    @include('common.breadcrumbs', [
+        'data' => [['title' => 'رویدادها', 'url' => url()->current(), 'bg' => $settings->events]],
+    ])
     <!-- Start Events Area -->
     <section class="events-area events-area-style-two ptb-100">
         <div class="container">
@@ -31,7 +14,7 @@
                             <img src="assets/images/event-img.jpg" alt="Image">
                         </div>
 
-                        <span>Next Event</span>
+                        <span>رویداد بعدی</span>
 
                         <div id="timer">
                             <div id="days"></div>
@@ -40,17 +23,17 @@
                             <div id="seconds"></div>
                         </div>
 
-                        <a href="index.htm#" class="default-btn">
-                            Book now
-                            <i class="ri-arrow-right-line"></i>
-                        </a>
+                        <button class="default-btn" disabled style="width: 100%">
+                            هم اکنون رزرو کنید
+                            <i class="ri-arrow-left-line"></i>
+                        </button>
                     </div>
                 </div>
 
                 <div class="col-lg-7">
                     <div class="events-content ml-15">
-                        <span>Events</span>
-                        <h2>Upcoming Events</h2>
+                        <span>رویدادها</span>
+                        <h2>رویدادهای آینده</h2>
 
                         <ul class="events-list">
                             <li>

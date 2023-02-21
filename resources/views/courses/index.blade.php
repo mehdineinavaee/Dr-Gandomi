@@ -2,7 +2,7 @@
 @section('title', 'دوره ها')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'دوره ها', 'url' => url()->current()]],
+        'data' => [['title' => 'دوره ها', 'url' => url()->current(), 'bg' => $settings->courses]],
     ])
 
     <!-- Start Study Area -->
