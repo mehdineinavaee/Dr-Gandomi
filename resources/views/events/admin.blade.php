@@ -1,20 +1,20 @@
 @extends('layouts.app')
-@section('title', 'مدیریت دسته بندی ها')
+@section('title', 'مدیریت رویدادها')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'مدیریت دسته بندی', 'url' => url()->current(), 'bg' => $settings->categories]],
+        'data' => [['title' => 'مدیریت رویدادها', 'url' => url()->current(), 'bg' => $settings->events]],
     ])
     <section class="contact-info-area ptb-100">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="card border-dark mb-3">
-                        <div class="card-header">مدیریت دسته بندی ها</div>
+                        <div class="card-header">مدیریت رویدادها</div>
                         <div class="card-body text-dark">
                             <h5 class="card-title">
-                                <a href="{{ route('event_categories.create') }}">
+                                <a href="{{ route('events.create') }}">
                                     <i class="ri-add-circle-fill" style="font-size: 2rem" data-toggle="tooltip"
-                                        data-placement="top" title="افزودن دسته بندی جدید"></i>
+                                        data-placement="top" title="افزودن رویداد جدید"></i>
                                 </a>
                             </h5>
                             <p class="card-text">
@@ -22,22 +22,43 @@
                                 <table id="example" class="table table-striped" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th style="text-align:center; width:10%">ردیف</th>
-                                            <th style="text-align:center; width:70%">عنوان</th>
-                                            <th style="text-align:center; width:20%">عملیات</th>
+                                            <th style="text-align:center;">ردیف</th>
+                                            <th style="text-align:center;">تاریخ</th>
+                                            <th style="text-align:center;">روز</th>
+                                            <th style="text-align:center;">ساعت</th>
+                                            <th style="text-align:center;">مکان</th>
+                                            <th style="text-align:center;">شروع</th>
+                                            <th style="text-align:center;">پایان</th>
+                                            <th style="text-align:center;">عملیات</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($event_categories as $event_category)
+                                        @foreach ($events as $event)
                                             <tr>
-                                                <td style="text-align:center;" class="align-middle">{{ $loop->iteration }}
+                                                <td style="text-align:center;" class="align-middle">
+                                                    {{ $loop->iteration }}
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $event_category->title }}
+                                                    {{ $event->date }}
+                                                </td>
+                                                <td style="text-align:center;" class="align-middle">
+                                                    {{ $event->day }}
+                                                </td>
+                                                <td style="text-align:center;" class="align-middle">
+                                                    {{ $event->hour }}
+                                                </td>
+                                                <td style="text-align:center;" class="align-middle">
+                                                    {{ $event->location }}
+                                                </td>
+                                                <td style="text-align:center;" class="align-middle">
+                                                    {{ $event->start }}
+                                                </td>
+                                                <td style="text-align:center;" class="align-middle">
+                                                    {{ $event->end }}
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
 
-                                                    {{-- <form action="{{ route('categories.destroy', ['event_category' => $event_category->id]) }}"
+                                                    {{-- <form action="{{ route('events.destroy', ['event' => $event->id]) }}"
                                                         method="post">
                                                         @method('DELETE')
                                                         @csrf
@@ -50,17 +71,25 @@
                                                         </button>
                                                     </form> --}}
 
-                                                    <button value='/event_categories/{{ $event_category->id }}'
+                                                    <button value='/events/{{ $event->id }}'
                                                         class="btn btn-danger btn-sm delete">
                                                         <i class="ri-chat-delete-fill" data-toggle="tooltip"
                                                             style="font-size: 1rem" data-placement="top" title="حذف">
                                                         </i>
                                                     </button>
 
-                                                    <a href="{{ route('event_categories.edit', ['event_category' => $event_category->id]) }}"
+                                                    <a href="{{ route('events.edit', ['event' => $event->id]) }}"
                                                         class="btn btn-primary btn-sm">
                                                         <i class="ri-edit-2-fill" data-toggle="tooltip"
                                                             style="font-size: 1rem" data-placement="top" title="ویرایش">
+                                                        </i>
+                                                    </a>
+
+                                                    <a href="{{ route('events.show', ['event' => $event->id]) }}"
+                                                        class="btn btn-info btn-sm" style="color: #fff">
+                                                        <i class="ri-folder-info-fill" data-toggle="tooltip"
+                                                            style="font-size: 1rem" data-placement="top"
+                                                            title="مشاهده جزئیات">
                                                         </i>
                                                     </a>
 

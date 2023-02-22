@@ -4,7 +4,7 @@
     @include('common.breadcrumbs', [
         'data' => [['title' => 'ویرایش روش برگزاری', 'url' => url()->current(), 'bg' => $settings->modes]],
     ])
-    <section class="candidates-resume-area ptb-50">
+    <section class="candidates-resume-area ptb-100">
         <div class="container">
             <div class="candidates-resume-content">
                 <form class="resume-info" autocomplete="off" action="{{ route('modes.update', ['mode' => $mode->id]) }}"

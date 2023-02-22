@@ -4,7 +4,7 @@
     @include('common.breadcrumbs', [
         'data' => [['title' => 'ویرایش استاد', 'url' => url()->current(), 'bg' => $settings->our_professors]],
     ])
-    <section class="candidates-resume-area ptb-50">
+    <section class="candidates-resume-area ptb-100">
         <div class="container">
             <div class="candidates-resume-content">
                 <form class="resume-info" autocomplete="off"

@@ -45,6 +45,7 @@ Route::resource('wishlist', WishlistController::class);
 Route::get('admin/blog_right_sidebars', [BlogRightSidebarController::class, 'admin'])->name('blog_right_sidebars.admin');
 Route::get('admin/courses', [CourseController::class, 'admin'])->name('courses.admin');
 Route::resource('categories', CategoryController::class);
+Route::get('admin/events', [EventController::class, 'admin'])->name('events.admin');
 Route::resource('event_categories', EventCategoryController::class);
 Route::resource('modes', ModeController::class);
 Route::get('admin/our_professors', [OurProfessorController::class, 'admin'])->name('our_professors.admin');

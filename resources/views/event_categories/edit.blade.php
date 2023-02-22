@@ -4,11 +4,11 @@
     @include('common.breadcrumbs', [
         'data' => [['title' => 'ویرایش دسته بندی', 'url' => url()->current(), 'bg' => $settings->categories]],
     ])
-    <section class="candidates-resume-area ptb-50">
+    <section class="candidates-resume-area ptb-100">
         <div class="container">
             <div class="candidates-resume-content">
                 <form class="resume-info" autocomplete="off"
-                    action="{{ route('event_categories.update', ['event_category' => $event_category->id]) }}" method="post"
+                    action="{{ route('event_categories.update', ['event_category' => $eventCategory->id]) }}" method="post"
                     enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
@@ -18,7 +18,7 @@
                             <div class="form-group">
                                 <label>عنوان</label>
                                 <input type="text" name="title" id="title" class="form-control"
-                                    value="{{ $event_category->title }}">
+                                    value="{{ $eventCategory->title }}">
                             </div>
                         </div>
                     </div>

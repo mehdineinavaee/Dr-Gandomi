@@ -14,9 +14,9 @@ class EventCategoryController extends Controller
      */
     public function index()
     {
-        $categories = EventCategory::all();
+        $event_categories = EventCategory::all();
         return view('event_categories.index')
-            ->with('categories', $categories);
+            ->with('event_categories', $event_categories);
     }
 
     /**

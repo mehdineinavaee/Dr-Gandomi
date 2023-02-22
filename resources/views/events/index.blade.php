@@ -36,38 +36,30 @@
                         <h2>رویدادهای آینده</h2>
 
                         <ul class="events-list">
+                            @foreach ($events as $event)
+                                <li>
+                                    <div class="events-date">
+                                        <span>{{ $event->date }}</span>
+                                    </div>
 
-                            <li>
-                                <div class="events-date">
-                                    <span class="mb-2">01 May</span>
-                                    <span>2021</span>
-                                </div>
+                                    <span>{{ $event->event_category->title }}</span>
+                                    <h3>
+                                        <a href="{{ route('events.show', ['event' => $event->id]) }}">
+                                            {{ $event->title }}
+                                        </a>
+                                    </h3>
+                                    <p class="justify">
+                                        {!! Str::limit($event->description, 100, ' ...') !!}
+                                    </p>
 
-                                <span>Conference</span>
-                                <h3>
-                                    <a href="event-details.html">
-                                        Universities admission conference 2021
+                                    <a href="{{ route('events.show', ['event' => $event->id]) }}" class="read-more">
+                                        اطلاعات بیشتر
+                                        <i class="ri-arrow-left-line"></i>
                                     </a>
-                                </h3>
-                                <p class="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                                <a href="event-details.html" class="read-more">
-                                    اطلاعات بیشتر
-                                    <i class="ri-arrow-left-line"></i>
-                                </a>
-                            </li>
-
-                            <div class="pagination-area">
-                                <span class="page-numbers current" aria-current="page">1</span>
-                                <a href="index.htm#" class="page-numbers">2</a>
-                                <a href="index.htm#" class="page-numbers">3</a>
-
-                                <a href="index.htm#" class="next page-numbers">
-                                    <i class="ri-arrow-right-line"></i>
-                                </a>
-                            </div>
+                                </li>
+                            @endforeach
                         </ul>
+                        {{ $events->links('common.pagination-links') }}
                     </div>
                 </div>
             </div>

@@ -168,6 +168,24 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="JavaScript:void(0)" class="nav-link">
+                                        رویدادها
+                                        <i class="ri-arrow-left-s-line"></i>
+                                    </a>
+
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="{{ route('event_categories.index') }}" class="nav-link">دسته
+                                                بندی ها
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{ route('events.admin') }}" class="nav-link">پنل رویدادها
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="JavaScript:void(0)" class="nav-link">
                                         محصولات
                                         <i class="ri-arrow-left-s-line"></i>
                                     </a>
