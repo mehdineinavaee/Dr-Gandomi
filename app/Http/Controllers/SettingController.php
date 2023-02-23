@@ -227,19 +227,6 @@ class SettingController extends Controller
             $setting->cart = basename($path);
         }
 
-        if ($request->hasFile('wishlist')) {
-            $fileName = $setting->wishlist;
-            if (Storage::exists('public/settings/' . $fileName)) {
-                Storage::delete('public/settings/' . $fileName);
-                /*
-                    Delete Multiple File like this way
-                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
-                */
-            }
-            $path = $request->wishlist->store('public/settings');
-            $setting->wishlist = basename($path);
-        }
-
         if ($request->hasFile('contact')) {
             $fileName = $setting->contact;
             if (Storage::exists('public/settings/' . $fileName)) {

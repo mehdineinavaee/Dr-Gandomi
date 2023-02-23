@@ -13,9 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('wishlists', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('events', function (Blueprint $table) {
+            $table->foreignId('advisor_id');
+            $table->foreign('advisor_id')
+                ->references('id')
+                ->on('our_professors')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
@@ -26,6 +30,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wishlists');
+        Schema::table('events', function (Blueprint $table) {
+            //
+        });
     }
 };

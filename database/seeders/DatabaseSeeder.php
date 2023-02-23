@@ -91,7 +91,6 @@ class DatabaseSeeder extends Seeder
                 'event_details' => 'NULL',
                 'products' => 'NULL',
                 'cart' => 'NULL',
-                'wishlist' => 'NULL',
                 'contact' => 'NULL',
                 'settings' => 'NULL',
                 'home_one' => 'NULL',

@@ -70,6 +70,54 @@
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
+                                <label>استاد راهنما</label>
+                                <select id="supervisor" name="supervisor" class="form-control">
+                                    <option value="" selected>استاد راهنما را انتخاب کنید
+                                    </option>
+                                    @foreach ($our_professors as $our_professor)
+                                        <option value="{{ $our_professor->id }}">
+                                            {{ $our_professor->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>استاد مشاور</label>
+                                <select id="advisor" name="advisor" class="form-control">
+                                    <option value="" selected>استاد مشاور را انتخاب کنید
+                                    </option>
+                                    @foreach ($our_professors as $our_professor)
+                                        <option value="{{ $our_professor->id }}">
+                                            {{ $our_professor->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>داور</label>
+                                <select id="referee" name="referee" class="form-control">
+                                    <option value="" selected>داور را انتخاب کنید
+                                    </option>
+                                    @foreach ($our_professors as $our_professor)
+                                        <option value="{{ $our_professor->id }}">
+                                            {{ $our_professor->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
                                 <label>تاریخ شروع</label>
                                 <input type="text" name="start" id="start" class="form-control">
                             </div>

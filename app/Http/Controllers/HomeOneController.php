@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\HomeOne;
+use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -16,8 +17,10 @@ class HomeOneController extends Controller
     public function index()
     {
         $home_ones = HomeOne::find(1);
+        $events = Event::orderBy('id', 'desc')->take(3)->get();
         return view('home_ones.index')
-            ->with('home_ones', $home_ones);
+            ->with('home_ones', $home_ones)
+            ->with('events', $events);
     }
 
     /**

@@ -151,14 +151,6 @@
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
-                                <label>لیست علاقه مندی ها (1920px&times;600px)</label>
-                                <input type="file" class="form-control" accept="image/*" id="wishlist"
-                                    name="wishlist">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="form-group">
                                 <label>تماس با ما (1920px&times;600px)</label>
                                 <input type="file" class="form-control" accept="image/*" id="contact"
                                     name="contact">

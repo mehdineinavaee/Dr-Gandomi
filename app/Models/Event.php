@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\EventCategory;
+use App\Models\OurProfessor;
 
 class Event extends Model
 {
@@ -14,5 +15,20 @@ class Event extends Model
     public function event_category()
     {
         return $this->belongsTo(EventCategory::class);
+    }
+
+    public function supervisor()
+    {
+        return $this->belongsTo(OurProfessor::class);
+    }
+
+    public function advisor()
+    {
+        return $this->belongsTo(OurProfessor::class);
+    }
+
+    public function referee()
+    {
+        return $this->belongsTo(OurProfessor::class);
     }
 }

@@ -97,9 +97,6 @@
                                 <li class="nav-item">
                                     <a href="{{ route('cart.index') }}" class="nav-link">کارت</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="{{ route('wishlist.index') }}" class="nav-link">لیست علاقه مندی ها</a>
-                                </li>
                             </ul>
                         </li>
 

@@ -32,7 +32,6 @@ return new class extends Migration
             $table->string('event_details');
             $table->string('products');
             $table->string('cart');
-            $table->string('wishlist');
             $table->string('contact');
             $table->string('settings');
             $table->string('home_one');

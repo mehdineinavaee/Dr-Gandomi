@@ -29,7 +29,7 @@
 <!-- Custom JS -->
 <script src="{{ asset('assets/js/custom.js') }}"></script>
 <!-- TextArea Editor JS -->
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/ka0mkyq22km10p5ao17dm3ukphxfaar5qswk31um5efu0ijm/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
     tinymce.init({
         selector: 'textarea'

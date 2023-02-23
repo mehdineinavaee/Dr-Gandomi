@@ -19,7 +19,6 @@ use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TranslatorController;
 use App\Http\Controllers\TuitionFeeController;
-use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('/', HomeOneController::class);
@@ -39,7 +38,6 @@ Route::resource('publishers', PublisherController::class);
 Route::resource('settings', SettingController::class);
 Route::resource('translators', TranslatorController::class);
 Route::resource('tuition_fee', TuitionFeeController::class);
-Route::resource('wishlist', WishlistController::class);
 
 // Admin Routes
 Route::get('admin/blog_right_sidebars', [BlogRightSidebarController::class, 'admin'])->name('blog_right_sidebars.admin');

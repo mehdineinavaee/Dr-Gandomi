@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\EventCategory;
 use App\Models\Event;
+use App\Models\OurProfessor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -36,8 +37,10 @@ class EventController extends Controller
     public function create()
     {
         $event_categories = EventCategory::orderBy('title')->get();
+        $our_professors = OurProfessor::orderBy('name')->get();
         return view('events.create')
-            ->with('event_categories', $event_categories);
+            ->with('event_categories', $event_categories)
+            ->with('our_professors', $our_professors);
     }
 
     /**
@@ -54,6 +57,9 @@ class EventController extends Controller
             $event->cover = basename($path);
         }
         $event->event_category()->associate($request->event_category);
+        $event->supervisor()->associate($request->supervisor);
+        $event->advisor()->associate($request->advisor);
+        $event->referee()->associate($request->referee);
         $event->save();
 
         return redirect()->route('events.admin')
@@ -81,9 +87,11 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         $event_categories = EventCategory::orderBy('title')->get();
+        $our_professors = OurProfessor::orderBy('name')->get();
         return view('events.edit')
             ->with('event', $event)
-            ->with('event_categories', $event_categories);
+            ->with('event_categories', $event_categories)
+            ->with('our_professors', $our_professors);
     }
 
     /**
@@ -109,6 +117,9 @@ class EventController extends Controller
         }
         $event->fill($request->only(['full_name', 'date', 'day', 'hour', 'location', 'title', 'description', 'start', 'end'])); // 'cover' nadashte bashe
         $event->event_category()->associate($request->event_category);
+        $event->supervisor()->associate($request->supervisor);
+        $event->advisor()->associate($request->advisor);
+        $event->referee()->associate($request->referee);
         $event->save();
 
         return redirect()->route('events.admin')

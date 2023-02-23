@@ -3,75 +3,32 @@
         <div class="row align-items-center">
             <div class="col-lg-7">
                 <div class="events-content mr-15">
-                    <span>Events</span>
-                    <h2>Upcoming Events</h2>
+                    <span>رویدادها</span>
+                    <h2>رویدادهای آینده</h2>
 
                     <ul class="events-list">
-                        <li>
-                            <div class="events-date">
-                                <span class="mb-2">01 May</span>
-                                <span>2021</span>
-                            </div>
+                        @foreach ($events as $event)
+                            <li>
+                                <div class="events-date">
+                                    <span>{{ $event->date }}</span>
+                                </div>
 
-                            <span>Conference</span>
-                            <h3>
-                                <a href="event-details.html">
-                                    Universities admission conference 2021
+                                <span>{{ $event->event_category->title }}</span>
+                                <h3>
+                                    <a href="{{ route('events.show', ['event' => $event->id]) }}">
+                                        {{ $event->title }}
+                                    </a>
+                                </h3>
+                                <p class="justify">
+                                    {!! Str::limit($event->description, 100, ' ...') !!}
+                                </p>
+
+                                <a href="{{ route('events.show', ['event' => $event->id]) }}" class="read-more">
+                                    اطلاعات بیشتر
+                                    <i class="ri-arrow-left-line"></i>
                                 </a>
-                            </h3>
-                            <p class="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                tempor incididunt
-                                ut labore et dolore magna aliqua.</p>
-
-                            <a href="event-details.html" class="read-more">
-                                Find out more
-                                <i class="ri-arrow-right-line"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <div class="events-date">
-                                <span class="mb-2">01 May</span>
-                                <span>2021</span>
-                            </div>
-
-                            <span>Conference</span>
-                            <h3>
-                                <a href="event-details.html">
-                                    History and culture open day conference 2021
-                                </a>
-                            </h3>
-                            <p class="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                tempor incididunt
-                                ut labore et dolore magna aliqua.</p>
-
-                            <a href="event-details.html" class="read-more">
-                                Find out more
-                                <i class="ri-arrow-right-line"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <div class="events-date">
-                                <span class="mb-2">01 May</span>
-                                <span>2021</span>
-                            </div>
-
-                            <span>Conference</span>
-                            <h3>
-                                <a href="event-details.html">
-                                    Undergraduate & Postgraduate Open Days 2021
-                                </a>
-                            </h3>
-                            <p class="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                tempor incididunt
-                                ut labore et dolore magna aliqua.</p>
-
-                            <a href="event-details.html" class="read-more">
-                                Find out more
-                                <i class="ri-arrow-right-line"></i>
-                            </a>
-                        </li>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -82,7 +39,7 @@
                         <img src="assets/images/event-img.jpg" alt="Image">
                     </div>
 
-                    <span>Next Event</span>
+                    <span>رویداد بعدی</span>
 
                     <div id="timer">
                         <div id="days"></div>
@@ -91,10 +48,10 @@
                         <div id="seconds"></div>
                     </div>
 
-                    <a href="application.html" class="default-btn">
-                        Book now
-                        <i class="ri-arrow-right-line"></i>
-                    </a>
+                    <button class="default-btn" disabled>
+                        هم اکنون رزرو کنید
+                        <i class="ri-arrow-left-line"></i>
+                    </button>
                 </div>
             </div>
         </div>
