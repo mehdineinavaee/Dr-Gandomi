@@ -16,15 +16,13 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('full_name');
-            $table->string('date')->nullable();
-            $table->string('day')->nullable();
-            $table->string('hour')->nullable();
+            $table->string('date');
+            $table->string('day');
+            $table->string('hour');
             $table->string('location');
             $table->string('cover')->nullable();
             $table->string('title');
-            $table->text('description', '5000')->nullable();
-            $table->string('start')->nullable();
-            $table->string('end')->nullable();
+            $table->text('description', '5000');
             $table->timestamps();
         });
     }

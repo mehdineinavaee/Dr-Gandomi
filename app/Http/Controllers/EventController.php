@@ -129,7 +129,7 @@ class EventController extends Controller
             $path = $request->cover->store('public/events');
             $event->cover = basename($path);
         }
-        $event->fill($request->only(['full_name', 'date', 'day', 'hour', 'location', 'title', 'description', 'start', 'end'])); // 'cover' nadashte bashe
+        $event->fill($request->only(['full_name', 'date', 'day', 'hour', 'location', 'title', 'description'])); // 'cover' nadashte bashe
         $event->event_category()->associate($request->event_category);
         $event->supervisor()->associate($request->supervisor);
         $event->advisor()->associate($request->advisor);

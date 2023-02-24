@@ -10,7 +10,7 @@ use App\Models\OurProfessor;
 class Event extends Model
 {
     use HasFactory;
-    protected $fillable = ['full_name', 'date', 'day', 'hour', 'location', 'cover', 'title', 'description', 'start', 'end'];
+    protected $fillable = ['full_name', 'date', 'day', 'hour', 'location', 'cover', 'title', 'description'];
 
     public function event_category()
     {

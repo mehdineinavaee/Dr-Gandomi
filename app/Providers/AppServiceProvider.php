@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\Models\Setting;
-use App\Models\Event;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;

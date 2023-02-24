@@ -118,20 +118,6 @@
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
-                                <label>تاریخ شروع</label>
-                                <input type="text" name="start" id="start" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="form-group">
-                                <label>تاریخ پایان</label>
-                                <input type="text" name="end" id="end" class="form-control">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="form-group">
                                 <label>دسته بندی</label>
                                 <select id="event_category" name="event_category" class="form-control">
                                     <option value="" selected>دسته بندی را انتخاب کنید

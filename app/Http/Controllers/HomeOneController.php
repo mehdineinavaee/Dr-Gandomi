@@ -6,6 +6,7 @@ use App\Models\HomeOne;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 
 class HomeOneController extends Controller
 {
@@ -16,9 +17,25 @@ class HomeOneController extends Controller
      */
     public function index()
     {
+        // You need to install verta
+        $nowDate = verta(Carbon::now()->format("Y-m-d"))->formatDate();
+        // $nowYear = verta(Carbon::now()->format("Y-m-d"))->year;
+        // $nowMonth = verta(Carbon::now()->format("Y-m-d"))->month;
+        // $nowDay = verta(Carbon::now()->format("Y-m-d"))->day;
+        $nowTime = Carbon::now('Asia/Tehran')->format("H:i:s");
+        // echo ($nowDate);
+        // echo ("<br>\n");
+        // echo ($nowYear);
+        // echo ("<br>\n");
+        // echo ($nowMonth);
+        // echo ("<br>\n");
+        // echo ($nowDay);
+        // echo ("<br>\n");
+        // echo ($nowTime);
+
         $home_ones = HomeOne::find(1);
         $events = Event::orderBy('id', 'desc')->take(3)->get();
-
+        // echo ($events);
         // Pass time to JS file in views/areas/home_ones/events_area.blade.php
 
         $time = Event::find(1);

@@ -27,8 +27,6 @@
                                             <th style="text-align:center;">روز</th>
                                             <th style="text-align:center;">ساعت</th>
                                             <th style="text-align:center;">مکان</th>
-                                            <th style="text-align:center;">شروع</th>
-                                            <th style="text-align:center;">پایان</th>
                                             <th style="text-align:center;">عملیات</th>
                                         </tr>
                                     </thead>
@@ -49,12 +47,6 @@
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
                                                     {{ $event->location }}
-                                                </td>
-                                                <td style="text-align:center;" class="align-middle">
-                                                    {{ $event->start }}
-                                                </td>
-                                                <td style="text-align:center;" class="align-middle">
-                                                    {{ $event->end }}
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
 

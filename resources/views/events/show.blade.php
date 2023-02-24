@@ -50,14 +50,6 @@
 
                             <ul>
                                 <li>
-                                    تاریخ شروع
-                                    <span>{{ $event->start }}</span>
-                                </li>
-                                <li>
-                                    تاریخ پایان
-                                    <span>{{ $event->end }}</span>
-                                </li>
-                                <li>
                                     دسته بندی
                                     <span>{{ $event->event_category->title }}</span>
                                 </li>

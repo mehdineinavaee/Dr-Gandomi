@@ -39,7 +39,7 @@
                         <img src="assets/images/event-img.jpg" alt="Image">
                     </div>
 
-                    <span>رویداد بعدی</span>
+                    <span>زمان باقی مانده تا جدیدترین رویداد</span>
 
                     <div id="timer">
                         <div id="days"></div>
@@ -91,7 +91,7 @@
             // var myHour = "17:00:00";
 
             var endTime = new Date(
-                myMonth + " " + myDay + ", " + myYear + " " + myHour + " PDT"
+                myMonth + " " + myDay + ", " + myYear + " " + myHour
             );
             var endTime = Date.parse(endTime) / 1000;
             var now = new Date();
