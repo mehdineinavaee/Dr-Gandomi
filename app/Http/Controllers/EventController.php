@@ -25,7 +25,21 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::orderBy('id', 'desc')->paginate(6);
-        return view('events.index')
+
+        // Pass time to JS file in views/areas/home_ones/events_area.blade.php
+
+        $time = Event::find(1);
+
+        if ($time === null) {
+            $date = "1401/11/01";
+            $hour = "13:30";
+        } else {
+            $date = $time->date;
+            $hour = $time->hour;
+        }
+
+        // End pass
+        return view('events.index', compact(array('date', 'hour')))
             ->with('events', $events);
     }
 

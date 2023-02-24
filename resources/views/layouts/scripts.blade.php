@@ -26,6 +26,8 @@
 <script src="{{ asset('assets/js/contact-form-script.js') }}"></script>
 <!-- Ajaxchimp Min JS -->
 <script src="{{ asset('assets/js/ajaxchimp.min.js') }}"></script>
+<!-- Jalali Moment JS -->
+<script src="https://unpkg.com/jalali-moment/dist/jalali-moment.browser.js"></script>
 <!-- Custom JS -->
 <script src="{{ asset('assets/js/custom.js') }}"></script>
 <!-- TextArea Editor JS -->

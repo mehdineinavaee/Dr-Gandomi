@@ -18,7 +18,22 @@ class HomeOneController extends Controller
     {
         $home_ones = HomeOne::find(1);
         $events = Event::orderBy('id', 'desc')->take(3)->get();
-        return view('home_ones.index')
+
+        // Pass time to JS file in views/areas/home_ones/events_area.blade.php
+
+        $time = Event::find(1);
+
+        if ($time === null) {
+            $date = "1401/11/01";
+            $hour = "13:30";
+        } else {
+            $date = $time->date;
+            $hour = $time->hour;
+        }
+
+        // End pass
+
+        return view('home_ones.index', compact(array('date', 'hour')))
             ->with('home_ones', $home_ones)
             ->with('events', $events);
     }

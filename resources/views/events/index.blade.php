@@ -67,3 +67,68 @@
     </section>
     <!-- End Events Area -->
 @endsection
+
+@push('js')
+    <script>
+        function makeTimer() {
+            // var en = "1990/01/21";
+            // console.log(moment(en, "YYYY/MM/DD").locale("fa").format("YYYY/MM/DD")); // 1368/11/01
+            // console.log(moment(en, "YYYY/MM/DD").locale("fa").format("YYYY")); // 1368
+            // console.log(moment(en, "YYYY/MM/DD").locale("fa").format("MM")); // 11
+            // console.log(moment(en, "YYYY/MM/DD").locale("fa").format("MMM")); // بهمن
+            // console.log(moment(en, "YYYY/MM/DD").locale("fa").format("DD")); // 01
+
+            // var fa = "1368/11/01";
+            // console.log(
+            //   moment.from(fa, "fa", "YYYY/MM/DD").locale("en").format("YYYY/MM/DD")
+            // ); // 1990/01/21
+            // console.log(
+            //   moment.from(fa, "fa", "YYYY/MM/DD").locale("en").format("YYYY")
+            // ); // 1990
+            // console.log(moment.from(fa, "fa", "YYYY/MM/DD").locale("en").format("MM")); // 01
+            // console.log(moment.from(fa, "fa", "YYYY/MM/DD").locale("en").format("MMM")); // January
+            // console.log(moment.from(fa, "fa", "YYYY/MM/DD").locale("en").format("DD")); // 21
+
+            var myDate = "{{ $date }}";
+            var myHour = "{{ $hour }}";
+            var myMonth = moment.from(myDate, "fa", "YYYY/MM/DD").locale("en").format("MMM");
+            var myDay = moment.from(myDate, "fa", "YYYY/MM/DD").locale("en").format("DD");
+            var myYear = moment.from(myDate, "fa", "YYYY/MM/DD").locale("en").format("YYYY");
+
+            // var myMonth = "november";
+            // var myDay = "30";
+            // var myYear = "2023";
+            // var myHour = "17:00:00";
+
+            var endTime = new Date(
+                myMonth + " " + myDay + ", " + myYear + " " + myHour + " PDT"
+            );
+            var endTime = Date.parse(endTime) / 1000;
+            var now = new Date();
+            var now = Date.parse(now) / 1000;
+            var timeLeft = endTime - now;
+            var days = Math.floor(timeLeft / 86400);
+            var hours = Math.floor((timeLeft - days * 86400) / 3600);
+            var minutes = Math.floor((timeLeft - days * 86400 - hours * 3600) / 60);
+            var seconds = Math.floor(
+                timeLeft - days * 86400 - hours * 3600 - minutes * 60
+            );
+            if (hours < "10") {
+                hours = "0" + hours;
+            }
+            if (minutes < "10") {
+                minutes = "0" + minutes;
+            }
+            if (seconds < "10") {
+                seconds = "0" + seconds;
+            }
+            $("#days").html(days + "<span>روز</span>");
+            $("#hours").html(hours + "<span>ساعت</span>");
+            $("#minutes").html(minutes + "<span>دقیقه</span>");
+            $("#seconds").html(seconds + "<span>ثانیه</span>");
+        }
+        setInterval(function() {
+            makeTimer();
+        }, 300);
+    </script>
+@endpush
