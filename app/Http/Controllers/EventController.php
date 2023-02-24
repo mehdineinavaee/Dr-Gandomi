@@ -7,6 +7,7 @@ use App\Models\Event;
 use App\Models\OurProfessor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 
 class EventController extends Controller
 {
@@ -24,21 +25,40 @@ class EventController extends Controller
      */
     public function index()
     {
+        // You need to install verta
+        $nowDate = verta(Carbon::now()->format("Y-m-d"))->formatDate();
+        // $nowYear = verta(Carbon::now()->format("Y-m-d"))->year;
+        // $nowMonth = verta(Carbon::now()->format("Y-m-d"))->month;
+        // $nowDay = verta(Carbon::now()->format("Y-m-d"))->day;
+        $nowTime = Carbon::now('Asia/Tehran')->format("H:i:s");
+        // echo ($nowDate);
+        // echo ("<br>\n");
+        // echo ($nowYear);
+        // echo ("<br>\n");
+        // echo ($nowMonth);
+        // echo ("<br>\n");
+        // echo ($nowDay);
+        // echo ("<br>\n");
+        // echo ($nowTime);
+
         $events = Event::orderBy('id', 'desc')->paginate(6);
 
         // Pass time to JS file in views/areas/home_ones/events_area.blade.php
-
-        $time = Event::find(1);
+        $time = Event::orderBy('date', 'asc')
+            ->orderBy('hour', 'asc')
+            ->whereDate('date', '>=', $nowDate)
+            ->whereTime('hour', '>=', $nowTime)
+            ->first();
 
         if ($time === null) {
-            $date = "1401/11/01";
-            $hour = "13:30";
+            $date = $nowDate;
+            $hour = $nowTime;
         } else {
             $date = $time->date;
             $hour = $time->hour;
         }
-
         // End pass
+
         return view('events.index', compact(array('date', 'hour')))
             ->with('events', $events);
     }

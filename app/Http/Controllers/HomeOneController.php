@@ -34,20 +34,24 @@ class HomeOneController extends Controller
         // echo ($nowTime);
 
         $home_ones = HomeOne::find(1);
-        $events = Event::orderBy('id', 'desc')->take(3)->get();
-        // echo ($events);
-        // Pass time to JS file in views/areas/home_ones/events_area.blade.php
+        $events = Event::orderBy('id', 'desc')
+            ->take(3)
+            ->get();
 
-        $time = Event::find(1);
+        // Pass time to JS file in views/areas/home_ones/events_area.blade.php
+        $time = Event::orderBy('date', 'asc')
+            ->orderBy('hour', 'asc')
+            ->whereDate('date', '>=', $nowDate)
+            ->whereTime('hour', '>=', $nowTime)
+            ->first();
 
         if ($time === null) {
-            $date = "1401/11/01";
-            $hour = "13:30";
+            $date = $nowDate;
+            $hour = $nowTime;
         } else {
             $date = $time->date;
             $hour = $time->hour;
         }
-
         // End pass
 
         return view('home_ones.index', compact(array('date', 'hour')))

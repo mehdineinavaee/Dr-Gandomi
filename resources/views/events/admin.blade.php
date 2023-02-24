@@ -23,6 +23,7 @@
                                     <thead>
                                         <tr>
                                             <th style="text-align:center;">ردیف</th>
+                                            <th style="text-align:center;">سخنران</th>
                                             <th style="text-align:center;">تاریخ</th>
                                             <th style="text-align:center;">روز</th>
                                             <th style="text-align:center;">ساعت</th>
@@ -35,6 +36,9 @@
                                             <tr>
                                                 <td style="text-align:center;" class="align-middle">
                                                     {{ $loop->iteration }}
+                                                </td>
+                                                <td style="text-align:center;" class="align-middle">
+                                                    {{ $event->full_name }}
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
                                                     {{ $event->date }}

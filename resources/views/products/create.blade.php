@@ -14,8 +14,16 @@
                     <div class="row">
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
-                                <label>تصویر (330px&times;390px)</label>
+                                <label>تصویر محصول (330px&times;390px)</label>
                                 <input type="file" class="form-control" accept="image/*" id="cover" name="cover">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>تصویر جزئیات محصول (700px&times;671px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="cover_detail"
+                                    name="cover_detail">
                             </div>
                         </div>
 

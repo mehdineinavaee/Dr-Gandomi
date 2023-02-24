@@ -11,7 +11,7 @@ use App\Models\Translator;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['cover', 'title', 'price', 'discount', 'total', 'new', 'edition', 'description'];
+    protected $fillable = ['cover', 'cover_detail', 'title', 'price', 'discount', 'total', 'new', 'edition', 'description'];
 
     public function publisher()
     {

@@ -67,6 +67,11 @@ class ProductController extends Controller
             $product->cover = basename($path);
         }
 
+        if ($request->hasFile('cover_detail')) {
+            $path = $request->cover_detail->store('public/products');
+            $product->cover_detail = basename($path);
+        }
+
         $product->publisher()->associate($request->publisher);
 
         $product->save();
@@ -91,7 +96,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('products.show')
+            ->with('product', $product);
     }
 
     /**
@@ -133,7 +139,19 @@ class ProductController extends Controller
             $path = $request->cover->store('public/products');
             $product->cover = basename($path);
         }
-        $product->fill($request->only(['title', 'price', 'discount', 'total', 'new', 'edition', 'description'])); // 'cover' nadashte bashe
+        if ($request->hasFile('cover_detail')) {
+            $fileName = $product->cover_detail;
+            if (Storage::exists('public/products/' . $fileName)) {
+                Storage::delete('public/products/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['products/test.png', 'products/test2.png']);
+                */
+            }
+            $path = $request->cover_detail->store('public/products');
+            $product->cover_detail = basename($path);
+        }
+        $product->fill($request->only(['title', 'price', 'discount', 'total', 'new', 'edition', 'description'])); // 'cover', 'cover_detail' nadashte bashe
         $product->price = str_replace(",", "", $product->price);
         $product->total = $product->price - (($product->price * $product->discount) / 100);
         if ($request->has('new')) {
@@ -170,7 +188,16 @@ class ProductController extends Controller
             Storage::delete('public/products/' . $fileName);
             /*
                 Delete Multiple File like this way
-                Storage::delete(['teachers/test.png', 'teachers/test2.png']);
+                Storage::delete(['products/test.png', 'products/test2.png']);
+            */
+        }
+
+        $fileNameDetail = $product->cover_detail;
+        if (Storage::exists('public/products/' . $fileNameDetail)) {
+            Storage::delete('public/products/' . $fileNameDetail);
+            /*
+                Delete Multiple File like this way
+                Storage::delete(['products/test.png', 'products/test2.png']);
             */
         }
         $product->delete();
