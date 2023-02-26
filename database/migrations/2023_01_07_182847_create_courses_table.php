@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('cover')->nullable();
             $table->text('description', '5000')->nullable();
             $table->string('duration')->nullable();
-            $table->string('start_dates')->nullable();
+            $table->date('start_dates')->nullable();
             $table->integer('fee')->nullable();
             $table->string('language')->nullable();
             $table->integer('seats_available')->nullable();

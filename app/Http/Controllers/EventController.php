@@ -13,7 +13,8 @@ class EventController extends Controller
 {
     public function admin()
     {
-        $events = Event::all();
+        $events = Event::orderBy('date', 'asc')
+            ->orderBy('hour', 'asc')->get();
         return view('events.admin')
             ->with('events', $events);
     }
@@ -47,15 +48,24 @@ class EventController extends Controller
         $time = Event::orderBy('date', 'asc')
             ->orderBy('hour', 'asc')
             ->whereDate('date', '>=', $nowDate)
-            ->whereTime('hour', '>=', $nowTime)
-            ->first();
+            ->get();
 
-        if ($time === null) {
+        // dd($time);
+
+        if ($time->isEmpty()) {
             $date = $nowDate;
             $hour = $nowTime;
         } else {
-            $date = $time->date;
-            $hour = $time->hour;
+            foreach ($time as $key => $item) {
+                if ($item->date === $nowDate && $item->hour < $nowTime) {
+                    $time->pull($key);
+                }
+            }
+
+            // dd($time->first());
+
+            $date = $time->first()->date;
+            $hour = $time->first()->hour;
         }
         // End pass
 

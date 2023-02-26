@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('title');
             $table->text('description', '5000');
             $table->text('tags', '1000');
-            $table->text('date');
+            $table->date('date');
             $table->timestamps();
         });
     }
