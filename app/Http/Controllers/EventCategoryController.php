@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\EventCategory;
-use Illuminate\Http\Request;
+use App\Http\Requests\EventCategoryRequest;
 
 class EventCategoryController extends Controller
 {
@@ -35,7 +35,7 @@ class EventCategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EventCategoryRequest $request)
     {
         $category = new EventCategory($request->all());
         $category->save();
@@ -73,7 +73,7 @@ class EventCategoryController extends Controller
      * @param  \App\Models\EventCategory  $eventCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EventCategory $eventCategory)
+    public function update(EventCategoryRequest $request, EventCategory $eventCategory)
     {
         $eventCategory->fill($request->only(['title']));
         $eventCategory->save();

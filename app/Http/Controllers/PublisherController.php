@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Publisher;
-use Illuminate\Http\Request;
+use App\Http\Requests\PublisherRequest;
 
 class PublisherController extends Controller
 {
@@ -37,7 +37,7 @@ class PublisherController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PublisherRequest $request)
     {
         $publisher = new Publisher($request->all());
         $publisher->save();
@@ -75,7 +75,7 @@ class PublisherController extends Controller
      * @param  \App\Models\Publisher  $publisher
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Publisher $publisher)
+    public function update(PublisherRequest $request, Publisher $publisher)
     {
         $publisher->fill($request->all());
         $publisher->save();

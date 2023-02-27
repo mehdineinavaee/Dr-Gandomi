@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Translator;
-use Illuminate\Http\Request;
+use App\Http\Requests\TranslatorRequest;
 
 class TranslatorController extends Controller
 {
@@ -37,7 +37,7 @@ class TranslatorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TranslatorRequest $request)
     {
         $translator = new Translator($request->all());
         $translator->save();
@@ -75,7 +75,7 @@ class TranslatorController extends Controller
      * @param  \App\Models\Translator  $translator
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Translator $translator)
+    public function update(TranslatorRequest $request, Translator $translator)
     {
         $translator->fill($request->all());
         $translator->save();

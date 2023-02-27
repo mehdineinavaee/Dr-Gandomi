@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Course;
 use App\Models\Mode;
-use Illuminate\Http\Request;
+use App\Http\Requests\CourseRequest;
 use Illuminate\Support\Facades\Storage;
 
 class CourseController extends Controller
@@ -49,7 +49,7 @@ class CourseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CourseRequest $request)
     {
         $myArray = explode(',', $request->categories);
         $course = new Course($request->all());
@@ -101,7 +101,7 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(CourseRequest $request, Course $course)
     {
         $myArray = explode(',', $request->categories);
         if ($request->hasFile('cover')) {

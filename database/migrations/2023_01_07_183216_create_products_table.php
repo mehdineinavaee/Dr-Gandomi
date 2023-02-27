@@ -17,12 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('cover')->nullable();
             $table->string('cover_detail')->nullable();
-            $table->string('title');
-            $table->integer('price');
-            $table->string('discount');
-            $table->string('total');
+            $table->string('title', '255');
+            $table->integer('price')->length(50);
+            $table->string('discount', '3');
+            $table->string('total', '50');
             $table->boolean('new')->default(0);
-            $table->string('edition');
+            $table->string('edition', '10');
             $table->text('description', '5000')->nullable();
             $table->timestamps();
         });

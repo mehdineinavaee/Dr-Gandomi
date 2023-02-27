@@ -24,7 +24,8 @@ class TranslatorRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'first_name' => 'required|regex:/^[\pL\s\-]+$/u|max:255',
+            'last_name' => 'required|regex:/^[\pL\s\-]+$/u|max:255',
         ];
     }
 }

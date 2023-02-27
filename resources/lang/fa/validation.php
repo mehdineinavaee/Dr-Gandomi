@@ -115,5 +115,10 @@ return [
     'attributes' => [
         'first_name' => 'نام',
         'last_name' => 'نام خانوادگی',
+        'cover' => 'تصویر',
+        'title' => 'عنوان',
+        'description' => 'توضیحات',
+        'tags' => 'تگ ها',
+        'date' => 'تاریخ',
     ],
 ];

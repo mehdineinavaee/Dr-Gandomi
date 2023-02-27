@@ -24,7 +24,13 @@ class EventRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'full_name' => 'required|regex:/^[\pL\s\-]+$/u|max:255',
+            'date' => 'required|date|max:10',
+            'day' => 'required|max:20',
+            'hour' => 'required|max:11',
+            'location' => 'required|max:300',
+            'title' => 'required|max:255',
+            'description' => 'required|max:5000',
         ];
     }
 }

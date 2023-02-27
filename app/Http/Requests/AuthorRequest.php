@@ -24,8 +24,8 @@ class AuthorRequest extends FormRequest
     public function rules()
     {
         return [
-            'first_name' => 'required|regex:/^[\pL\s\-]+$/u',
-            'last_name' => 'required|regex:/^[\pL\s\-]+$/u',
+            'first_name' => 'required|regex:/^[\pL\s\-]+$/u|max:255',
+            'last_name' => 'required|regex:/^[\pL\s\-]+$/u|max:255',
         ];
     }
 }

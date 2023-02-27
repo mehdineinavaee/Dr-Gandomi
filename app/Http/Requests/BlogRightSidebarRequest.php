@@ -24,7 +24,10 @@ class BlogRightSidebarRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|max:255',
+            'description' => 'required|max:5000',
+            'tags' => 'required|max:1000',
+            'date' => 'required|date|max:10',
         ];
     }
 }

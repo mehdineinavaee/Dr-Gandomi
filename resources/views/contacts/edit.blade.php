@@ -16,14 +16,6 @@
                     <div class="row">
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
-                                <label>لینک گوگل مپ</label>
-                                <input type="text" name="google_map_area" id="google_map_area" class="form-control"
-                                    value="{{ $contact->google_map_area }}">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="form-group">
                                 <label>آدرس</label>
                                 <input type="text" name="address" id="address" class="form-control"
                                     value="{{ $contact->address }}">
@@ -43,38 +35,6 @@
                                 <label>تلفن</label>
                                 <input type="text" name="tell" id="tell" class="form-control"
                                     value="{{ $contact->tell }}">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="form-group">
-                                <label>فیس بوک</label>
-                                <input type="text" name="facebook" id="facebook" class="form-control"
-                                    value="{{ $contact->facebook }}">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="form-group">
-                                <label>اینستاگرام</label>
-                                <input type="text" name="instagram" id="instagram" class="form-control"
-                                    value="{{ $contact->instagram }}">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="form-group">
-                                <label>لینکدین</label>
-                                <input type="text" name="linkedin" id="linkedin" class="form-control"
-                                    value="{{ $contact->linkedin }}">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="form-group">
-                                <label>توییتر</label>
-                                <input type="text" name="twitter" id="twitter" class="form-control"
-                                    value="{{ $contact->twitter }}">
                             </div>
                         </div>
                     </div>

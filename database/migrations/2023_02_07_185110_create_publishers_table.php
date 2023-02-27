@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('publishers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('address')->nullable();
-            $table->string('postal_code')->nullable();
-            $table->string('tell')->nullable();
+            $table->string('name', '255');
+            $table->string('address', '255')->nullable();
+            $table->string('postal_code', '10')->nullable();
+            $table->string('tell', '11')->nullable();
             $table->timestamps();
         });
     }

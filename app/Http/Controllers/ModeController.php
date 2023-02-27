@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mode;
-use Illuminate\Http\Request;
+use App\Http\Requests\ModeRequest;
 
 class ModeController extends Controller
 {
@@ -35,7 +35,7 @@ class ModeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ModeRequest $request)
     {
         $mode = new Mode($request->all());
         $mode->save();
@@ -73,7 +73,7 @@ class ModeController extends Controller
      * @param  \App\Models\Mode  $mode
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Mode $mode)
+    public function update(ModeRequest $request, Mode $mode)
     {
         $mode->fill($request->only(['title']));
         $mode->save();

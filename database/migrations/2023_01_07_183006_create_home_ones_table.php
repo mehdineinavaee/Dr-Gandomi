@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('backgroundBanner')->nullable();
             $table->string('banner')->nullable();
-            $table->string('welcome')->nullable();
-            $table->string('slogen')->nullable();
+            $table->string('welcome', '100')->nullable();
+            $table->string('slogen', '100')->nullable();
             $table->timestamps();
         });
     }

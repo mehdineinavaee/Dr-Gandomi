@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Setting;
-use Illuminate\Http\Request;
+use App\Http\Requests\SettingRequest;
 use Illuminate\Support\Facades\Storage;
 
 class SettingController extends Controller
@@ -34,7 +34,7 @@ class SettingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SettingRequest $request)
     {
         //
     }
@@ -69,7 +69,7 @@ class SettingController extends Controller
      * @param  \App\Models\Setting  $setting
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Setting $setting)
+    public function update(SettingRequest $request, Setting $setting)
     {
         if ($request->hasFile('logo')) {
             $fileName = $setting->logo;
@@ -331,7 +331,7 @@ class SettingController extends Controller
             $setting->translators = basename($path);
         }
 
-        $setting->fill($request->only(['tel', 'footer_description', 'address', 'email', 'phone'])); // 'logo', 'favicon', ... nadashte bashe
+        $setting->fill($request->only(['tel', 'footer_description', 'address', 'email', 'phone', 'facebook', 'instagram', 'linkedin', 'twitter', 'google_map_area'])); // 'logo', 'favicon', ... nadashte bashe
         $setting->save();
 
         return redirect()->route('home_one.index')

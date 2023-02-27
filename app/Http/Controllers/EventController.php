@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\EventCategory;
 use App\Models\Event;
 use App\Models\OurProfessor;
-use Illuminate\Http\Request;
+use App\Http\Requests\EventRequest;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
 
@@ -93,7 +93,7 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EventRequest $request)
     {
         $event = new Event($request->all());
         if ($request->hasFile('cover')) {
@@ -145,7 +145,7 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Event $event)
+    public function update(EventRequest $request, Event $event)
     {
         if ($request->hasFile('cover')) {
             $fileName = $event->cover;

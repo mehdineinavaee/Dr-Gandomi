@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Faq;
-use Illuminate\Http\Request;
+use App\Http\Requests\FaqRequest;
 
 class FaqController extends Controller
 {
@@ -42,7 +42,7 @@ class FaqController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FaqRequest $request)
     {
         $faq = new Faq($request->all());
         $faq->save();
@@ -82,7 +82,7 @@ class FaqController extends Controller
      * @param  \App\Models\Faq  $faq
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Faq $faq)
+    public function update(FaqRequest $request, Faq $faq)
     {
         $faq->fill($request->only(['question', 'response'])); // 'cover' nadashte bashe
         $faq->save();

@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('blog_right_sidebars', function (Blueprint $table) {
             $table->id();
             $table->string('cover');
-            $table->text('title');
+            $table->text('title', '255');
             $table->text('description', '5000');
             $table->text('tags', '1000');
-            $table->date('date');
+            $table->date('date', '10');
             $table->timestamps();
         });
     }

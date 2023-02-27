@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Grade;
-use Illuminate\Http\Request;
+use App\Http\Requests\GradeRequest;
 
 class GradeController extends Controller
 {
@@ -33,7 +33,7 @@ class GradeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GradeRequest $request)
     {
         //
     }
@@ -67,7 +67,7 @@ class GradeController extends Controller
      * @param  \App\Models\Grade  $grade
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Grade $grade)
+    public function update(GradeRequest $request, Grade $grade)
     {
         //
     }

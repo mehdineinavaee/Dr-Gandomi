@@ -11,6 +11,31 @@
                       <p class="justify">
                           {!! $settings->footer_description !!}
                       </p>
+                      <ul class="social-icon">
+                          <li>
+                              <span>ما را دنبال کنید</span>
+                          </li>
+                          <li>
+                              <a href="{{ $settings->facebook }}" target="_blank">
+                                  <i class="ri-facebook-fill"></i>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="{{ $settings->instagram }}" target="_blank">
+                                  <i class="ri-instagram-line"></i>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="{{ $settings->linkedin }}" target="_blank">
+                                  <i class="ri-linkedin-fill"></i>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="{{ $settings->twitter }}" target="_blank">
+                                  <i class="ri-twitter-fill"></i>
+                              </a>
+                          </li>
+                      </ul>
                   </div>
               </div>
 

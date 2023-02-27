@@ -14,9 +14,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $contact = Contact::where('id', '1')->get();
-        return view('contacts.index')
-            ->with('contact', $contact);
+        return view('contacts.index');
     }
 
     /**

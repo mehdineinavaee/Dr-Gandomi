@@ -71,6 +71,48 @@
                             </div>
                         </div>
 
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>فیس بوک</label>
+                                <input type="text" name="facebook" id="facebook" class="form-control"
+                                    value="{{ $setting->facebook }}">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>اینستاگرام</label>
+                                <input type="text" name="instagram" id="instagram" class="form-control"
+                                    value="{{ $setting->instagram }}">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>لینکدین</label>
+                                <input type="text" name="linkedin" id="linkedin" class="form-control"
+                                    value="{{ $setting->linkedin }}">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>توییتر</label>
+                                <input type="text" name="twitter" id="twitter" class="form-control"
+                                    value="{{ $setting->twitter }}">
+                            </div>
+                        </div>
+
+                        <h3>تماس با ما</h3>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>لینک گوگل مپ</label>
+                                <input type="text" name="google_map_area" id="google_map_area" class="form-control"
+                                    value="{{ $setting->google_map_area }}">
+                            </div>
+                        </div>
+
                         <h3>پشت زمینه عناوین صفحات</h3>
 
                         <div class="col-lg-6 col-sm-6">
@@ -83,7 +125,8 @@
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>بلاگ (1920px&times;600px)</label>
-                                <input type="file" class="form-control" accept="image/*" id="blog" name="blog">
+                                <input type="file" class="form-control" accept="image/*" id="blog"
+                                    name="blog">
                             </div>
                         </div>
 
@@ -98,14 +141,16 @@
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>پرسش و پاسخ (1920px&times;600px)</label>
-                                <input type="file" class="form-control" accept="image/*" id="faqs" name="faqs">
+                                <input type="file" class="form-control" accept="image/*" id="faqs"
+                                    name="faqs">
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>گالری (1920px&times;600px)</label>
-                                <input type="file" class="form-control" accept="image/*" id="gallery" name="gallery">
+                                <input type="file" class="form-control" accept="image/*" id="gallery"
+                                    name="gallery">
                             </div>
                         </div>
 

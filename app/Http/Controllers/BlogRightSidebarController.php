@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BlogRightSidebar;
-use Illuminate\Http\Request;
+use App\Http\Requests\BlogRightSidebarRequest;
 use Illuminate\Support\Facades\Storage;
 
 class BlogRightSidebarController extends Controller
@@ -45,7 +45,7 @@ class BlogRightSidebarController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BlogRightSidebarRequest $request)
     {
         $blogRightSidebar = new BlogRightSidebar($request->all());
         if ($request->hasFile('cover')) {
@@ -91,7 +91,7 @@ class BlogRightSidebarController extends Controller
      * @param  \App\Models\BlogRightSidebar  $blogRightSidebar
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BlogRightSidebar $blogRightSidebar)
+    public function update(BlogRightSidebarRequest $request, BlogRightSidebar $blogRightSidebar)
     {
         if ($request->hasFile('cover')) {
             $fileName = $blogRightSidebar->cover;

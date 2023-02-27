@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use Illuminate\Http\Request;
+use App\Http\Requests\ProductRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Publisher;
 use App\Models\Author;
@@ -52,7 +52,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         $product = new Product($request->all());
         $product->price = str_replace(",", "", $request->price);
@@ -125,7 +125,7 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(ProductRequest $request, Product $product)
     {
         if ($request->hasFile('cover')) {
             $fileName = $product->cover;

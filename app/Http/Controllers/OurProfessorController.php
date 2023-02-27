@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\OurProfessor;
-use Illuminate\Http\Request;
+use App\Http\Requests\OurProfessorRequest;
 use Illuminate\Support\Facades\Storage;
 
 class OurProfessorController extends Controller
@@ -43,7 +43,7 @@ class OurProfessorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OurProfessorRequest $request)
     {
         $ourProfessor = new OurProfessor($request->all());
         if ($request->hasFile('cover')) {
@@ -86,7 +86,7 @@ class OurProfessorController extends Controller
      * @param  \App\Models\OurProfessor  $ourProfessor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, OurProfessor $ourProfessor)
+    public function update(OurProfessorRequest $request, OurProfessor $ourProfessor)
     {
         if ($request->hasFile('cover')) {
             $fileName = $ourProfessor->cover;

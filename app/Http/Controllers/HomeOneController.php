@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\BlogRightSidebar;
 use App\Models\HomeOne;
 use App\Models\Event;
-use Illuminate\Http\Request;
+use App\Http\Requests\HomeOneRequest;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
 
@@ -89,7 +89,7 @@ class HomeOneController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(HomeOneRequest $request)
     {
         //
     }
@@ -124,7 +124,7 @@ class HomeOneController extends Controller
      * @param  \App\Models\HomeOne  $homeOne
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, HomeOne $homeOne)
+    public function update(HomeOneRequest $request, HomeOne $homeOne)
     {
         if ($request->hasFile('backgroundBanner')) {
             $fileName = $homeOne->backgroundBanner;

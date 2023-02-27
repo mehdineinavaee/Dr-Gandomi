@@ -23,32 +23,59 @@
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>عنوان</label>
-                                <input type="text" name="title" id="title" class="form-control"
+                                <input type="text" name="title" id="title"
+                                    class="form-control @error('title') is-invalid @enderror"
                                     value="{{ $blogRightSidebar->title }}">
+                                @error('title')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-12 col-sm-12">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>توضیحات</label>
-                                <textarea name="description" id="description">{{ $blogRightSidebar->description }}</textarea>
+                                <textarea name="description" id="description" class="@error('description') is-invalid @enderror">{{ $blogRightSidebar->description }}</textarea>
+                                @error('description')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>تگ ها</label>
-                                <input type="text" name="tags" id="tags" class="form-control"
+                                <input type="text" name="tags" id="tags"
+                                    class="form-control @error('tags') is-invalid @enderror"
                                     value="{{ $blogRightSidebar->tags }}">
+                                @error('tags')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>تاریخ</label>
-                                <input type="text" name="date" id="date" class="form-control"
+                                <input type="text" name="date" id="date"
+                                    class="form-control @error('date') is-invalid @enderror"
                                     value="{{ $blogRightSidebar->date }}">
+                                @error('date')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
