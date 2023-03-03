@@ -27,7 +27,7 @@ class CourseRequest extends FormRequest
             'title' => 'required|max:255',
             'description' => 'max:5000',
             'duration' => 'max:50',
-            'start_dates' => 'date|max:10',
+            'start_dates' => 'date|max:10|min:10',
             'fee' => 'regex:/^[0-9]{1,3}(,[0-9]{3})*(\.[0-9]+)*$/|not_in:0|max:50',
             'language' => 'max:50',
             'seats_available' => 'max:10|numeric',

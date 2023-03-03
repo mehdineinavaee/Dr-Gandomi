@@ -113,12 +113,16 @@ return [
     ],
 
     'attributes' => [
-        'first_name' => 'نام',
-        'last_name' => 'نام خانوادگی',
         'cover' => 'تصویر',
-        'title' => 'عنوان',
         'description' => 'توضیحات',
-        'tags' => 'تگ ها',
         'date' => 'تاریخ',
+        'email' => 'ایمیل',
+        'first_name' => 'نام',
+        'full_name' => 'نام و نام خانوادگی',
+        'last_name' => 'نام خانوادگی',
+        'message' => 'پیام',
+        'phone_number' => 'همراه',
+        'title' => 'عنوان',
+        'tags' => 'تگ ها',
     ],
 ];

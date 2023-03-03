@@ -101,7 +101,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('contact.index') }}" class="nav-link">تماس با ما</a>
+                            <a href="{{ route('contact.create') }}" class="nav-link">تماس با ما</a>
                         </li>
 
                         <li class="nav-item">
@@ -205,7 +205,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('contact.edit', ['contact' => 1]) }}" class="nav-link">
+                                    <a href="{{ route('contact.index') }}" class="nav-link">
                                         پنل تماس با ما
                                     </a>
                                 </li>

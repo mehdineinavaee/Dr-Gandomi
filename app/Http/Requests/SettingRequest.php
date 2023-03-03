@@ -24,11 +24,11 @@ class SettingRequest extends FormRequest
     public function rules()
     {
         return [
-            'tel' => 'max:11',
+            'tel' => 'max:11|min:11',
             'footer_description' => 'max:500',
             'address' => 'max:500',
             'email' => 'max:50|email',
-            'phone' => 'max:11',
+            'phone' => 'max:11|min:11',
             'facebook' => 'max:50',
             'instagram' => 'max:50',
             'linkedin' => 'max:50',

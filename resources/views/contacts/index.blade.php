@@ -1,135 +1,103 @@
 @extends('layouts.app')
-@section('title', 'تماس با ما')
+@section('title', 'مدیریت پیام ها')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'تماس با ما', 'url' => url()->current(), 'bg' => $settings->contact]],
+        'data' => [['title' => 'مدیریت پیام ها', 'url' => url()->current(), 'bg' => $settings->authors]],
     ])
-    <!-- Start Contact Info Area -->
     <section class="contact-info-area ptb-100">
         <div class="container">
             <div class="row">
-                @foreach ($contact as $item)
-                    <div class="col-lg-7">
-                        <div class="map-area">
-                            {!! $item->google_map_area !!}
+                <div class="col-12">
+                    <div class="card border-dark mb-3">
+                        <div class="card-header">مدیریت پیام ها</div>
+                        <div class="card-body text-dark">
+                            <p class="card-text">
+                            <div class="table-responsive">
+                                <table id="example" class="table table-striped" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align:center; width:10%">ردیف</th>
+                                            <th style="text-align:center;">نام و نام خانوادگی</th>
+                                            <th style="text-align:center;">ایمیل</th>
+                                            <th style="text-align:center;">همراه</th>
+                                            <th style="text-align:center;">عملیات</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($contacts as $contact)
+                                            <tr>
+                                                <td style="text-align:center;" class="align-middle">
+                                                    {{ $loop->iteration }}
+                                                </td>
+                                                <td style="text-align:center;" class="align-middle">
+                                                    {{ $contact->full_name }}</td>
+                                                <td style="text-align:center;" class="align-middle">
+                                                    {{ $contact->email }}
+                                                </td>
+                                                <td style="text-align:center;" class="align-middle">
+                                                    {{ $contact->phone_number }}
+                                                </td>
+                                                <td style="text-align:center;" class="align-middle">
+                                                    <button value='/contact/{{ $contact->id }}'
+                                                        class="btn btn-danger btn-sm delete">
+                                                        <i class="ri-chat-delete-fill" data-toggle="tooltip"
+                                                            style="font-size: 1rem" data-placement="top" title="حذف">
+                                                        </i>
+                                                    </button>
+
+                                                    <a href="{{ route('contact.show', ['contact' => $contact->id]) }}"
+                                                        class="btn btn-info btn-sm" style="color: #fff">
+                                                        <i class="ri-folder-info-fill" data-toggle="tooltip"
+                                                            style="font-size: 1rem" data-placement="top"
+                                                            title="مشاهده پیام">
+                                                        </i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                            </p>
                         </div>
-                    </div>
-
-                    <div class="col-lg-5">
-                        <div class="contact-info">
-                            <h2>با ما در تماس باشید</h2>
-
-                            <ul class="address">
-                                <li class="location">
-                                    <i class="ri-map-pin-2-fill"></i>
-                                    <span>آدرس</span>
-                                    {{ $item->address }}
-                                </li>
-                                <li>
-                                    <i class="ri-mail-line"></i>
-                                    <span>ایمیل</span>
-                                    {{ $item->email }}
-                                </li>
-                                <li>
-                                    <i class="ri-phone-fill"></i>
-                                    <span>تلفن</span>
-                                    <a href="tel:{{ $item->tell }}">{{ $item->tell }}</a>
-                                </li>
-                            </ul>
-
-                            <h3>ما را در شبکه مجازی دنبال کنید</h3>
-
-                            <ul class="social-link">
-                                <li>
-                                    <a href="{{ $item->facebook }}" target="_blank">
-                                        <i class="ri-facebook-fill"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ $item->instagram }}" target="_blank">
-                                        <i class="ri-instagram-fill"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ $item->linkedin }}" target="_blank">
-                                        <i class="ri-linkedin-box-fill"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ $item->twitter }}" target="_blank">
-                                        <i class="ri-twitter-fill"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-    <!-- End Contact Info Area -->
-
-    <!-- Start Contact Area -->
-    <section class="contact-area pb-100">
-        <div class="container">
-            <div class="section-title">
-                <h2>برای ما پیام فوری ارسال کنید</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis ut nostrum, quibusdam, voluptatum
-                    eaque illo cum, aperiam accusantium reprehenderit</p>
-            </div>
-
-            <form id="contactForm" autocomplete="off">
-                <div class="row">
-                    <div class="col-lg-6 col-sm-6">
-                        <div class="form-group">
-                            <label>نام و نام خانوادگی</label>
-                            <input type="text" name="name" id="name" class="form-control" required
-                                data-error="Please enter your name">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-sm-6">
-                        <div class="form-group">
-                            <label>ایمیل</label>
-                            <input type="email" name="email" id="email" class="form-control" required
-                                data-error="Please enter your email">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-sm-6">
-                        <div class="form-group">
-                            <label>همراه</label>
-                            <input type="text" name="phone_number" id="phone_number" required
-                                data-error="Please enter your number" class="form-control">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-sm-6">
-                        <div class="form-group">
-                            <label>موضوع</label>
-                            <input type="text" name="msg_subject" id="msg_subject" class="form-control" required
-                                data-error="Please enter your subject">
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <label>متن پیام</label>
-                            <textarea name="message" class="form-control" id="message" cols="30" rows="6" required
-                                data-error="Write your message"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12 col-md-12">
-                        <button type="submit" class="default-btn">
-                            <span>ارسال پیام</span>
-                        </button>
-                        <div id="msgSubmit" class="h3 text-center hidden"></div>
-                        <div class="clearfix"></div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </section>
-    <!-- End Contact Area -->
+    @include('common.delete')
 @endsection
+
+@push('js')
+    <script>
+        $(function() {
+            $('#example').DataTable({
+                language: {
+                    "decimal": "",
+                    "emptyTable": "داده ای وجود ندارد",
+                    "info": "نمایش _START_ تا _END_ از _TOTAL_ ردیف",
+                    "infoEmpty": "نمایش 0 تا 0 از 0 ردیف",
+                    "infoFiltered": "(مجموع رکوردها _MAX_)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "نمایش _MENU_ ردیف",
+                    "loadingRecords": "در حال بارگزاری ... ",
+                    "processing": "در حال پردازش ... ",
+                    "search": "جستجو ",
+                    "zeroRecords": "هیچ رکوردی یافت نشد",
+                    "paginate": {
+                        "first": "ابتدا",
+                        "last": "انتها",
+                        "next": "بعدی",
+                        "previous": "قبلی"
+                    },
+                    "aria": {
+                        "sortAscending": ": activate to sort column ascending",
+                        "sortDescending": ": activate to sort column descending"
+                    }
+                }
+            });
+            $('[data-toggle=tooltip]').tooltip();
+        });
+    </script>
+@endpush

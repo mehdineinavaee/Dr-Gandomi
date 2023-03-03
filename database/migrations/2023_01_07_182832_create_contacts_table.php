@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('full_name', '50');
             $table->string('email', '50');
-            $table->string('mobile', '11');
-            $table->string('subject', '100')->nullable();
+            $table->string('phone_number', '11');
+            $table->string('msg_subject', '100')->nullable();
             $table->string('message', '2000');
             $table->timestamps();
         });

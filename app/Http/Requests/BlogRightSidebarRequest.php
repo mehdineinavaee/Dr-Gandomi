@@ -27,7 +27,7 @@ class BlogRightSidebarRequest extends FormRequest
             'title' => 'required|max:255',
             'description' => 'required|max:5000',
             'tags' => 'required|max:1000',
-            'date' => 'required|date|max:10',
+            'date' => 'required|date|max:10|min:10',
         ];
     }
 }

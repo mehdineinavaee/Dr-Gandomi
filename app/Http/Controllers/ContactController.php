@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
-use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
@@ -14,7 +14,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('contacts.index');
+        $contacts = Contact::all();
+        return view('contacts.index')
+            ->with('contacts', $contacts);
     }
 
     /**
@@ -24,7 +26,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('contacts.create');
     }
 
     /**
@@ -33,9 +35,13 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
-        //
+        $contact = new Contact($request->all());
+        $contact->save();
+
+        return redirect()->route('contact.create')
+            ->with('success', 'پیام شما با موفقیت ثبت شد');
     }
 
     /**
@@ -46,7 +52,8 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        //
+        return view('contacts.show')
+            ->with('contact', $contact);
     }
 
     /**
@@ -57,8 +64,7 @@ class ContactController extends Controller
      */
     public function edit(Contact $contact)
     {
-        return view('contacts.edit')
-            ->with('contact', $contact);
+        //
     }
 
     /**
@@ -68,13 +74,9 @@ class ContactController extends Controller
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contact)
+    public function update(ContactRequest $request, Contact $contact)
     {
-        $contact->fill($request->only(['google_map_area', 'address', 'email', 'tell', 'facebook', 'instagram', 'linkedin', 'twitter'])); // 'cover' nadashte bashe
-        $contact->save();
-
-        return redirect()->route('contact.index')
-            ->with('success', 'تماس با ما ویرایش شد');
+        //
     }
 
     /**
@@ -83,8 +85,14 @@ class ContactController extends Controller
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy($id)
     {
-        //
+        $contact = Contact::find($id);
+        $contact->delete();
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'پیام با موفقیت حذف شد',
+        ]);
     }
 }
