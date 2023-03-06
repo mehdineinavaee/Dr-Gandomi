@@ -114,7 +114,7 @@
                                 <div class="col-lg-6 col-sm-6">
                                     <div class="form-group">
                                         <span style="color:red">*</span>
-                                        <label>همراه</label>
+                                        <label>موبایل</label>
                                         <input type="text" name="phone_number" id="phone_number"
                                             value="{{ old('phone_number') }}"
                                             class="form-control @error('phone_number') is-invalid @enderror">

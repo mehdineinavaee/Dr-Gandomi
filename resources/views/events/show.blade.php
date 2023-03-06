@@ -105,7 +105,7 @@
                                     </div>
 
                                     <div class="team-name">
-                                        <h3>{{ $event->supervisor->name }}</h3>
+                                        <h3>{{ $event->supervisor->full_name }}</h3>
                                         <span>استاد راهنما</span>
                                     </div>
                                 </div>
@@ -147,7 +147,7 @@
                                     </div>
 
                                     <div class="team-name">
-                                        <h3>{{ $event->advisor->name }}</h3>
+                                        <h3>{{ $event->advisor->full_name }}</h3>
                                         <span>استاد مشاور</span>
                                     </div>
                                 </div>
@@ -189,7 +189,7 @@
                                     </div>
 
                                     <div class="team-name">
-                                        <h3>{{ $event->referee->name }}</h3>
+                                        <h3>{{ $event->referee->full_name }}</h3>
                                         <span>داور</span>
                                     </div>
                                 </div>

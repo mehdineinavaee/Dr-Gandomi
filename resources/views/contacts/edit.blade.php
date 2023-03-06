@@ -33,8 +33,8 @@
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>تلفن</label>
-                                <input type="text" name="tell" id="tell" class="form-control"
-                                    value="{{ $contact->tell }}">
+                                <input type="text" name="tel" id="tel" class="form-control"
+                                    value="{{ $contact->tel }}">
                             </div>
                         </div>
                     </div>

@@ -53,14 +53,14 @@ class DatabaseSeeder extends Seeder
         DB::table('settings')->insert([
             [
                 // Header
-                'tel' => '09133552993',
+                'phone_number' => '09133552993',
                 'logo' => 'NULL',
                 'favicon' => 'NULL',
                 // Footer
                 'footer_description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis dolorum tempore tenetur tempora nostrum totam molestias dolores recusandae saepe maxime ut excepturi exercitationem, inventore pariatur! Laborum explicabo eius veritatis iste.',
                 'address' => 'دانشگاه آزاد اسلامی واحد یزد',
                 'email' => 'abolfazlgandomi@gmail.com',
-                'phone' => '03582011111',
+                'tel' => '03582011111',
                 'facebook' => 'www.facebook.com',
                 'instagram' => 'www.instagram.com',
                 'linkedin' => 'www.linkedin.com',

@@ -38,7 +38,7 @@
                                                 <td style="text-align:center;" class="align-middle">{{ $loop->iteration }}
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $ourProfessor->name }}</td>
+                                                    {{ $ourProfessor->full_name }}</td>
                                                 <td style="text-align:center;" class="align-middle">
                                                     {{ $ourProfessor->post }}</td>
                                                 <td style="text-align:center;" class="align-middle">

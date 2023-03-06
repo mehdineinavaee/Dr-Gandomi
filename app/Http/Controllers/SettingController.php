@@ -331,10 +331,10 @@ class SettingController extends Controller
             $setting->translators = basename($path);
         }
 
-        $setting->fill($request->only(['tel', 'footer_description', 'address', 'email', 'phone', 'facebook', 'instagram', 'linkedin', 'twitter', 'google_map_area'])); // 'logo', 'favicon', ... nadashte bashe
+        $setting->fill($request->only(['phone_number', 'footer_description', 'address', 'email', 'tel', 'facebook', 'instagram', 'linkedin', 'twitter', 'google_map_area'])); // 'logo', 'favicon', ... nadashte bashe
         $setting->save();
 
-        return redirect()->route('home_one.index')
+        return redirect()->route('/')
             ->with('success', 'تنظیمات ویرایش شد');
     }
 

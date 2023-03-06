@@ -4,7 +4,7 @@
         <div class="container">
             <div class="mobile-responsive-menu">
                 <div class="logo">
-                    <a href="index.html">
+                    <a href={{ route('/') }}>
                         <img src={{ asset('storage/settings/' . $settings->logo) }} alt="logo">
                     </a>
                 </div>
@@ -26,7 +26,7 @@
     <div class="desktop-nav">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href={{ route('/') }}>
                     <img src={{ asset('storage/settings/' . $settings->logo) }} alt="logo">
                 </a>
 
@@ -37,7 +37,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('courses.index') }}" class="nav-link">دوره ها</a>
+                            <a href={{ route('courses.index') }} class="nav-link">دوره ها</a>
                         </li>
 
                         <li class="nav-item">
@@ -48,16 +48,16 @@
 
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a href="{{ route('blog_right_sidebars.index') }}" class="nav-link">بلاگ</a>
+                                    <a href={{ route('blog_right_sidebars.index') }} class="nav-link">بلاگ</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('our_professors.index') }}" class="nav-link">اساتید</a>
+                                    <a href={{ route('our_professors.index') }} class="nav-link">اساتید</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('faqs.index') }}" class="nav-link">پرسش و پاسخ</a>
+                                    <a href={{ route('faqs.index') }} class="nav-link">پرسش و پاسخ</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('gallery.index') }}" class="nav-link">گالری</a>
+                                    <a href={{ route('gallery.index') }} class="nav-link">گالری</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="JavaScript:void(0)" class="nav-link">
@@ -67,7 +67,7 @@
 
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="{{ route('my_account.index') }}" class="nav-link">حساب من</a>
+                                            <a href={{ route('my_account.index') }} class="nav-link">حساب من</a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="log-in.html" class="nav-link">ورود</a>
@@ -81,7 +81,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('events.index') }}" class="nav-link">رویدادها</a>
+                            <a href={{ route('events.index') }} class="nav-link">رویدادها</a>
                         </li>
 
                         <li class="nav-item">
@@ -92,16 +92,16 @@
 
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a href="{{ route('products.index') }}" class="nav-link">محصولات</a>
+                                    <a href={{ route('products.index') }} class="nav-link">محصولات</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('cart.index') }}" class="nav-link">کارت</a>
+                                    <a href={{ route('cart.index') }} class="nav-link">کارت</a>
                                 </li>
                             </ul>
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{ route('contact.create') }}" class="nav-link">تماس با ما</a>
+                            <a href={{ route('contact.create') }} class="nav-link">تماس با ما</a>
                         </li>
 
                         <li class="nav-item">
@@ -111,13 +111,13 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a href="{{ route('settings.edit', ['setting' => 1]) }}" class="nav-link">
+                                    <a href={{ route('settings.edit', ['setting' => 1]) }} class="nav-link">
                                         تنظیمات
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="{{ route('home_one.edit', ['home_one' => 1]) }}" class="nav-link">
+                                    <a href={{ route('home_one.edit', ['home_one' => 1]) }} class="nav-link">
                                         صفحه اصلی
                                     </a>
                                 </li>
@@ -130,36 +130,36 @@
 
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="{{ route('categories.index') }}" class="nav-link">دسته بندی ها
+                                            <a href={{ route('categories.index') }} class="nav-link">دسته بندی ها
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{ route('modes.index') }}" class="nav-link">روش برگزاری</a>
+                                            <a href={{ route('modes.index') }} class="nav-link">روش برگزاری</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{ route('courses.admin') }}" class="nav-link">پنل دوره
+                                            <a href={{ route('courses.admin') }} class="nav-link">پنل دوره
                                                 ها
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('blog_right_sidebars.admin') }}" class="nav-link">
+                                    <a href={{ route('blog_right_sidebars.admin') }} class="nav-link">
                                         پنل بلاگ
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('our_professors.admin') }}" class="nav-link">
+                                    <a href={{ route('our_professors.admin') }} class="nav-link">
                                         پنل اساتید
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('faqs.admin') }}" class="nav-link">
+                                    <a href={{ route('faqs.admin') }} class="nav-link">
                                         پنل پرسش و پاسخ
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('galleries.admin') }}" class="nav-link">
+                                    <a href={{ route('galleries.admin') }} class="nav-link">
                                         پنل گالری
                                     </a>
                                 </li>
@@ -171,12 +171,12 @@
 
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="{{ route('event_categories.index') }}" class="nav-link">دسته
+                                            <a href={{ route('event_categories.index') }} class="nav-link">دسته
                                                 بندی ها
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{ route('events.admin') }}" class="nav-link">پنل رویدادها
+                                            <a href={{ route('events.admin') }} class="nav-link">پنل رویدادها
                                             </a>
                                         </li>
                                     </ul>
@@ -189,23 +189,23 @@
 
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="{{ route('publishers.index') }}" class="nav-link">انتشارات
+                                            <a href={{ route('publishers.index') }} class="nav-link">انتشارات
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{ route('authors.index') }}" class="nav-link">نویسنده ها</a>
+                                            <a href={{ route('authors.index') }} class="nav-link">نویسنده ها</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{ route('translators.index') }}" class="nav-link">مترجمان</a>
+                                            <a href={{ route('translators.index') }} class="nav-link">مترجمان</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{ route('products.admin') }}" class="nav-link">پنل محصولات
+                                            <a href={{ route('products.admin') }} class="nav-link">پنل محصولات
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('contact.index') }}" class="nav-link">
+                                    <a href={{ route('contact.index') }} class="nav-link">
                                         پنل تماس با ما
                                     </a>
                                 </li>

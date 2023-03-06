@@ -25,9 +25,9 @@ class EventRequest extends FormRequest
     {
         return [
             'full_name' => 'required|regex:/^[\pL\s\-]+$/u|max:255',
-            'date' => 'required|date|max:10|min:10',
+            'date' => 'required|date|min:10|max:10',
             'day' => 'required|max:20',
-            'hour' => 'required|max:11|min:5',
+            'hour' => 'required|min:5|max:11',
             'location' => 'required|max:300',
             'title' => 'required|max:255',
             'description' => 'required|max:5000',

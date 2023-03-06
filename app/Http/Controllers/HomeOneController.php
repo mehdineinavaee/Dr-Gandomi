@@ -60,10 +60,16 @@ class HomeOneController extends Controller
                 }
             }
 
+            // dd($time);
             // dd($time->first());
 
-            $date = $time->first()->date;
-            $hour = $time->first()->hour;
+            if ($time->isEmpty()) {
+                $date = $nowDate;
+                $hour = $nowTime;
+            } else {
+                $date = $time->first()->date;
+                $hour = $time->first()->hour;
+            }
         }
         // End pass
 
@@ -155,7 +161,7 @@ class HomeOneController extends Controller
         $homeOne->fill($request->only(['welcome', 'slogen'])); // 'backgroundBanner', 'banner' nadashte bashe
         $homeOne->save();
 
-        return redirect()->route('home_one.index')
+        return redirect()->route('/')
             ->with('success', 'صفحه اصلی ویرایش شد');
     }
 

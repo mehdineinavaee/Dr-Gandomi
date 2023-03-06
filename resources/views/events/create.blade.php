@@ -21,50 +21,100 @@
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>سخنران</label>
-                                <input type="text" name="full_name" id="full_name" class="form-control">
+                                <input type="text" name="full_name" id="full_name"
+                                    class="form-control @error('full_name') is-invalid @enderror"
+                                    value="{{ old('full_name') }}">
+                                @error('full_name')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>تاریخ</label>
-                                <input type="text" name="date" id="date" class="form-control">
+                                <input type="text" name="date" id="date"
+                                    class="form-control @error('date') is-invalid @enderror" value="{{ old('date') }}">
+                                @error('date')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>روز</label>
-                                <input type="text" name="day" id="day" class="form-control">
+                                <input type="text" name="day" id="day"
+                                    class="form-control @error('day') is-invalid @enderror" value="{{ old('day') }}">
+                                @error('day')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
-                                <label>ساعت</label>
-                                <input type="text" name="hour" id="hour" class="form-control">
+                                <span style="color:red">*</span>
+                                <label>ساعت برگزاری</label>
+                                <input type="text" name="hour" id="hour"
+                                    class="form-control @error('hour') is-invalid @enderror" value="{{ old('hour') }}">
+                                @error('hour')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>مکان</label>
-                                <input type="text" name="location" id="location" class="form-control">
+                                <input type="text" name="location" id="location"
+                                    class="form-control @error('location') is-invalid @enderror"
+                                    value="{{ old('location') }}">
+                                @error('location')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-12 col-sm-12">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>عنوان</label>
-                                <input type="text" name="title" id="title" class="form-control">
+                                <input type="text" name="title" id="title"
+                                    class="form-control @error('title') is-invalid @enderror" value="{{ old('title') }}">
+                                @error('title')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-12 col-sm-12">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>توضیحات</label>
-                                <textarea name="description" id="description"></textarea>
+                                <textarea name="description" id="description" class="@error('description') is-invalid @enderror">{{ old('description') }}</textarea>
+                                @error('description')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
@@ -75,8 +125,9 @@
                                     <option value="" selected>استاد راهنما را انتخاب کنید
                                     </option>
                                     @foreach ($our_professors as $our_professor)
-                                        <option value="{{ $our_professor->id }}">
-                                            {{ $our_professor->name }}
+                                        <option value="{{ $our_professor->id }}"
+                                            {{ old('supervisor') == $our_professor->id ? 'selected' : '' }}>
+                                            {{ $our_professor->full_name }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -91,8 +142,9 @@
                                     <option value="" selected>استاد مشاور را انتخاب کنید
                                     </option>
                                     @foreach ($our_professors as $our_professor)
-                                        <option value="{{ $our_professor->id }}">
-                                            {{ $our_professor->name }}
+                                        <option value="{{ $our_professor->id }}"
+                                            {{ old('advisor') == $our_professor->id ? 'selected' : '' }}>
+                                            {{ $our_professor->full_name }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -107,8 +159,9 @@
                                     <option value="" selected>داور را انتخاب کنید
                                     </option>
                                     @foreach ($our_professors as $our_professor)
-                                        <option value="{{ $our_professor->id }}">
-                                            {{ $our_professor->name }}
+                                        <option value="{{ $our_professor->id }}"
+                                            {{ old('referee') == $our_professor->id ? 'selected' : '' }}>
+                                            {{ $our_professor->full_name }}
                                         </option>
                                     @endforeach
                                 </select>
@@ -123,7 +176,8 @@
                                     <option value="" selected>دسته بندی را انتخاب کنید
                                     </option>
                                     @foreach ($event_categories as $event_category)
-                                        <option value="{{ $event_category->id }}">
+                                        <option value="{{ $event_category->id }}"
+                                            {{ old('event_category') == $our_professor->id ? 'selected' : '' }}>
                                             {{ $event_category->title }}
                                         </option>
                                     @endforeach

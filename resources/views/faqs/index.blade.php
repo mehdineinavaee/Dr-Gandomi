@@ -66,7 +66,7 @@
                             <div class="col-lg-6 col-sm-6">
                                 <div class="form-group">
                                     <input type="text" name="phone_number" id="phone_number" required
-                                        data-error="Please enter your number" class="form-control" placeholder="همراه">
+                                        data-error="Please enter your number" class="form-control" placeholder="موبایل">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>

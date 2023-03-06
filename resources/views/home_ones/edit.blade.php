@@ -31,16 +31,28 @@
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>پیام خوش آمد گویی</label>
-                                <input type="text" name="welcome" id="welcome" class="form-control"
+                                <input type="text" name="welcome" id="welcome"
+                                    class="form-control @error('welcome') is-invalid @enderror"
                                     value="{{ $home_one->welcome }}">
+                                @error('welcome')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>شعار</label>
-                                <input type="text" name="slogen" id="slogen" class="form-control"
+                                <input type="text" name="slogen" id="slogen"
+                                    class="form-control @error('slogen') is-invalid @enderror"
                                     value="{{ $home_one->slogen }}">
+                                @error('slogen')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>

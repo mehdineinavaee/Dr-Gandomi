@@ -19,8 +19,14 @@
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>موبایل</label>
-                                <input type="text" name="tel" id="tel" class="form-control"
-                                    value="{{ $setting->tel }}">
+                                <input type="text" name="phone_number" id="phone_number"
+                                    class="form-control @error('phone_number') is-invalid @enderror"
+                                    value="{{ $setting->phone_number }}">
+                                @error('phone_number')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
@@ -43,63 +49,108 @@
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>آدرس</label>
-                                <input type="text" name="address" id="address" class="form-control"
+                                <input type="text" name="address" id="address"
+                                    class="form-control @error('address') is-invalid @enderror"
                                     value="{{ $setting->address }}">
+                                @error('address')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>ایمیل</label>
-                                <input type="text" name="email" id="email" class="form-control"
-                                    value="{{ $setting->email }}">
+                                <input type="text" name="email" id="email"
+                                    class="form-control @error('email') is-invalid @enderror" value="{{ $setting->email }}">
+                                @error('email')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>تلفن</label>
-                                <input type="text" name="phone" id="phone" class="form-control"
-                                    value="{{ $setting->phone }}">
+                                <input type="text" name="tel" id="tel"
+                                    class="form-control @error('tel') is-invalid @enderror" value="{{ $setting->tel }}">
+                                @error('tel')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-12 col-sm-12">
                             <div class="form-group">
                                 <label>توضیحات</label>
-                                <textarea name="footer_description" id="footer_description">{{ $setting->footer_description }}</textarea>
+                                <textarea name="footer_description" id="footer_description" class="@error('footer_description') is-invalid @enderror">{{ $setting->footer_description }}</textarea>
+                                @error('footer_description')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>فیس بوک</label>
-                                <input type="text" name="facebook" id="facebook" class="form-control"
+                                <input type="text" name="facebook" id="facebook"
+                                    class="form-control @error('facebook') is-invalid @enderror"
                                     value="{{ $setting->facebook }}">
+                                @error('facebook')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>اینستاگرام</label>
-                                <input type="text" name="instagram" id="instagram" class="form-control"
+                                <input type="text" name="instagram" id="instagram"
+                                    class="form-control @error('instagram') is-invalid @enderror"
                                     value="{{ $setting->instagram }}">
+                                @error('instagram')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>لینکدین</label>
-                                <input type="text" name="linkedin" id="linkedin" class="form-control"
+                                <input type="text" name="linkedin" id="linkedin"
+                                    class="form-control @error('linkedin') is-invalid @enderror"
                                     value="{{ $setting->linkedin }}">
+                                @error('linkedin')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>توییتر</label>
-                                <input type="text" name="twitter" id="twitter" class="form-control"
+                                <input type="text" name="twitter" id="twitter"
+                                    class="form-control @error('twitter') is-invalid @enderror"
                                     value="{{ $setting->twitter }}">
+                                @error('twitter')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
@@ -108,8 +159,14 @@
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>لینک گوگل مپ</label>
-                                <input type="text" name="google_map_area" id="google_map_area" class="form-control"
+                                <input type="text" name="google_map_area" id="google_map_area"
+                                    class="form-control @error('google_map_area') is-invalid @enderror"
                                     value="{{ $setting->google_map_area }}">
+                                @error('google_map_area')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
@@ -118,7 +175,8 @@
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>دوره ها (1920px&times;600px)</label>
-                                <input type="file" class="form-control" accept="image/*" id="courses" name="courses">
+                                <input type="file" class="form-control" accept="image/*" id="courses"
+                                    name="courses">
                             </div>
                         </div>
 

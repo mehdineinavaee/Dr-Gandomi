@@ -24,8 +24,8 @@ class HomeOneRequest extends FormRequest
     public function rules()
     {
         return [
-            'welcome' => 'max:100',
-            'slogen' => 'max:100',
+            'welcome' => 'nullable|max:100',
+            'slogen' => 'nullable|max:100',
         ];
     }
 }

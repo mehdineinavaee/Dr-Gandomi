@@ -21,43 +21,81 @@
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>نام و نام خانوادگی</label>
-                                <input type="text" name="name" id="name" class="form-control">
+                                <input type="text" name="full_name" id="full_name" value="{{ old('full_name') }}"
+                                    class="form-control @error('full_name') is-invalid @enderror">
+                                @error('full_name')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>سمت</label>
-                                <input type="text" name="post" id="post" class="form-control">
+                                <input type="text" name="post" id="post" value="{{ old('post') }}"
+                                    class="form-control @error('post') is-invalid @enderror">
+                                @error('post')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>توییتر</label>
-                                <input type="text" name="twitter" id="twitter" class="form-control">
+                                <input type="text" name="twitter" id="twitter" value="{{ old('twitter') }}"
+                                    class="form-control @error('twitter') is-invalid @enderror">
+                                @error('twitter')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>لینکدین</label>
-                                <input type="text" name="linkedin" id="linkedin" class="form-control">
+                                <input type="text" name="linkedin" id="linkedin" value="{{ old('linkedin') }}"
+                                    class="form-control @error('linkedin') is-invalid @enderror">
+                                @error('linkedin')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>اینستاگرام</label>
-                                <input type="text" name="instagram" id="instagram" class="form-control">
+                                <input type="text" name="instagram" id="instagram" value="{{ old('instagram') }}"
+                                    class="form-control @error('instagram') is-invalid @enderror">
+                                @error('instagram')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>فیس بوک</label>
-                                <input type="text" name="facebook" id="facebook" class="form-control">
+                                <input type="text" name="facebook" id="facebook" value="{{ old('facebook') }}"
+                                    class="form-control @error('facebook') is-invalid @enderror">
+                                @error('facebook')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>

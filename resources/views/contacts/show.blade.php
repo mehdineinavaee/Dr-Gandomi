@@ -10,12 +10,16 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="main-default-content mr-15">
-                        <h2 class="justify">{{ $contact->msg_subject }}</h2>
+                        @if ($contact->msg_subject)
+                            <h2 class="justify">{{ $contact->msg_subject }}</h2>
+                        @else
+                            <h2 class="justify">بدون عنوان</h2>
+                        @endif
 
                         <div class="gap-20"></div>
 
                         <div class="justify">
-                            {{ $contact->message }}
+                            {!! $contact->message !!}
                         </div>
 
                         <div class="gap-20"></div>
@@ -38,7 +42,7 @@
                                     <span>{{ $contact->email }}</span>
                                 </li>
                                 <li>
-                                    همراه
+                                    موبایل
                                     <span>{{ $contact->phone_number }}</span>
                                 </li>
                             </ul>

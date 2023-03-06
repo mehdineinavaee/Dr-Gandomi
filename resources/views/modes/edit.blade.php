@@ -15,9 +15,15 @@
                     <div class="row">
                         <div class="col-lg-12 col-sm-12">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>عنوان</label>
-                                <input type="text" name="title" id="title" class="form-control"
-                                    value="{{ $mode->title }}">
+                                <input type="text" name="title" id="title"
+                                    class="form-control @error('title') is-invalid @enderror" value="{{ $mode->title }}">
+                                @error('title')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>

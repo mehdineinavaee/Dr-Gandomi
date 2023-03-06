@@ -19,7 +19,7 @@
                                             <th style="text-align:center; width:10%">ردیف</th>
                                             <th style="text-align:center;">نام و نام خانوادگی</th>
                                             <th style="text-align:center;">ایمیل</th>
-                                            <th style="text-align:center;">همراه</th>
+                                            <th style="text-align:center;">موبایل</th>
                                             <th style="text-align:center;">عملیات</th>
                                         </tr>
                                     </thead>

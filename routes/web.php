@@ -20,7 +20,6 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TranslatorController;
 use Illuminate\Support\Facades\Route;
 
-Route::resource('/', HomeOneController::class);
 Route::resource('authors', AuthorController::class);
 Route::resource('blog_right_sidebars', BlogRightSidebarController::class);
 Route::resource('cart', CartController::class);
@@ -38,6 +37,7 @@ Route::resource('settings', SettingController::class);
 Route::resource('translators', TranslatorController::class);
 
 // Admin Routes
+Route::get('/', [HomeOneController::class, 'index'])->name('/');
 Route::get('admin/blog_right_sidebars', [BlogRightSidebarController::class, 'admin'])->name('blog_right_sidebars.admin');
 Route::get('admin/courses', [CourseController::class, 'admin'])->name('courses.admin');
 Route::resource('categories', CategoryController::class);

@@ -15,17 +15,31 @@
 
                         <div class="col-lg-12 col-sm-12">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>پرسش</label>
-                                <input type="text" name="question" id="question" class="form-control" cols="30"
-                                    rows="5" />
+                                <input type="text" name="question" id="question"
+                                    class="form-control @error('question') is-invalid @enderror"
+                                    value="{{ old('question') }}" />
+                                @error('question')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-12 col-sm-12">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>پاسخ</label>
-                                <input type="text" name="response" id="response" class="form-control" cols="30"
-                                    rows="5" />
+                                <input type="text" name="response" id="response"
+                                    class="form-control @error('response') is-invalid @enderror"
+                                    value="{{ old('response') }}" />
+                                @error('response')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>

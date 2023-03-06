@@ -14,29 +14,54 @@
                     <div class="row">
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>نام</label>
-                                <input type="text" name="name" id="name" class="form-control">
+                                <input type="text" name="name" id="name" value="{{ old('name') }}"
+                                    class="form-control @error('name') is-invalid @enderror">
+                                @error('name')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>آدرس</label>
-                                <input type="text" name="address" id="address" class="form-control">
+                                <input type="text" name="address" id="address" value="{{ old('address') }}"
+                                    class="form-control @error('address') is-invalid @enderror">
+                                @error('address')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>صندوق پستی</label>
-                                <input type="text" name="postal_code" id="postal_code" class="form-control">
+                                <input type="text" name="postal_code" id="postal_code" value="{{ old('postal_code') }}"
+                                    class="form-control @error('postal_code') is-invalid @enderror">
+                                @error('postal_code')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>تلفن</label>
-                                <input type="text" name="tell" id="tell" class="form-control">
+                                <input type="text" name="tel" id="tel" value="{{ old('tel') }}"
+                                    class="form-control @error('tel') is-invalid @enderror">
+                                @error('tel')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>

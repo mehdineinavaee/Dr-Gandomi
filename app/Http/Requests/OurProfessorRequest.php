@@ -24,12 +24,12 @@ class OurProfessorRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|regex:/^[\pL\s\-]+$/u|max:255',
+            'full_name' => 'required|regex:/^[\pL\s\-]+$/u|max:255',
             'post' => 'required|max:20',
-            'twitter' => 'max:50',
-            'linkedin' => 'max:50',
-            'instagram' => 'max:50',
-            'facebook' => 'max:50',
+            'twitter' => 'nullable|max:50|url',
+            'linkedin' => 'nullable|max:50|url',
+            'instagram' => 'nullable|max:50|url',
+            'facebook' => 'nullable|max:50|url',
         ];
     }
 }

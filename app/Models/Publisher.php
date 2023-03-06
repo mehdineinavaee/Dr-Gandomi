@@ -9,7 +9,7 @@ use App\Models\Product;
 class Publisher extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'address', 'postal_code', 'tell'];
+    protected $fillable = ['name', 'address', 'postal_code', 'tel'];
 
     public function products()
     {

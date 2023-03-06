@@ -62,10 +62,16 @@ class EventController extends Controller
                 }
             }
 
+            // dd($time);
             // dd($time->first());
 
-            $date = $time->first()->date;
-            $hour = $time->first()->hour;
+            if ($time->isEmpty()) {
+                $date = $nowDate;
+                $hour = $nowTime;
+            } else {
+                $date = $time->first()->date;
+                $hour = $time->first()->hour;
+            }
         }
         // End pass
 
@@ -81,7 +87,7 @@ class EventController extends Controller
     public function create()
     {
         $event_categories = EventCategory::orderBy('title')->get();
-        $our_professors = OurProfessor::orderBy('name')->get();
+        $our_professors = OurProfessor::orderBy('full_name')->get();
         return view('events.create')
             ->with('event_categories', $event_categories)
             ->with('our_professors', $our_professors);
@@ -131,7 +137,7 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         $event_categories = EventCategory::orderBy('title')->get();
-        $our_professors = OurProfessor::orderBy('name')->get();
+        $our_professors = OurProfessor::orderBy('full_name')->get();
         return view('events.edit')
             ->with('event', $event)
             ->with('event_categories', $event_categories)

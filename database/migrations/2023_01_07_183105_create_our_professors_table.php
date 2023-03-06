@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('our_professors', function (Blueprint $table) {
             $table->id();
             $table->string('cover')->nullable();
-            $table->string('name', '255');
+            $table->string('full_name', '255');
             $table->string('post', '20');
             $table->string('twitter', '50')->nullable();
             $table->string('linkedin', '50')->nullable();

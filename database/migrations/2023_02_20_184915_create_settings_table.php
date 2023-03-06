@@ -16,14 +16,14 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             // Header
-            $table->text('tel', '11')->nullable();
+            $table->string('phone_number', '11')->nullable();
             $table->string('logo')->nullable();
             $table->string('favicon')->nullable();
             // Footer
             $table->text('footer_description', '500')->nullable();
-            $table->text('address', '500')->nullable();
-            $table->text('email', '50')->nullable();
-            $table->text('phone', '11')->nullable();
+            $table->string('address', '500')->nullable();
+            $table->string('email', '50')->nullable();
+            $table->string('tel', '11')->nullable();
             $table->string('facebook', '50')->nullable();
             $table->string('instagram', '50')->nullable();
             $table->string('linkedin', '50')->nullable();

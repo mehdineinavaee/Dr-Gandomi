@@ -25,9 +25,9 @@ class PublisherRequest extends FormRequest
     {
         return [
             'name' => 'required|regex:/^[\pL\s\-]+$/u|max:255',
-            'address' => 'max:255',
-            'postal_code' => 'max:10|min:10|numeric',
-            'tell' => 'max:11|min:11|numeric',
+            'address' => 'nullable|max:255',
+            'postal_code' => 'nullable|digits:10|numeric',
+            'tel' => 'nullable|digits:11|numeric',
         ];
     }
 }

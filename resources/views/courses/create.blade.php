@@ -14,8 +14,15 @@
                     <div class="row">
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>عنوان</label>
-                                <input type="text" name="title" id="title" class="form-control">
+                                <input type="text" name="title" id="title" value="{{ old('title') }}"
+                                    class="form-control @error('title') is-invalid @enderror">
+                                @error('title')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
@@ -28,11 +35,12 @@
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
-                                <label>دسته بندی</label><br />
+                                <label>دسته بندی</label>
                                 <select id="categories" name="categories" placeholder="دسته بندی را انتخاب کنید"
                                     data-search="true" data-silent-initial-value-set="true" multiple>
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">
+                                        <option value="{{ $category->id }}"
+                                            {{ old('categories') == $category->id ? 'selected' : '' }}>
                                             {{ $category->title }}
                                         </option>
                                     @endforeach
@@ -48,7 +56,8 @@
                                     <option value="" selected>روش برگزاری را انتخاب کنید
                                     </option>
                                     @foreach ($modes as $mode)
-                                        <option value="{{ $mode->id }}">
+                                        <option value="{{ $mode->id }}"
+                                            {{ old('mode') == $mode->id ? 'selected' : '' }}>
                                             {{ $mode->title }}
                                         </option>
                                     @endforeach
@@ -60,46 +69,82 @@
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>مدت</label>
-                                <input type="text" name="duration" id="duration" class="form-control">
+                                <input type="text" name="duration" id="duration" value="{{ old('duration') }}"
+                                    class="form-control @error('duration') is-invalid @enderror">
+                                @error('duration')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>تاریخ شروع</label>
-                                <input type="text" name="start_dates" id="start_dates" class="form-control">
+                                <input type="text" name="start_dates" id="start_dates" value="{{ old('start_dates') }}"
+                                    class="form-control @error('start_dates') is-invalid @enderror">
+                                @error('start_dates')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>هزینه</label>
-                                <input type="text" name="fee" id="fee" class="form-control"
+                                <input type="text" name="fee" id="fee" value="{{ old('fee') }}"
+                                    class="form-control @error('fee') is-invalid @enderror"
                                     onkeyup="separateNum(this.value,this,'createNumToLetter');">
                                 {{-- name id div (numToLetter) nabayad hamnam id input (fee) bashad --}}
                                 <div id="createNumToLetter" style="text-align: justify">
                                 </div>
+                                @error('fee')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>زبان</label>
-                                <input type="text" name="language" id="language" class="form-control">
+                                <input type="text" name="language" id="language" value="{{ old('language') }}"
+                                    class="form-control @error('language') is-invalid @enderror">
+                                @error('language')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>تعداد صندلی فعال</label>
-                                <input type="text" name="seats_available" id="seats_available" class="form-control">
+                                <input type="text" name="seats_available" id="seats_available"
+                                    value="{{ old('seats_available') }}"
+                                    class="form-control @error('seats_available') is-invalid @enderror">
+                                @error('seats_available')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
 
                         <div class="col-lg-12 col-sm-12">
                             <div class="form-group">
                                 <label>توضیحات</label>
-                                <textarea name="description" id="description"></textarea>
+                                <textarea name="description" id="description" class="@error('description') is-invalid @enderror">{{ old('description') }}</textarea>
+                                @error('description')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                     </div>

@@ -9,7 +9,7 @@ use App\Models\Event;
 class OurProfessor extends Model
 {
     use HasFactory;
-    protected $fillable = ['cover', 'name', 'post', 'twitter', 'linkedin', 'instagram', 'facebook'];
+    protected $fillable = ['cover', 'full_name', 'post', 'twitter', 'linkedin', 'instagram', 'facebook'];
 
     public function supervisors()
     {

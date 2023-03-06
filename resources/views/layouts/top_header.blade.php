@@ -3,14 +3,16 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 col-sm-6">
-                <ul class="header-left-content">
-                    <li>
-                        <a href="tel:{{ $settings->tel }}">
-                            <i class="ri-phone-fill"></i>
-                            {{ $settings->tel }}
-                        </a>
-                    </li>
-                </ul>
+                @if ($settings->phone_number)
+                    <ul class="header-left-content">
+                        <li>
+                            <a href="tel:{{ $settings->phone_number }}">
+                                <i class="ri-phone-fill"></i>
+                                {{ $settings->phone_number }}
+                            </a>
+                        </li>
+                    </ul>
+                @endif
             </div>
 
             <div class="col-lg-6 col-sm-6">

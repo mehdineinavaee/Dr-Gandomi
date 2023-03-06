@@ -44,7 +44,7 @@
                                                     {{ $publisher->postal_code }}
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $publisher->tell }}
+                                                    {{ $publisher->tel }}
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
 

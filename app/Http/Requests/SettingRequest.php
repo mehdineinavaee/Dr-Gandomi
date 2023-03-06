@@ -24,16 +24,16 @@ class SettingRequest extends FormRequest
     public function rules()
     {
         return [
-            'tel' => 'max:11|min:11',
-            'footer_description' => 'max:500',
-            'address' => 'max:500',
-            'email' => 'max:50|email',
-            'phone' => 'max:11|min:11',
-            'facebook' => 'max:50',
-            'instagram' => 'max:50',
-            'linkedin' => 'max:50',
-            'twitter' => 'max:50',
-            'google_map_area' => 'max:1000',
+            'phone_number' => 'nullable|digits:11|numeric',
+            'footer_description' => 'nullable|max:500',
+            'address' => 'nullable|max:500',
+            'email' => 'nullable|max:50|email',
+            'tel' => 'nullable|digits:11|numeric',
+            'facebook' => 'nullable|max:50|url',
+            'instagram' => 'nullable|max:50|url',
+            'linkedin' => 'nullable|max:50|url',
+            'twitter' => 'nullable|max:50|url',
+            'google_map_area' => 'nullable|max:1000',
         ];
     }
 }

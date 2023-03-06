@@ -100,7 +100,7 @@ class OurProfessorController extends Controller
             $path = $request->cover->store('public/our_professors');
             $ourProfessor->cover = basename($path);
         }
-        $ourProfessor->fill($request->only(['name', 'post', 'twitter', 'linkedin', 'instagram', 'facebook'])); // 'cover' nadashte bashe
+        $ourProfessor->fill($request->only(['full_name', 'post', 'twitter', 'linkedin', 'instagram', 'facebook'])); // 'cover' nadashte bashe
         $ourProfessor->save();
 
         return redirect()->route('our_professors.admin')
