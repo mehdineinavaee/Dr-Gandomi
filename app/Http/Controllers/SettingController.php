@@ -331,6 +331,19 @@ class SettingController extends Controller
             $setting->translators = basename($path);
         }
 
+        if ($request->hasFile('study')) {
+            $fileName = $setting->study;
+            if (Storage::exists('public/settings/' . $fileName)) {
+                Storage::delete('public/settings/' . $fileName);
+                /*
+                    Delete Multiple File like this way
+                    Storage::delete(['our_professors/test.png', 'our_professors/test2.png']);
+                */
+            }
+            $path = $request->study->store('public/settings');
+            $setting->study = basename($path);
+        }
+
         $setting->fill($request->only(['phone_number', 'footer_description', 'address', 'email', 'tel', 'facebook', 'instagram', 'linkedin', 'twitter', 'google_map_area'])); // 'logo', 'favicon', ... nadashte bashe
         $setting->save();
 

@@ -17,6 +17,7 @@ use App\Http\Controllers\OurProfessorController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\StudyController;
 use App\Http\Controllers\TranslatorController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,7 @@ Route::resource('our_professors', OurProfessorController::class);
 Route::resource('products', ProductController::class);
 Route::resource('publishers', PublisherController::class);
 Route::resource('settings', SettingController::class);
+Route::resource('studies', StudyController::class);
 Route::resource('translators', TranslatorController::class);
 
 // Admin Routes

@@ -1,10 +1,10 @@
 <section class="study-area pt-100 pb-70">
     <div class="container">
         <div class="section-title white-title">
-            <h2>Browse courses by study area</h2>
-            <p class="justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                ut labore et
-                dolore magna</p>
+            <h2>فایل های دانشجو</h2>
+            <p class="justify">
+                دانشجویان می توانند دروس مورد نظر خود را انتخاب کرده و فایل های ارائه شده را دانلود کنند.
+            </p>
         </div>
 
         <div class="row justify-content-center">

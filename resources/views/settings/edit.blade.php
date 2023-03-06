@@ -315,6 +315,14 @@
                                     name="translators">
                             </div>
                         </div>
+
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <label>فایل های دانشجو (1920px&times;857px)</label>
+                                <input type="file" class="form-control" accept="image/*" id="study"
+                                    name="study">
+                            </div>
+                        </div>
                     </div>
 
                     <div class="col-lg-12 col-md-12">

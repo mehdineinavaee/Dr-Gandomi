@@ -49,6 +49,7 @@ return new class extends Migration
             $table->string('publishers')->nullable();
             $table->string('authors')->nullable();
             $table->string('translators')->nullable();
+            $table->string('study')->nullable();
             $table->timestamps();
         });
     }
