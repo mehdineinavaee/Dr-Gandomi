@@ -1,4 +1,5 @@
-<section class="study-area pt-100 pb-70">
+<section class="study-area pt-100 pb-70"
+    style="background-image: url('{{ asset('storage/settings/' . $settings->study) }}');">
     <div class="container">
         <div class="section-title white-title">
             <h2>فایل های دانشجو</h2>
@@ -9,80 +10,19 @@
 
         <div class="row justify-content-center">
             <div class="study-slider owl-carousel owl-theme">
-                <div class="single-study">
-                    <i class="flaticon-finance"></i>
-                    <h3>
-                        <a href="study-online.html">Business and finance</a>
-                    </h3>
-                    <p class="justify">Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor incididunt ut
-                        labore et
-                        dolore.</p>
+                @foreach ($studies as $study)
+                    <div class="single-study">
+                        <i class="flaticon-finance"></i>
+                        <h3>
+                            <a href={{ route('studies.show', ['study' => $study->id]) }}>{{ $study->title }}</a>
+                        </h3>
 
-                    <a href="study-online.html" class="read-more">
-                        Find out more
-                        <span class="ri-arrow-right-line"></span>
-                    </a>
-                </div>
-
-                <div class="single-study">
-                    <i class="flaticon-data-scientist"></i>
-                    <h3>
-                        <a href="study-online.html">IT and data science</a>
-                    </h3>
-                    <p class="justify">Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor incididunt ut
-                        labore et
-                        dolore.</p>
-
-                    <a href="study-online.html" class="read-more">
-                        Find out more
-                        <span class="ri-arrow-right-line"></span>
-                    </a>
-                </div>
-
-                <div class="single-study">
-                    <i class="flaticon-compliant"></i>
-                    <h3>
-                        <a href="study-online.html">Law and criminology</a>
-                    </h3>
-                    <p class="justify">Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor incididunt ut
-                        labore et
-                        dolore.</p>
-
-                    <a href="study-online.html" class="read-more">
-                        Find out more
-                        <span class="ri-arrow-right-line"></span>
-                    </a>
-                </div>
-
-                <div class="single-study">
-                    <i class="flaticon-health"></i>
-                    <h3>
-                        <a href="study-online.html">Health and medicine</a>
-                    </h3>
-                    <p class="justify">Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor incididunt ut
-                        labore et
-                        dolore.</p>
-
-                    <a href="study-online.html" class="read-more">
-                        Find out more
-                        <span class="ri-arrow-right-line"></span>
-                    </a>
-                </div>
-
-                <div class="single-study">
-                    <i class="flaticon-data-scientist"></i>
-                    <h3>
-                        <a href="study-online.html">Business and finance</a>
-                    </h3>
-                    <p class="justify">Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor incididunt ut
-                        labore et
-                        dolore.</p>
-
-                    <a href="study-online.html" class="read-more">
-                        Find out more
-                        <span class="ri-arrow-right-line"></span>
-                    </a>
-                </div>
+                        <a href={{ route('studies.show', ['study' => $study->id]) }} class="read-more">
+                            اطلاعات بیشتر
+                            <span class="ri-arrow-left-line"></span>
+                        </a>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

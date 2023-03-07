@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\BlogRightSidebar;
 use App\Models\HomeOne;
 use App\Models\Event;
+use App\Models\Study;
 use App\Http\Requests\HomeOneRequest;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
@@ -41,6 +42,9 @@ class HomeOneController extends Controller
         $news = BlogRightSidebar::orderBy('id', 'desc')
             ->take(3)
             ->get();
+        $studies = Study::orderBy('id', 'desc')
+            ->take(5)
+            ->get();
 
         // Pass time to JS file in views/areas/home_ones/events_area.blade.php
         $time = Event::orderBy('date', 'asc')
@@ -76,7 +80,8 @@ class HomeOneController extends Controller
         return view('home_ones.index', compact(array('date', 'hour')))
             ->with('home_ones', $home_ones)
             ->with('events', $events)
-            ->with('news', $news);
+            ->with('news', $news)
+            ->with('studies', $studies);
     }
 
     /**

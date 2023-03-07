@@ -52,3 +52,4 @@ Route::get('admin/galleries', [GalleryController::class, 'admin'])->name('galler
 Route::get('admin/studies', [StudyController::class, 'admin'])->name('studies.admin');
 Route::post('gallery/deleteSelectedItems', [GalleryController::class, 'deleteSelectedItems'])->name('gallery.deleteSelectedItems');
 Route::get('admin/products', [ProductController::class, 'admin'])->name('products.admin');
+Route::get('download/{study}', [StudyController::class, 'download'])->name('studies.download');

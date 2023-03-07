@@ -24,7 +24,7 @@ class StudyRequest extends FormRequest
     public function rules()
     {
         return [
-            'file' => 'required',
+            'file' => 'required|mimes:doc,docx,pdf',
             'title' => 'required|max:255',
             'description' => 'nullable|max:5000',
         ];

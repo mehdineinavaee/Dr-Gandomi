@@ -12,7 +12,8 @@
                 <h2>اساتید</h2>
                 <p class="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, asperiores tempore voluptas,
                     labore maxime nam necessitatibus impedit quos aut suscipit voluptatem officiis? Quod exercitationem
-                    ipsum repellat perferendis non tempora nulla?</p>
+                    ipsum repellat perferendis non tempora nulla?
+                </p>
             </div>
 
             <div class="row justify-content-md-center">

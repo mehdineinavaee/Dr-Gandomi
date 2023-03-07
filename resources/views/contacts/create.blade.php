@@ -16,50 +16,76 @@
 
                 <div class="col-lg-5">
                     <div class="contact-info">
-                        <h2>با ما در تماس باشید</h2>
+                        @if ($settings->address == null && $settings->email == null && $settings->tel == null)
+                            <span></span>
+                        @else
+                            <h2>با ما در تماس باشید</h2>
 
-                        <ul class="address">
-                            <li class="location">
-                                <i class="ri-map-pin-2-fill"></i>
-                                <span>آدرس</span>
-                                {{ $settings->address }}
-                            </li>
-                            <li>
-                                <i class="ri-mail-line"></i>
-                                <span>ایمیل</span>
-                                {{ $settings->email }}
-                            </li>
-                            <li>
-                                <i class="ri-phone-fill"></i>
-                                <span>تلفن</span>
-                                <a href="tel:{{ $settings->tel }}">{{ $settings->tel }}</a>
-                            </li>
-                        </ul>
+                            <ul class="address">
+                                @if ($settings->address)
+                                    <li class="location">
+                                        <i class="ri-map-pin-2-fill"></i>
+                                        <span>آدرس</span>
+                                        {{ $settings->address }}
+                                    </li>
+                                @endif
+                                @if ($settings->email)
+                                    <li>
+                                        <i class="ri-mail-line"></i>
+                                        <span>ایمیل</span>
+                                        {{ $settings->email }}
+                                    </li>
+                                @endif
+                                @if ($settings->tel)
+                                    <li>
+                                        <i class="ri-phone-fill"></i>
+                                        <span>تلفن</span>
+                                        <a href="tel:{{ $settings->tel }}">{{ $settings->tel }}</a>
+                                    </li>
+                                @endif
+                            </ul>
+                        @endif
 
-                        <h3>ما را در شبکه مجازی دنبال کنید</h3>
+                        @if (
+                            $settings->facebook == null &&
+                                $settings->instagram == null &&
+                                $settings->linkedin == null &&
+                                $settings->twitter == null)
+                            <span></span>
+                        @else
+                            <h3>ما را در شبکه مجازی دنبال کنید</h3>
+                            <ul class="social-link">
+                                @if ($settings->facebook)
+                                    <li>
+                                        <a href="{{ $settings->facebook }}" target="_blank">
+                                            <i class="ri-facebook-fill"></i>
+                                        </a>
+                                    </li>
+                                @endif
+                                @if ($settings->instagram)
+                                    <li>
+                                        <a href="{{ $settings->instagram }}" target="_blank">
+                                            <i class="ri-instagram-fill"></i>
+                                        </a>
+                                    </li>
+                                @endif
+                                @if ($settings->linkedin)
+                                    <li>
+                                        <a href="{{ $settings->linkedin }}" target="_blank">
+                                            <i class="ri-linkedin-box-fill"></i>
+                                        </a>
+                                    </li>
+                                @endif
+                                @if ($settings->twitter)
+                                    <li>
+                                        <a href="{{ $settings->twitter }}" target="_blank">
+                                            <i class="ri-twitter-fill"></i>
+                                        </a>
+                                    </li>
+                                @endif
+                            </ul>
+                        @endif
 
-                        <ul class="social-link">
-                            <li>
-                                <a href="{{ $settings->facebook }}" target="_blank">
-                                    <i class="ri-facebook-fill"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ $settings->instagram }}" target="_blank">
-                                    <i class="ri-instagram-fill"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ $settings->linkedin }}" target="_blank">
-                                    <i class="ri-linkedin-box-fill"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ $settings->twitter }}" target="_blank">
-                                    <i class="ri-twitter-fill"></i>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>

@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', 'ویرایش جزوه دانشجویی')
+@section('title', 'ویرایش فایل دانشجویی')
 @section('content')
     @include('common.breadcrumbs', [
-        'data' => [['title' => 'ویرایش جزوه دانشجویی', 'url' => url()->current(), 'bg' => $settings->study]],
+        'data' => [['title' => 'ویرایش فایل دانشجویی', 'url' => url()->current(), 'bg' => $settings->study]],
     ])
     <section class="candidates-resume-area ptb-100">
         <div class="container">
@@ -16,8 +16,11 @@
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>فایل</label>
-                                <input type="file" class="form-control" accept="application/pdf" id="file"
-                                    name="file">
+                                <input type="file" class="form-control @error('file') is-invalid @enderror"
+                                    id="file" name="file">
+                                @error('file')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
 

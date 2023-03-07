@@ -123,6 +123,7 @@ return [
         'email' => 'ایمیل',
         'edition' => 'ویرایش',
         'facebook' => 'فیس بوک',
+        'file' => 'فایل',
         'first_name' => 'نام',
         'full_name' => 'نام و نام خانوادگی',
         'fee' => 'هزینه',

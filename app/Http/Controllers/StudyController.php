@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Study;
 use App\Http\Requests\StudyRequest;
 use Illuminate\Support\Facades\Storage;
+use ZipArchive;
 
 class StudyController extends Controller
 {
@@ -131,5 +132,24 @@ class StudyController extends Controller
             'status' => 200,
             'message' => 'فایل دانشجو با موفقیت حذف شد',
         ]);
+    }
+
+    public function download(Study $study)
+    {
+        $zip = new ZipArchive;
+        $folderName = $study->title . '.zip';
+        $filename = $study->file;
+        $path = public_path('storage' . '/studies/' . $filename);
+        $extension = pathinfo($path, PATHINFO_EXTENSION);
+        if (Storage::exists('public/studies/' . $filename)) {
+            if ($zip->open(public_path($folderName), ZipArchive::CREATE) === TRUE) {
+                $zip->addFile($path, $study->title . '.' . $extension);
+                $zip->close();
+            }
+            return response()->download(public_path($folderName));
+        } else {
+            return redirect()->back()
+                ->with('danger', 'خطا در برقراری ارتباط');
+        }
     }
 }

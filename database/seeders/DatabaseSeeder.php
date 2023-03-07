@@ -61,10 +61,10 @@ class DatabaseSeeder extends Seeder
                 'address' => 'دانشگاه آزاد اسلامی واحد یزد',
                 'email' => 'abolfazlgandomi@gmail.com',
                 'tel' => '03582011111',
-                'facebook' => 'www.facebook.com',
-                'instagram' => 'www.instagram.com',
-                'linkedin' => 'www.linkedin.com',
-                'twitter' => 'www.twitter.com',
+                'facebook' => 'https://www.facebook.com',
+                'instagram' => 'https://www.instagram.com',
+                'linkedin' => 'https://www.linkedin.com',
+                'twitter' => 'https://www.twitter.com',
                 // Contact
                 'google_map_area' => '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3389.4680603160573!2d54.3493974!3d31.8394762!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fa619546e0ce4ff%3A0xb15335001a40852b!2sAzad%20Islamic%20University%20Of%20Yazd!5e0!3m2!1sen!2s!4v1675928862263!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>',
                 // Breadcrumb background images

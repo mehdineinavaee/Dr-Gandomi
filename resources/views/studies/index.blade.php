@@ -21,15 +21,12 @@
                         <div class="single-study study-f3f3f4">
                             <i class="flaticon-contract"></i>
                             <h3>
-                                <a href="study-online.html">{{ $study->title }}</a>
+                                <a href={{ route('studies.show', ['study' => $study->id]) }}>{{ $study->title }}</a>
                             </h3>
-                            <p class="justify">
-                                {{ $study->description }}
-                            </p>
 
-                            <a href="index.htm" class="read-more">
-                                دانلود فایل
-                                <span class="ri-arrow-right-line"></span>
+                            <a href={{ route('studies.show', ['study' => $study->id]) }} class="read-more">
+                                دانلود در ادامه مطلب
+                                <span class="ri-arrow-left-line"></span>
                             </a>
                         </div>
                     </div>
