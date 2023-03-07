@@ -49,5 +49,6 @@ Route::resource('modes', ModeController::class);
 Route::get('admin/our_professors', [OurProfessorController::class, 'admin'])->name('our_professors.admin');
 Route::get('admin/faqs', [FaqController::class, 'admin'])->name('faqs.admin');
 Route::get('admin/galleries', [GalleryController::class, 'admin'])->name('galleries.admin');
+Route::get('admin/studies', [StudyController::class, 'admin'])->name('studies.admin');
 Route::post('gallery/deleteSelectedItems', [GalleryController::class, 'deleteSelectedItems'])->name('gallery.deleteSelectedItems');
 Route::get('admin/products', [ProductController::class, 'admin'])->name('products.admin');

@@ -60,6 +60,9 @@
                                     <a href={{ route('gallery.index') }} class="nav-link">گالری</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href={{ route('studies.index') }} class="nav-link">فایل های دانشجو</a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="JavaScript:void(0)" class="nav-link">
                                         کاربر
                                         <i class="ri-arrow-left-s-line"></i>
@@ -161,6 +164,11 @@
                                 <li class="nav-item">
                                     <a href={{ route('galleries.admin') }} class="nav-link">
                                         پنل گالری
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href={{ route('studies.admin') }} class="nav-link">
+                                        پنل فایل های دانشجو
                                     </a>
                                 </li>
                                 <li class="nav-item">
