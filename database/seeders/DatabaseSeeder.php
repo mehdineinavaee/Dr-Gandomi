@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         DB::table('home_ones')->insert([
             [
                 'welcome' => 'به سایت دکتر گندمی خوش آمدید',
-                'slogen' => 'آموزش در سطح جهانی برای ساختن آینده قابل استفاده است',
+                'slogan' => 'آموزش در سطح جهانی برای ساختن آینده قابل استفاده است',
                 'backgroundBanner' => 'NULL',
                 'banner' => 'NULL',
                 'created_at' => date('Y-m-d H:i:s'),
@@ -87,15 +87,6 @@ class DatabaseSeeder extends Seeder
                 'authors' => 'NULL',
                 'translators' => 'NULL',
                 'study' => 'NULL',
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-            ],
-        ]);
-
-        DB::table('translators')->insert([
-            [
-                'first_name' => 'این کتاب',
-                'last_name' => 'مترجم ندارد',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ],

@@ -36,22 +36,60 @@
                                     <tbody>
                                         @foreach ($courses as $course)
                                             <tr>
-                                                <td style="text-align:center;" class="align-middle">{{ $loop->iteration }}
-                                                </td>
-                                                <td style="text-align:center;" class="align-middle">{{ $course->title }}
-                                                </td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $course->mode->title }}</td>
-                                                <td style="text-align:center;" class="align-middle">{{ $course->duration }}
+                                                    {{ $loop->iteration }}
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $course->start_dates }}</td>
-                                                <td style="text-align:center;" class="align-middle">
-                                                    {{ number_format($course->fee) }} تومان</td>
-                                                <td style="text-align:center;" class="align-middle">{{ $course->language }}
+                                                    {{ $course->title }}
                                                 </td>
+                                                @if ($course->mode_id)
+                                                    <td style="text-align:center;" class="align-middle">
+                                                        {{ $course->mode->title }}
+                                                    </td>
+                                                @else
+                                                    <td style="text-align:center;" class="align-middle">
+                                                        NULL
+                                                    </td>
+                                                @endif
+                                                @if ($course->duration)
+                                                    <td style="text-align:center;" class="align-middle">
+                                                        {{ $course->duration }}
+                                                    </td>
+                                                @else
+                                                    <td style="text-align:center;" class="align-middle">
+                                                        NULL
+                                                    </td>
+                                                @endif
+                                                @if ($course->start_dates)
+                                                    <td style="text-align:center;" class="align-middle">
+                                                        {{ $course->start_dates }}
+                                                    </td>
+                                                @else
+                                                    <td style="text-align:center;" class="align-middle">
+                                                        NULL
+                                                    </td>
+                                                @endif
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $course->seats_available }}</td>
+                                                    {{ number_format($course->fee) }} تومان
+                                                </td>
+                                                @if ($course->language)
+                                                    <td style="text-align:center;" class="align-middle">
+                                                        {{ $course->language }}
+                                                    </td>
+                                                @else
+                                                    <td style="text-align:center;" class="align-middle">
+                                                        NULL
+                                                    </td>
+                                                @endif
+                                                @if ($course->seats_available)
+                                                    <td style="text-align:center;" class="align-middle">
+                                                        {{ $course->seats_available }}
+                                                    </td>
+                                                @else
+                                                    <td style="text-align:center;" class="align-middle">
+                                                        NULL
+                                                    </td>
+                                                @endif
                                                 <td style="text-align:center;" class="align-middle">
 
                                                     {{-- <form action="{{ route('courses.destroy', ['course' => $course->id]) }}"

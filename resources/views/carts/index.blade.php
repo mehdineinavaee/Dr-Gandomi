@@ -14,253 +14,92 @@
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Trash</th>
-                                        <th scope="col">Image</th>
-                                        <th scope="col">Product name</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Quantity</th>
-                                        <th scope="col">Total</th>
+                                        <th scope="col">حذف</th>
+                                        <th scope="col">تصویر</th>
+                                        <th scope="col">نام محصول</th>
+                                        <th scope="col">قیمت</th>
+                                        <th scope="col">تعداد</th>
+                                        <th scope="col">قیمت نهایی</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
-                                    <tr>
-                                        <td class="trash">
-                                            <a href="index.htm#" class="remove">
-                                                <i class="ri-delete-bin-line"></i>
-                                            </a>
-                                        </td>
+                                    @if ($products->isEmpty())
+                                        <tr>
+                                            <td colspan="6">موردی یافت نشد</td>
+                                        </tr>
+                                    @else
+                                        @foreach ($products as $product)
+                                            <tr>
+                                                <td class="trash">
+                                                    <a class="remove delete_from_cart">
+                                                        <i class="ri-delete-bin-line"></i>
+                                                        <form
+                                                            action="{{ route('cart.destroy', ['product' => $product->id]) }}"
+                                                            method="POST">
+                                                            @method('DELETE')
+                                                            @csrf
+                                                        </form>
+                                                    </a>
+                                                </td>
 
-                                        <td class="product-thumbnail">
-                                            <a href="product-details.html">
-                                                <img src="assets/images/product/product-1.jpg" alt="Image">
-                                            </a>
-                                        </td>
+                                                <td class="product-thumbnail">
+                                                    <a href={{ route('products.show', ['product' => $product->id]) }}>
+                                                        <img src={{ asset('storage/products/' . $product->cover) }}
+                                                            alt={{ $product->title }}>
+                                                    </a>
+                                                </td>
 
-                                        <td class="product-name">
-                                            <a href="product-details.html">Natural</a>
-                                        </td>
+                                                <td class="product-name">
+                                                    <a href={{ route('products.show', ['product' => $product->id]) }}>{{ $product->title }}
+                                                    </a>
+                                                </td>
 
-                                        <td class="product-price">
-                                            <span class="unit-amount">$10.00</span>
-                                        </td>
+                                                <td class="product-price">
+                                                    <span class="unit-amount">{{ number_format($product->price) }}
+                                                        تومان</span>
+                                                </td>
 
-                                        <td class="product-quantity">
-                                            <div class="input-counter">
-                                                <span class="minus-btn">
-                                                    <i class="ri-subtract-line"></i>
-                                                </span>
+                                                <td class="product-quantity">
+                                                    <div class="input-counter">
+                                                        <span class="minus-btn">
+                                                            <i class="ri-subtract-line"></i>
+                                                        </span>
 
-                                                <input type="text" value="1">
+                                                        <input type="text" value="1">
 
-                                                <span class="plus-btn">
-                                                    <i class="ri-add-line"></i>
-                                                </span>
-                                            </div>
-                                        </td>
+                                                        <span class="plus-btn">
+                                                            <i class="ri-add-line"></i>
+                                                        </span>
+                                                    </div>
+                                                </td>
 
-                                        <td class="product-subtotal">
-                                            <span class="subtotal-amount">$10.00</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="trash">
-                                            <a href="index.htm#" class="remove">
-                                                <i class="ri-delete-bin-line"></i>
-                                            </a>
-                                        </td>
-
-                                        <td class="product-thumbnail">
-                                            <a href="product-details.html">
-                                                <img src="assets/images/product/product-2.jpg" alt="Image">
-                                            </a>
-                                        </td>
-
-                                        <td class="product-name">
-                                            <a href="product-details.html">Secret covered in sand</a>
-                                        </td>
-
-                                        <td class="product-price">
-                                            <span class="unit-amount">$20.00</span>
-                                        </td>
-
-                                        <td class="product-quantity">
-                                            <div class="input-counter">
-                                                <span class="minus-btn">
-                                                    <i class="ri-subtract-line"></i>
-                                                </span>
-
-                                                <input type="text" value="1">
-
-                                                <span class="plus-btn">
-                                                    <i class="ri-add-line"></i>
-                                                </span>
-                                            </div>
-                                        </td>
-
-                                        <td class="product-subtotal">
-                                            <span class="subtotal-amount">$20.00</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="trash">
-                                            <a href="index.htm#" class="remove">
-                                                <i class="ri-delete-bin-line"></i>
-                                            </a>
-                                        </td>
-
-                                        <td class="product-thumbnail">
-                                            <a href="product-details.html">
-                                                <img src="assets/images/product/product-3.jpg" alt="Image">
-                                            </a>
-                                        </td>
-
-                                        <td class="product-name">
-                                            <a href="product-details.html">N is for nature</a>
-                                        </td>
-
-                                        <td class="product-price">
-                                            <span class="unit-amount">$08.00</span>
-                                        </td>
-
-                                        <td class="product-quantity">
-                                            <div class="input-counter">
-                                                <span class="minus-btn">
-                                                    <i class="ri-subtract-line"></i>
-                                                </span>
-
-                                                <input type="text" value="1">
-
-                                                <span class="plus-btn">
-                                                    <i class="ri-add-line"></i>
-                                                </span>
-                                            </div>
-                                        </td>
-
-                                        <td class="product-subtotal">
-                                            <span class="subtotal-amount">$08.00</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="trash">
-                                            <a href="index.htm#" class="remove">
-                                                <i class="ri-delete-bin-line"></i>
-                                            </a>
-                                        </td>
-
-                                        <td class="product-thumbnail">
-                                            <a href="product-details.html">
-                                                <img src="assets/images/product/product-4.jpg" alt="Image">
-                                            </a>
-                                        </td>
-
-                                        <td class="product-name">
-                                            <a href="product-details.html">Life of the candle</a>
-                                        </td>
-
-                                        <td class="product-price">
-                                            <span class="unit-amount">$15.00</span>
-                                        </td>
-
-                                        <td class="product-quantity">
-                                            <div class="input-counter">
-                                                <span class="minus-btn">
-                                                    <i class="ri-subtract-line"></i>
-                                                </span>
-
-                                                <input type="text" value="1">
-
-                                                <span class="plus-btn">
-                                                    <i class="ri-add-line"></i>
-                                                </span>
-                                            </div>
-                                        </td>
-
-                                        <td class="product-subtotal">
-                                            <span class="subtotal-amount">$15.00</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td class="trash">
-                                            <a href="index.htm#" class="remove">
-                                                <i class="ri-delete-bin-line"></i>
-                                            </a>
-                                        </td>
-
-                                        <td class="product-thumbnail">
-                                            <a href="product-details.html">
-                                                <img src="assets/images/product/product-5.jpg" alt="Image">
-                                            </a>
-                                        </td>
-
-                                        <td class="product-name">
-                                            <a href="product-details.html">Be now</a>
-                                        </td>
-
-                                        <td class="product-price">
-                                            <span class="unit-amount">$20.00</span>
-                                        </td>
-
-                                        <td class="product-quantity">
-                                            <div class="input-counter">
-                                                <span class="minus-btn">
-                                                    <i class="ri-subtract-line"></i>
-                                                </span>
-
-                                                <input type="text" value="1">
-
-                                                <span class="plus-btn">
-                                                    <i class="ri-add-line"></i>
-                                                </span>
-                                            </div>
-                                        </td>
-
-                                        <td class="product-subtotal">
-                                            <span class="subtotal-amount">$20.00</span>
-                                        </td>
-                                    </tr>
+                                                <td class="product-subtotal">
+                                                    <span class="subtotal-amount">{{ number_format($product->total) }}
+                                                        تومان</span>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    @endif
                                 </tbody>
                             </table>
                         </div>
                     </form>
-
-                    <div class="coupon-cart">
-                        <div class="row">
-                            <div class="col-lg-8 col-md-7">
-                                <div class="form-group mb-0">
-                                    <input type="text" class="form-control" placeholder="Coupon code">
-                                    <a href="index.htm#" class="default-btn">
-                                        Apply coupon
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-5">
-                                <a href="index.htm#" class="default-btn update-cart">
-                                    Update cart
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="col-lg-4">
                     <div class="cart-totals">
-                        <h3 class="cart-checkout-title">Checkout summary</h3>
+                        <h3 class="cart-checkout-title">خلاصه پرداخت</h3>
 
                         <ul>
-                            <li>Subtotal <span>$145.00</span></li>
-                            <li>Shipping <span>$00.00</span></li>
-                            <li>Total <span>$315.00</span></li>
-                            <li><b>Payable Total</b> <span><b>$145.00</b></span></li>
+                            <li>هزینه کل محصولات <span>$145.00</span></li>
+                            <li>هزینه ارسال <span>$00.00</span></li>
+                            <li>جمع نهایی <span>$315.00</span></li>
+                            <li><b>هزینه قابل پرداخت</b> <span><b>$145.00</b></span></li>
                         </ul>
 
                         <a href="checkout.html" class="default-btn">
-                            Proceed to checkout
+                            پرداخت در ادامه
                         </a>
                     </div>
                 </div>
@@ -269,3 +108,12 @@
     </section>
     <!-- End Cart Area -->
 @endsection
+@push('js')
+    <script>
+        $('.delete_from_cart').click(function() {
+            if (confirm("آیا از حذف اطمینان دارید؟")) {
+                $(this).find('form').submit();
+            }
+        });
+    </script>
+@endpush

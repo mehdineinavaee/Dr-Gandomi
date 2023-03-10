@@ -163,7 +163,7 @@ class HomeOneController extends Controller
             $homeOne->banner = basename($path);
         }
 
-        $homeOne->fill($request->only(['welcome', 'slogen'])); // 'backgroundBanner', 'banner' nadashte bashe
+        $homeOne->fill($request->only(['welcome', 'slogan'])); // 'backgroundBanner', 'banner' nadashte bashe
         $homeOne->save();
 
         return redirect()->route('/')

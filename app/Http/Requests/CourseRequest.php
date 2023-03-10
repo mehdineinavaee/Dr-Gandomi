@@ -28,7 +28,7 @@ class CourseRequest extends FormRequest
             'description' => 'nullable|max:5000',
             'duration' => 'nullable|max:50',
             'start_dates' => 'nullable|date|min:10|max:10',
-            'fee' => 'nullable|regex:/^[0-9]{1,3}(,[0-9]{3})*(\.[0-9]+)*$/|not_in:0|max:50',
+            'fee' => 'nullable|regex:/^[0-9]{1,3}(,[0-9]{3})*(\.[0-9]+)*$/|max:50', // |not_in:0| yani ejaze vared kardane sefr ra nadarad
             'language' => 'nullable|max:50',
             'seats_available' => 'nullable|digits_between:0,10|numeric',
         ];

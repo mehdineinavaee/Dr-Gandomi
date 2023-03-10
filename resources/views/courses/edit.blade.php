@@ -58,7 +58,7 @@
                                     </option>
                                     @foreach ($modes as $mode)
                                         <option value="{{ $mode->id }}"
-                                            @if ($course->mode->id === $mode->id) selected @endif>
+                                            @if ($course->mode_id && $course->mode->id === $mode->id) selected @endif>
                                             {{ $mode->title }}
                                         </option>
                                     @endforeach

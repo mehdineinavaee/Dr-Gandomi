@@ -10,7 +10,11 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="main-default-content mr-15">
-                        <span class="top-title">{{ $event->event_category->title }}</span>
+                        @if ($event->event_category)
+                            <span class="top-title">{{ $event->event_category->title }}</span>
+                        @else
+                            <span class="top-title"></span>
+                        @endif
                         <h2>{{ $event->title }}</h2>
 
                         <ul class="date-time">
@@ -51,7 +55,11 @@
                             <ul>
                                 <li>
                                     دسته بندی
-                                    <span>{{ $event->event_category->title }}</span>
+                                    @if ($event->event_category)
+                                        <span>{{ $event->event_category->title }}</span>
+                                    @else
+                                        <span></span>
+                                    @endif
                                 </li>
                                 <li>
                                     سخنران
@@ -67,134 +75,149 @@
                 </div>
 
                 <div class="col-lg-12">
-                    <h3>هیات داوران</h3>
+                    @if ($event->supervisor == null && $event->advisor == null && $event->referee == null)
+                        <h3></h3>
+                    @else
+                        <h3>هیات داوران</h3>
+                    @endif
                     <div class="row justify-content-md-center mr-15">
-                        <div class="col-lg-4 col-md-4">
-                            <div class="single-team-member">
-                                <img src="{{ asset('storage/our_professors/' . $event->supervisor->cover) }}"
-                                    alt="Image">
+                        @if ($event->supervisor)
+                            <div class="col-lg-4 col-md-4">
+                                <div class="single-team-member">
+                                    <img src="{{ asset('storage/our_professors/' . $event->supervisor->cover) }}"
+                                        alt="Image">
 
-                                <div class="team-content">
-                                    <div class="team-social">
-                                        <a href="javascript:void(0)" class="control">
-                                            <i class="ri-share-fill"></i>
-                                        </a>
+                                    <div class="team-content">
+                                        <div class="team-social">
+                                            <a href="javascript:void(0)" class="control">
+                                                <i class="ri-share-fill"></i>
+                                            </a>
 
-                                        <ul>
-                                            <li>
-                                                <a href="{{ $event->supervisor->facebook }}" target="_blank">
-                                                    <i class="ri-facebook-fill"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ $event->supervisor->instagram }}" target="_blank">
-                                                    <i class="ri-instagram-line"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ $event->supervisor->linkedin }}" target="_blank">
-                                                    <i class="ri-linkedin-fill"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ $event->supervisor->twitter }}" target="_blank">
-                                                    <i class="ri-twitter-fill"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                            <ul>
+                                                <li>
+                                                    <a href="{{ $event->supervisor->facebook }}" target="_blank">
+                                                        <i class="ri-facebook-fill"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ $event->supervisor->instagram }}" target="_blank">
+                                                        <i class="ri-instagram-line"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ $event->supervisor->linkedin }}" target="_blank">
+                                                        <i class="ri-linkedin-fill"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ $event->supervisor->twitter }}" target="_blank">
+                                                        <i class="ri-twitter-fill"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
 
-                                    <div class="team-name">
-                                        <h3>{{ $event->supervisor->full_name }}</h3>
-                                        <span>استاد راهنما</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-4">
-                            <div class="single-team-member">
-                                <img src="{{ asset('storage/our_professors/' . $event->advisor->cover) }}" alt="Image">
-
-                                <div class="team-content">
-                                    <div class="team-social">
-                                        <a href="javascript:void(0)" class="control">
-                                            <i class="ri-share-fill"></i>
-                                        </a>
-
-                                        <ul>
-                                            <li>
-                                                <a href="{{ $event->advisor->facebook }}" target="_blank">
-                                                    <i class="ri-facebook-fill"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ $event->advisor->instagram }}" target="_blank">
-                                                    <i class="ri-instagram-line"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ $event->advisor->linkedin }}" target="_blank">
-                                                    <i class="ri-linkedin-fill"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ $event->advisor->twitter }}" target="_blank">
-                                                    <i class="ri-twitter-fill"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="team-name">
-                                        <h3>{{ $event->advisor->full_name }}</h3>
-                                        <span>استاد مشاور</span>
+                                        <div class="team-name">
+                                            <h3>{{ $event->supervisor->full_name }}</h3>
+                                            <span>استاد راهنما</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        @endif
 
-                        <div class="col-lg-4 col-md-4">
-                            <div class="single-team-member">
-                                <img src="{{ asset('storage/our_professors/' . $event->referee->cover) }}" alt="Image">
+                        @if ($event->advisor)
+                            <div class="col-lg-4 col-md-4">
+                                <div class="single-team-member">
 
-                                <div class="team-content">
-                                    <div class="team-social">
-                                        <a href="javascript:void(0)" class="control">
-                                            <i class="ri-share-fill"></i>
-                                        </a>
+                                    <img src="{{ asset('storage/our_professors/' . $event->advisor->cover) }}"
+                                        alt="Image">
 
-                                        <ul>
-                                            <li>
-                                                <a href="{{ $event->referee->facebook }}" target="_blank">
-                                                    <i class="ri-facebook-fill"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ $event->referee->instagram }}" target="_blank">
-                                                    <i class="ri-instagram-line"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ $event->referee->linkedin }}" target="_blank">
-                                                    <i class="ri-linkedin-fill"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ $event->referee->twitter }}" target="_blank">
-                                                    <i class="ri-twitter-fill"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
+                                    <div class="team-content">
+                                        <div class="team-social">
+                                            <a href="javascript:void(0)" class="control">
+                                                <i class="ri-share-fill"></i>
+                                            </a>
+
+                                            <ul>
+                                                <li>
+                                                    <a href="{{ $event->advisor->facebook }}" target="_blank">
+                                                        <i class="ri-facebook-fill"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ $event->advisor->instagram }}" target="_blank">
+                                                        <i class="ri-instagram-line"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ $event->advisor->linkedin }}" target="_blank">
+                                                        <i class="ri-linkedin-fill"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ $event->advisor->twitter }}" target="_blank">
+                                                        <i class="ri-twitter-fill"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="team-name">
+                                            <h3>{{ $event->advisor->full_name }}</h3>
+                                            <span>استاد مشاور</span>
+                                        </div>
                                     </div>
 
-                                    <div class="team-name">
-                                        <h3>{{ $event->referee->full_name }}</h3>
-                                        <span>داور</span>
-                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endif
+                        @if ($event->referee)
+                            <div class="col-lg-4 col-md-4">
+                                <div class="single-team-member">
+
+                                    <img src="{{ asset('storage/our_professors/' . $event->referee->cover) }}"
+                                        alt="Image">
+
+                                    <div class="team-content">
+                                        <div class="team-social">
+                                            <a href="javascript:void(0)" class="control">
+                                                <i class="ri-share-fill"></i>
+                                            </a>
+
+                                            <ul>
+                                                <li>
+                                                    <a href="{{ $event->referee->facebook }}" target="_blank">
+                                                        <i class="ri-facebook-fill"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ $event->referee->instagram }}" target="_blank">
+                                                        <i class="ri-instagram-line"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ $event->referee->linkedin }}" target="_blank">
+                                                        <i class="ri-linkedin-fill"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ $event->referee->twitter }}" target="_blank">
+                                                        <i class="ri-twitter-fill"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="team-name">
+                                            <h3>{{ $event->referee->full_name }}</h3>
+                                            <span>داور</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>

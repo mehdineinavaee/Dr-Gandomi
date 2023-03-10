@@ -25,8 +25,8 @@ class ProductRequest extends FormRequest
     {
         return [
             'title' => 'required|max:255',
-            'price' => 'required|regex:/^[0-9]{1,3}(,[0-9]{3})*(\.[0-9]+)*$/|not_in:0|max:50',
-            'discount' => 'required|max:3|numeric',
+            'price' => 'required|regex:/^[0-9]{1,3}(,[0-9]{3})*(\.[0-9]+)*$/|max:50', // |not_in:0| yani ejaze vared kardane sefr ra nadarad
+            'discount' => 'required|min:0|max:100|numeric',
             'edition' => 'required|max:10',
             'description' => 'nullable|max:5000',
         ];

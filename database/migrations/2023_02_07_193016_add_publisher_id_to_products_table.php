@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->foreignId('publisher_id')->after('description');
+            $table->foreignId('publisher_id')->after('description')->nullable();
             $table->foreign('publisher_id')
                 ->references('id')
                 ->on('publishers')

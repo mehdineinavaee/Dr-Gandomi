@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('backgroundBanner')->nullable();
             $table->string('banner')->nullable();
             $table->string('welcome', '100')->nullable();
-            $table->string('slogen', '100')->nullable();
+            $table->string('slogan', '100')->nullable();
             $table->timestamps();
         });
     }

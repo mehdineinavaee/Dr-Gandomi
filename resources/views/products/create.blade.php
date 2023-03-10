@@ -62,7 +62,8 @@
                                     <option value="" selected>انتشارات را انتخاب کنید
                                     </option>
                                     @foreach ($publishers as $publisher)
-                                        <option value="{{ $publisher->id }}">
+                                        <option value="{{ $publisher->id }}"
+                                            {{ old('publishers') == $publisher->id ? 'selected' : '' }}>
                                             {{ $publisher->name }}
                                         </option>
                                     @endforeach
@@ -77,7 +78,8 @@
                                 <select id="authors" name="authors" placeholder="نویسنده را انتخاب کنید"
                                     data-search="true" data-silent-initial-value-set="true" multiple>
                                     @foreach ($authors as $author)
-                                        <option value="{{ $author->id }}">
+                                        <option value="{{ $author->id }}"
+                                            {{ old('authors') == $author->id ? 'selected' : '' }}>
                                             {{ $author->fullName }}
                                         </option>
                                     @endforeach

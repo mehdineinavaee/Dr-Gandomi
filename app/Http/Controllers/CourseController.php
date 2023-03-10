@@ -53,14 +53,24 @@ class CourseController extends Controller
     {
         $myArray = explode(',', $request->categories);
         $course = new Course($request->all());
-        $course->fee = str_replace(",", "", $course->fee);
+
+        if ($course->fee !== null) {
+            $course->fee = str_replace(",", "", $course->fee);
+        } else {
+            $course->fee = 0;
+        }
+
         if ($request->hasFile('cover')) {
             $path = $request->cover->store('public/courses');
             $course->cover = basename($path);
         }
+
         $course->mode()->associate($request->mode);
         $course->save();
-        $course->categories()->attach($myArray);
+
+        if ($request->categories !== null) {
+            $course->categories()->attach($myArray);
+        }
 
         return redirect()->route('courses.admin')
             ->with('success', 'دوره جدید ثبت شد');
@@ -116,10 +126,21 @@ class CourseController extends Controller
             $path = $request->cover->store('public/courses');
             $course->cover = basename($path);
         }
+
         $course->fill($request->only(['title', 'description', 'duration', 'start_dates', 'fee', 'language', 'seats_available'])); // 'cover' nadashte bashe
-        $course->fee = str_replace(",", "", $course->fee);
+
+        if ($course->fee !== null) {
+            $course->fee = str_replace(",", "", $course->fee);
+        } else {
+            $course->fee = 0;
+        }
+
         $course->mode()->associate($request->mode);
-        $course->categories()->sync($myArray);
+
+        if ($request->categories !== null) {
+            $course->categories()->sync($myArray);
+        }
+
         $course->save();
 
         return redirect()->route('courses.admin')

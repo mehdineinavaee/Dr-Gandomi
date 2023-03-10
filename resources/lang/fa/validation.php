@@ -144,7 +144,7 @@ return [
         'question' => 'پرسش',
         'response' => 'پاسخ',
         'start_dates' => 'تاریخ شروع',
-        'slogen' => 'شعار',
+        'slogan' => 'شعار',
         'seats_available' => 'تعداد صندلی فعال',
         'title' => 'عنوان',
         'tags' => 'تگ ها',

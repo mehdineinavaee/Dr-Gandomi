@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('product_translator', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_id');
-            $table->foreignId('translator_id');
+            $table->foreignId('product_id')->nullable();
+            $table->foreignId('translator_id')->nullable();
 
             $table->foreign('product_id')
                 ->references('id')

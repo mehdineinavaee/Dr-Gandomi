@@ -43,28 +43,23 @@
                             </li>
                             <li>
                                 انتشارات
-                                <span>{{ $product->publisher->name }}</span>
+                                @if ($product->publisher)
+                                    <span>{{ $product->publisher->name }}</span>
+                                @endif
+                            </li>
+                            <li>
+                                مترجمان
+                                @foreach ($product->translators as $item)
+                                    <ul>
+                                        <li style="font-weight: normal;">{{ $item->fullName }}</span>
+                                    </ul>
+                                @endforeach
                             </li>
                         </ul>
 
-                        <div class="product-add-to-cart">
-                            <span class="quantities">تعداد:</span>
-                            <div class="input-counter">
-                                <span class="minus-btn">
-                                    <i class="ri-subtract-line"></i>
-                                </span>
-
-                                <input type="text" value="1">
-
-                                <span class="plus-btn">
-                                    <i class="ri-add-line"></i>
-                                </span>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="default-btn mr-20">
+                        <a href={{ route('cart.add', ['product' => $product->id]) }} class="default-btn mr-20">
                             افزودن به سبد
-                        </button>
+                        </a>
                     </div>
                 </div>
 

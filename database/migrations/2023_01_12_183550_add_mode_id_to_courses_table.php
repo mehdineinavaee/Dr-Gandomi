@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('courses', function (Blueprint $table) {
-            $table->foreignId('mode_id')->after('description');
+            $table->foreignId('mode_id')->after('description')->nullable();
             $table->foreign('mode_id')
                 ->references('id')
                 ->on('modes')

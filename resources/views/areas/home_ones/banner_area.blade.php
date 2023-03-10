@@ -7,7 +7,7 @@
                     <div class="col-lg-6">
                         <div class="banner-content">
                             <span>{{ $home_ones->welcome }}</span>
-                            <h1>{{ $home_ones->slogen }}</h1>
+                            <h1>{{ $home_ones->slogan }}</h1>
 
                             <div class="banner-btn">
                                 <a href="{{ route('events.index') }}" class="default-btn">

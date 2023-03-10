@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('category_course', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id');
-            $table->foreignId('course_id');
+            $table->foreignId('category_id')->nullable();
+            $table->foreignId('course_id')->nullable();
 
             $table->foreign('category_id')
                 ->references('id')

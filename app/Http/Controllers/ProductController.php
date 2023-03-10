@@ -77,7 +77,10 @@ class ProductController extends Controller
         $product->save();
 
         $myAuthorsArray = explode(',', $request->authors);
-        $product->authors()->attach($myAuthorsArray);
+
+        if ($request->authors !== null) {
+            $product->authors()->attach($myAuthorsArray);
+        }
 
         if ($request->translators !== null) {
             $myTranslatorsArray = explode(',', $request->translators);
@@ -163,10 +166,16 @@ class ProductController extends Controller
         $product->publisher()->associate($request->publisher);
 
         $myAuthorsArray = explode(',', $request->authors);
-        $product->authors()->sync($myAuthorsArray);
+
+        if ($request->authors !== null) {
+            $product->authors()->sync($myAuthorsArray);
+        }
 
         $myTranslatorsArray = explode(',', $request->translators);
-        $product->translators()->sync($myTranslatorsArray);
+
+        if ($request->translators !== null) {
+            $product->translators()->sync($myTranslatorsArray);
+        }
 
         $product->save();
 

@@ -23,7 +23,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('authors', AuthorController::class);
 Route::resource('blog_right_sidebars', BlogRightSidebarController::class);
-Route::resource('cart', CartController::class);
 Route::resource('contact', ContactController::class);
 Route::resource('courses', CourseController::class);
 Route::resource('events', EventController::class);
@@ -53,3 +52,6 @@ Route::get('admin/studies', [StudyController::class, 'admin'])->name('studies.ad
 Route::post('gallery/deleteSelectedItems', [GalleryController::class, 'deleteSelectedItems'])->name('gallery.deleteSelectedItems');
 Route::get('admin/products', [ProductController::class, 'admin'])->name('products.admin');
 Route::get('download/{study}', [StudyController::class, 'download'])->name('studies.download');
+Route::get('cart', [CartController::class, 'index'])->name('cart.index');
+Route::get('cart/add/{product}', [CartController::class, 'add'])->name('cart.add');
+Route::delete('cart/{product}', [CartController::class, 'destroy'])->name('cart.destroy');

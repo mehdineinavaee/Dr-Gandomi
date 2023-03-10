@@ -16,7 +16,7 @@
 
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)">
+                                        <a href={{ route('cart.add', ['product' => $product->id]) }}>
                                             <i class="ri-shopping-cart-line"></i>
                                         </a>
                                     </li>

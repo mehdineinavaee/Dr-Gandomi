@@ -28,7 +28,6 @@
                     <div class="courses-sidebar ml-15">
                         <div class="courses-single-sidebar">
                             <h3>اطلاعات دوره</h3>
-
                             <ul>
                                 <li>
                                     دسته بندی
@@ -38,10 +37,17 @@
                                         </span>
                                     @endforeach
                                 </li>
-                                <li>
-                                    روش برگزاری
-                                    <span>{{ $course->mode->title }}</span>
-                                </li>
+                                @if ($course->mode_id)
+                                    <li>
+                                        روش برگزاری
+                                        <span>{{ $course->mode->title }}</span>
+                                    </li>
+                                @else
+                                    <li>
+                                        روش برگزاری
+                                        <span></span>
+                                    </li>
+                                @endif
                                 <li>
                                     مدت دوره
                                     <span>{{ $course->duration }}</span>

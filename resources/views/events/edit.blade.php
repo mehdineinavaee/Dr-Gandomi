@@ -127,7 +127,7 @@
                                     </option>
                                     @foreach ($our_professors as $our_professor)
                                         <option value="{{ $our_professor->id }}"
-                                            @if ($event->supervisor->id === $our_professor->id) selected @endif>
+                                            @if ($event->supervisor && $event->supervisor->id === $our_professor->id) selected @endif>
                                             {{ $our_professor->full_name }}
                                         </option>
                                     @endforeach
@@ -144,7 +144,7 @@
                                     </option>
                                     @foreach ($our_professors as $our_professor)
                                         <option value="{{ $our_professor->id }}"
-                                            @if ($event->advisor->id === $our_professor->id) selected @endif>
+                                            @if ($event->advisor && $event->advisor->id === $our_professor->id) selected @endif>
                                             {{ $our_professor->full_name }}
                                         </option>
                                     @endforeach
@@ -161,7 +161,7 @@
                                     </option>
                                     @foreach ($our_professors as $our_professor)
                                         <option value="{{ $our_professor->id }}"
-                                            @if ($event->referee->id === $our_professor->id) selected @endif>
+                                            @if ($event->referee && $event->referee->id === $our_professor->id) selected @endif>
                                             {{ $our_professor->full_name }}
                                         </option>
                                     @endforeach
@@ -178,7 +178,7 @@
                                     </option>
                                     @foreach ($event_categories as $event_category)
                                         <option value="{{ $event_category->id }}"
-                                            @if ($event->event_category->id === $event_category->id) selected @endif>
+                                            @if ($event->event_category && $event->event_category->id === $event_category->id) selected @endif>
                                             {{ $event_category->title }}
                                         </option>
                                     @endforeach

@@ -25,7 +25,7 @@ class HomeOneRequest extends FormRequest
     {
         return [
             'welcome' => 'nullable|max:100',
-            'slogen' => 'nullable|max:100',
+            'slogan' => 'nullable|max:100',
         ];
     }
 }

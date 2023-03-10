@@ -177,7 +177,7 @@
                                     </option>
                                     @foreach ($event_categories as $event_category)
                                         <option value="{{ $event_category->id }}"
-                                            {{ old('event_category') == $our_professor->id ? 'selected' : '' }}>
+                                            {{ old('event_category') == $event_category->id ? 'selected' : '' }}>
                                             {{ $event_category->title }}
                                         </option>
                                     @endforeach

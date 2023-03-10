@@ -66,7 +66,7 @@
                                     </option>
                                     @foreach ($publishers as $publisher)
                                         <option value="{{ $publisher->id }}"
-                                            @if ($product->publisher->id === $publisher->id) selected @endif>
+                                            @if ($product->publisher && $product->publisher->id === $publisher->id) selected @endif>
                                             {{ $publisher->name }}
                                         </option>
                                     @endforeach

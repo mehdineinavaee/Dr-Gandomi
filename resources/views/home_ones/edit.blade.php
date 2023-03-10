@@ -45,10 +45,10 @@
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
                                 <label>شعار</label>
-                                <input type="text" name="slogen" id="slogen"
-                                    class="form-control @error('slogen') is-invalid @enderror"
-                                    value="{{ $home_one->slogen }}">
-                                @error('slogen')
+                                <input type="text" name="slogan" id="slogan"
+                                    class="form-control @error('slogan') is-invalid @enderror"
+                                    value="{{ $home_one->slogan }}">
+                                @error('slogan')
                                     <div class="invalid-feedback">
                                         {{ $message }}
                                     </div>
