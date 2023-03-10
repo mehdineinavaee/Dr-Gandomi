@@ -35,20 +35,43 @@
                                     <tbody>
                                         @foreach ($ourProfessors as $ourProfessor)
                                             <tr>
-                                                <td style="text-align:center;" class="align-middle">{{ $loop->iteration }}
+                                                <td style="text-align:center;" class="align-middle">
+                                                    {{ $loop->iteration }}
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $ourProfessor->full_name }}</td>
+                                                    {{ $ourProfessor->full_name }}
+                                                </td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $ourProfessor->post }}</td>
+                                                    {{ $ourProfessor->post }}
+                                                </td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $ourProfessor->twitter }}</td>
+                                                    @if ($ourProfessor->twitter)
+                                                        {{ $ourProfessor->twitter }}
+                                                    @else
+                                                        NULL
+                                                    @endif
+                                                </td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $ourProfessor->linkedin }}</td>
+                                                    @if ($ourProfessor->linkedin)
+                                                        {{ $ourProfessor->linkedin }}
+                                                    @else
+                                                        NULL
+                                                    @endif
+                                                </td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $ourProfessor->instagram }}</td>
+                                                    @if ($ourProfessor->instagram)
+                                                        {{ $ourProfessor->instagram }}
+                                                    @else
+                                                        NULL
+                                                    @endif
+                                                </td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $ourProfessor->facebook }}</td>
+                                                    @if ($ourProfessor->facebook)
+                                                        {{ $ourProfessor->facebook }}
+                                                    @else
+                                                        NULL
+                                                    @endif
+                                                </td>
                                                 <td style="text-align:center;" class="align-middle">
 
                                                     {{-- <form action="{{ route('courses.destroy', ['course' => $course->id]) }}"

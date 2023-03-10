@@ -14,6 +14,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>فایل</label>
                                 <input type="file" class="form-control @error('file') is-invalid @enderror"
                                     id="file" name="file">
@@ -25,6 +26,7 @@
 
                         <div class="col-lg-6 col-sm-6">
                             <div class="form-group">
+                                <span style="color:red">*</span>
                                 <label>عنوان درس</label>
                                 <input type="text" name="title" id="title" value="{{ old('title') }}"
                                     class="form-control @error('title') is-invalid @enderror">

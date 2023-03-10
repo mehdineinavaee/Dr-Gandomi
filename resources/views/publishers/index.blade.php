@@ -33,18 +33,32 @@
                                     <tbody>
                                         @foreach ($publishers as $publisher)
                                             <tr>
-                                                <td style="text-align:center;" class="align-middle">{{ $loop->iteration }}
+                                                <td style="text-align:center;" class="align-middle">
+                                                    {{ $loop->iteration }}
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $publisher->name }}</td>
-                                                <td style="text-align:center;" class="align-middle">
-                                                    {{ $publisher->address }}
+                                                    {{ $publisher->name }}
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $publisher->postal_code }}
+                                                    @if ($publisher->address)
+                                                        {{ $publisher->address }}
+                                                    @else
+                                                        NULL
+                                                    @endif
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {{ $publisher->tel }}
+                                                    @if ($publisher->postal_code)
+                                                        {{ $publisher->postal_code }}
+                                                    @else
+                                                        NULL
+                                                    @endif
+                                                </td>
+                                                <td style="text-align:center;" class="align-middle">
+                                                    @if ($publisher->tel)
+                                                        {{ $publisher->tel }}
+                                                    @else
+                                                        NULL
+                                                    @endif
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
 

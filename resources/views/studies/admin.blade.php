@@ -38,7 +38,11 @@
                                                     {{ $study->title }}
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
-                                                    {!! Str::limit($study->description, 100, ' ...') !!}
+                                                    @if ($study->description)
+                                                        {!! Str::limit($study->description, 100, ' ...') !!}
+                                                    @else
+                                                        NULL
+                                                    @endif
                                                 </td>
                                                 <td style="text-align:center;" class="align-middle">
 
