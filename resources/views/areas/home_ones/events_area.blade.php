@@ -13,7 +13,10 @@
                                     <span>{{ $event->date }}</span>
                                 </div>
 
-                                <span>{{ $event->event_category->title }}</span>
+                                @if ($event->event_category)
+                                    <span>{{ $event->event_category->title }}</span>
+                                @endif
+
                                 <h3>
                                     <a href="{{ route('events.show', ['event' => $event->id]) }}">
                                         {{ $event->title }}
